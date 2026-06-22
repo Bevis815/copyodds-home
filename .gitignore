@@ -1,0 +1,28 @@
+node_modules/
+**/node_modules/
+# Vite 预构建缓存（可删以消除 Outdated Optimize Dep）
+**/.vite/
+.env
+**/.env
+polymarket-backend/deploy/
+dist/
+*.qoder
+
+# Go：只忽略 admin-api 目录内的默认二进制名，勿写裸的 polymarket-admin-api（会误忽略整个源码目录）
+polymarket-admin-api/polymarket-admin-api
+polymarket-admin-api/polymarket-admin-api.exe
+polymarket-admin-api/.run/
+polymarket-admin-api/logs/
+polymarket-admin-api/bin/
+
+# 压缩包
+*.zip
+*.tar
+*.gz
+*.rar
+
+# Go build output
+*.exe
+*.dll
+*.so
+*.dylib
