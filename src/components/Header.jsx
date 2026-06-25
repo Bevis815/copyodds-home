@@ -5,7 +5,7 @@ import { formatNumber } from '../utils/format'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { SupportFloatingButton } from './SupportEntry'
 
-const LOGO_SRC = '/logo.jpg'
+const LOGO_SRC = '/home-logo.jpg'
 
 function HeaderLink({ href, label }) {
   const className =
