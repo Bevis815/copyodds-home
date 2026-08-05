@@ -2,13 +2,12 @@ import { useEffect, useLayoutEffect, useRef } from 'react'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { Hero } from '../components/Hero'
-import { BacktestShowcase } from '../components/landing/BacktestShowcase'
-import { CopyTradingShowcase } from '../components/landing/CopyTradingShowcase'
+import { CommunitySection } from '../components/landing/CommunitySection'
 import { CtaBanner } from '../components/landing/CtaBanner'
-import { HowItWorksSection } from '../components/landing/HowItWorksSection'
-import { LeaderboardShowcase } from '../components/landing/LeaderboardShowcase'
 import { LandingBackdrop } from '../components/landing/LandingBackdrop'
-import { WhyCopyOddsSection } from '../components/landing/WhyCopyOddsSection'
+import { OpenSourceSection } from '../components/landing/OpenSourceSection'
+import { ProductFeaturesSection } from '../components/landing/ProductFeaturesSection'
+import { RoadmapSection } from '../components/landing/RoadmapSection'
 
 /**
  * @param {{ visible?: boolean }} props
@@ -44,25 +43,18 @@ export function HomePage({ visible = true }) {
     <div className="landing-page relative min-h-screen w-full">
       <LandingBackdrop />
 
-      <Header badges={[]} navigation={[]} fullWidth />
+      <Header fullWidth />
 
       <main className="relative z-[1] flex w-full flex-col">
-        <div className="landing-hero-screen-wrap">
-          <div className="landing-shell landing-hero-screen">
-            <Hero />
-          </div>
+        <div className="landing-shell landing-hero-screen">
+          <Hero />
         </div>
 
-        <div className="landing-shell flex flex-col gap-16 pb-12 pt-4 sm:gap-20 sm:pb-14 sm:pt-8 lg:gap-24">
-          <div className="landing-section-glow landing-section-glow--a">
-            <LeaderboardShowcase />
-          </div>
-          <BacktestShowcase />
-          <div className="landing-section-glow landing-section-glow--b">
-            <CopyTradingShowcase />
-          </div>
-          <HowItWorksSection />
-          <WhyCopyOddsSection />
+        <div className="landing-shell flex flex-col gap-24 pb-20 pt-8 sm:gap-28 sm:pb-24 lg:gap-32">
+          <ProductFeaturesSection />
+          <OpenSourceSection />
+          <RoadmapSection />
+          <CommunitySection />
           <CtaBanner />
         </div>
       </main>

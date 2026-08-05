@@ -1,121 +1,196 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { loginUrl } from '../lib/app-links'
+import { SITE } from '../lib/site'
+import { useGitHubStats } from '../hooks/useGitHubStats'
 import { formatNumber } from '../utils/format'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { SupportFloatingButton } from './SupportEntry'
+import { AnimatedNumber } from './ui/AnimatedNumber'
+import { IconGitHub, IconStar, IconTelegram, IconX } from './ui/Icons'
 
 const LOGO_SRC = '/home-logo.jpg'
 
-function HeaderLink({ href, label }) {
-  const className =
-    'interactive-focus rounded-full px-3 py-1.5 text-xs font-medium text-slate-200 transition hover:bg-white/5 hover:text-[#F8D978] sm:px-4 sm:py-2 sm:text-sm'
+const NAV = [
+  { href: '#product', key: 'product' },
+  { href: '#features', key: 'features' },
+  { href: 'docs', key: 'docs', external: true },
+  { href: 'api', key: 'api', external: true },
+  { href: '#roadmap', key: 'roadmap' },
+  { href: '#community', key: 'community' },
+]
 
-  if (href.startsWith('#')) {
-    return (
-      <a className={className} href={href}>
-        {label}
-      </a>
-    )
-  }
-
-  return (
-    <Link className={className} to={href}>
-      {label}
-    </Link>
-  )
+function resolveNavHref(item) {
+  if (item.href === 'docs') return SITE.docs.home
+  if (item.href === 'api') return SITE.docs.api
+  return item.href
 }
 
 function HeaderLogo({ href, logoAlt, logoHomeAria }) {
-  const className =
-    'interactive-focus logo-frame flex h-[52px] w-[168px] items-center rounded-[16px] px-2 py-2 transition duration-200 hover:border-[#F5C542]/24 hover:shadow-[0_28px_70px_rgba(0,0,0,0.46),0_0_38px_rgba(245,197,66,0.14)] sm:h-[72px] sm:w-[228px] sm:rounded-[22px] sm:px-3 sm:py-2.5 lg:h-[78px] lg:w-[252px] lg:rounded-[24px] lg:px-4 lg:py-3 xl:h-[84px] xl:w-[276px]'
-
-  const logoImage = <img className="logo-image" src={LOGO_SRC} alt={logoAlt} />
+  const className = 'site-logo interactive-focus'
+  const image = <img src={LOGO_SRC} alt={logoAlt} width={160} height={48} decoding="async" />
 
   if (href.startsWith('#')) {
     return (
-      <a className={className} href={href} aria-label={logoHomeAria} style={{ padding: 0 }}>
-        {logoImage}
+      <a className={className} href={href} aria-label={logoHomeAria}>
+        {image}
       </a>
     )
   }
 
   return (
-    <Link className={className} to={href} aria-label={logoHomeAria} style={{ padding: 0 }}>
-      {logoImage}
+    <Link className={className} to={href} aria-label={logoHomeAria}>
+      {image}
     </Link>
   )
 }
 
-function LoginHeaderButton() {
+export function Header({ logoHref = '#top', fullWidth = false, compact = false }) {
   const { t } = useTranslation()
+  const { stats } = useGitHubStats()
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
-  return (
-    <a
-      href={loginUrl()}
-      className="interactive-focus btn-gold inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold sm:gap-2 sm:px-4 sm:py-2 sm:text-sm"
-      aria-label={t('header.loginAria')}
-    >
-      {t('header.login')}
-    </a>
-  )
-}
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
-export function Header({
-  totalTraders = 0,
-  logoHref = '#top',
-  navigation = [],
-  badges = null,
-  fullWidth = false,
-}) {
-  const { t } = useTranslation()
-  const resolvedNavigation = navigation
-  const resolvedBadges = badges ?? [
-    {
-      tone: 'metal',
-      text: t('header.tracked', { count: formatNumber(totalTraders) }),
-    },
-  ]
-  const hasNavigation = Array.isArray(resolvedNavigation) && resolvedNavigation.length > 0
+  useEffect(() => {
+    if (!menuOpen) return undefined
+    const onKey = (e) => {
+      if (e.key === 'Escape') setMenuOpen(false)
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [menuOpen])
 
   return (
     <>
-      <div className="site-header-sticky">
+      <div className={`site-header-sticky ${scrolled ? 'is-scrolled' : ''}`}>
         <header
-          className={`site-header-inner flex w-full flex-col gap-3 pt-3 pb-3 sm:gap-4 sm:pt-3.5 sm:pb-3.5 lg:flex-row lg:items-center lg:justify-between lg:pt-4 lg:pb-4 ${
-            fullWidth ? 'landing-shell' : 'mx-auto max-w-[1280px] px-3 sm:px-6 lg:px-8'
-          }`}
+          className={`site-header ${fullWidth ? 'landing-shell' : 'mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8'}`}
         >
-        <div className="flex items-center gap-5">
-          <HeaderLogo href={logoHref} logoAlt={t('header.logoAlt')} logoHomeAria={t('header.logoHomeAria')} />
-        </div>
+          <div className="site-header__left">
+            <HeaderLogo
+              href={logoHref}
+              logoAlt={t('header.logoAlt')}
+              logoHomeAria={t('header.logoHomeAria')}
+            />
 
-        {hasNavigation ? (
-          <nav
-            className="surface-panel flex w-full max-w-full flex-wrap items-center gap-1.5 rounded-2xl px-1.5 py-1.5 sm:w-auto sm:gap-2 sm:rounded-full sm:px-2 sm:py-2"
-            aria-label={t('common.primaryNavAria')}
-          >
-            {resolvedNavigation.map((link) => (
-              <HeaderLink key={`${link.href}-${link.label}`} href={link.href} label={link.label} />
-            ))}
-          </nav>
-        ) : null}
+            {!compact ? (
+              <a
+                className="github-pill interactive-focus"
+                href={SITE.github.web.url}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={t('landing.header.starsAria')}
+              >
+                <IconStar className="size-3.5 text-brand-blue" />
+                <AnimatedNumber value={stats.stars} format={(n) => formatNumber(n)} />
+                <span className="github-pill__sep" aria-hidden />
+                <span className="github-pill__forks">
+                  {t('landing.header.forks', { count: formatNumber(stats.forks) })}
+                </span>
+              </a>
+            ) : null}
+          </div>
 
-        <div className="flex flex-wrap items-center justify-end gap-1.5 text-xs sm:gap-2 sm:text-sm lg:ml-auto">
-          <LoginHeaderButton />
-          <LanguageSwitcher />
-          {resolvedBadges.map((badge) => (
-            <span
-              className={`rounded-full px-3 py-1.5 font-medium sm:px-4 sm:py-2 ${
-                badge.tone === 'metal' ? 'badge-metal' : 'badge-neutral'
-              }`}
-              key={`${badge.tone}-${badge.text}`}
-            >
-              {badge.text}
-            </span>
-          ))}
-        </div>
+          {!compact ? (
+            <nav className="site-nav" aria-label={t('common.primaryNavAria')}>
+              {NAV.map((item) => {
+                const href = resolveNavHref(item)
+                return (
+                  <a
+                    key={item.key}
+                    className="site-nav__link interactive-focus"
+                    href={href}
+                    target={item.external ? '_blank' : undefined}
+                    rel={item.external ? 'noreferrer' : undefined}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {t(`landing.nav.${item.key}`)}
+                  </a>
+                )
+              })}
+            </nav>
+          ) : null}
+
+          <div className="site-header__right">
+            {!compact ? (
+              <div className="site-header__social">
+                <a
+                  className="icon-btn interactive-focus"
+                  href={SITE.github.web.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                >
+                  <IconGitHub className="size-4" />
+                </a>
+                <a
+                  className="icon-btn interactive-focus"
+                  href={SITE.social.x}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="X"
+                >
+                  <IconX className="size-4" />
+                </a>
+                <a
+                  className="icon-btn interactive-focus"
+                  href={SITE.social.telegram}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Telegram"
+                >
+                  <IconTelegram className="size-4" />
+                </a>
+              </div>
+            ) : null}
+
+            <LanguageSwitcher />
+
+            <a className="btn-primary btn-primary--sm" href={SITE.appUrl}>
+              {t('landing.hero.launchApp')}
+            </a>
+
+            {!compact ? (
+              <button
+                type="button"
+                className="menu-toggle interactive-focus"
+                aria-expanded={menuOpen}
+                aria-controls="mobile-nav"
+                aria-label={t('landing.header.menu')}
+                onClick={() => setMenuOpen((v) => !v)}
+              >
+                <span />
+                <span />
+              </button>
+            ) : null}
+          </div>
         </header>
+
+        {!compact && menuOpen ? (
+          <div className="mobile-nav landing-shell" id="mobile-nav">
+            {NAV.map((item) => {
+              const href = resolveNavHref(item)
+              return (
+                <a
+                  key={item.key}
+                  href={href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noreferrer' : undefined}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t(`landing.nav.${item.key}`)}
+                </a>
+              )
+            })}
+          </div>
+        ) : null}
       </div>
       <SupportFloatingButton />
     </>

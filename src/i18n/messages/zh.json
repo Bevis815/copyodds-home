@@ -162,11 +162,15 @@
   },
   "footer": {
     "brand": "CopyOdds",
-    "tagline": "Polymarket 聪明钱跟单平台——发现、回测、风控跟单。",
+    "tagline": "面向 Polymarket 的开源 AI 交易平台。",
     "backToTop": "返回顶部",
     "leaderboard": "榜单",
     "methodology": "方法说明",
-    "docs": "用户指南"
+    "docs": "文档",
+    "privacy": "隐私",
+    "terms": "条款",
+    "license": "许可证",
+    "navAria": "页脚"
   },
   "support": {
     "title": "客服",
@@ -179,7 +183,18 @@
     "whatsappFloatingAria": "通过 WhatsApp 联系客服"
   },
   "landing": {
+    "header": {
+      "starsAria": "GitHub Stars 与 Forks",
+      "forks": "{{count}} forks",
+      "menu": "打开菜单"
+    },
     "nav": {
+      "product": "产品",
+      "features": "功能",
+      "docs": "文档",
+      "api": "API",
+      "roadmap": "路线图",
+      "community": "社区",
       "leaderboard": "排行榜",
       "backtest": "回测",
       "copyTrading": "跟单",
@@ -187,12 +202,168 @@
       "why": "为何选我们"
     },
     "hero": {
-      "badge": "Polymarket 跟单",
-      "title": "跟随 Polymarket 最聪明的交易者",
-      "subtitle": "发现盈利钱包、回测历史表现，并在风控保护下自动跟单。",
-      "primaryCta": "查看排行榜",
-      "secondaryCta": "了解如何运作"
+      "badge": "开源 · AI 交易",
+      "titleLine1": "Open Source AI Trading Platform",
+      "titleLine2": "for Polymarket",
+      "title": "面向 Polymarket 的开源 AI 交易平台",
+      "subtitle": "用 AI 分析与自动执行，复制全球顶尖预测市场交易者。",
+      "launchApp": "启动应用",
+      "viewGithub": "在 GitHub 查看",
+      "docs": "文档",
+      "watchDemo": "观看演示",
+      "primaryCta": "启动应用",
+      "secondaryCta": "在 GitHub 查看"
     },
+    "heroBoard": {
+      "aria": "顶尖交易者排行榜",
+      "kicker": "实时榜单",
+      "title": "Top Traders",
+      "live": "实时",
+      "sample": "示例",
+      "colTrader": "交易者",
+      "colWinRate": "胜率",
+      "colRoi": "ROI",
+      "colFollowers": "关注者",
+      "colAiScore": "AI 评分",
+      "explore": "查看完整排行榜"
+    },
+    "stats": {
+      "aria": "开源数据",
+      "stars": "GitHub Stars",
+      "forks": "Forks",
+      "contributors": "贡献者",
+      "release": "最新版本",
+      "releaseSoon": "即将发布",
+      "weeklyCommits": "本周提交",
+      "license": "许可证"
+    },
+    "product": {
+      "eyebrow": "产品",
+      "title": "为开发者与认真的交易者而建。",
+      "body": "CopyOdds 是开源 AI 交易平台，而非赌场式交易所界面。发现聪明钱、用 AI 评分钱包，并在透明风控下自动跟单。",
+      "features": {
+        "discovery": {
+          "title": "聪明钱发现",
+          "body": "按信号质量、稳定性与风险排序 Polymarket 钱包，而不只看表面盈亏。"
+        },
+        "ai": {
+          "title": "AI 驱动分析",
+          "body": "综合 AI 评分帮你在投入资金前筛出值得跟随的交易者。"
+        },
+        "execution": {
+          "title": "自动执行",
+          "body": "在仓位上限、单市场限额与可配置护栏下镜像交易。"
+        },
+        "backtest": {
+          "title": "先回测再跟单",
+          "body": "用研究级细节查看收益曲线、回撤与活跃度历史。"
+        },
+        "api": {
+          "title": "API 优先架构",
+          "body": "开放排行榜、认证、钱包与跟单服务 — 源码可审计。"
+        },
+        "opensource": {
+          "title": "完全开源",
+          "body": "前端与后端均在 GitHub，Apache-2.0 许可。Fork、审计、贡献。"
+        }
+      }
+    },
+    "community": {
+      "eyebrow": "社区",
+      "title": "加入社区",
+      "body": "与贡献者、交易者和构建者一起公开建造透明的预测市场工具。",
+      "join": "加入 →",
+      "soon": "即将上线",
+      "github": "给仓库加星、提 Issue、提交 PR。",
+      "x": "产品更新、版本发布与研究笔记。",
+      "telegram": "与团队和其他构建者交流。",
+      "discord": "社区服务器规划中，敬请期待。",
+      "docs": "指南、架构说明与安装文档。",
+      "blogTitle": "博客",
+      "blog": "团队变更日志与深度文章。",
+      "api": "copyodds-services 的后端 API 参考。"
+    },
+    "openSource": {
+      "eyebrow": "开源",
+      "title": "公开建造",
+      "body": "开发在 copyodds-web 与 copyodds-services 上公开进行 — Apache-2.0 许可、Issue、PR 与 Release。",
+      "recentCommits": "最近提交",
+      "viewRepo": "查看仓库",
+      "latestRelease": "最新版本",
+      "releaseHint": "在 GitHub 跟踪带标签的发布。",
+      "contributors": "贡献者",
+      "contributorsHint": "正在公开贡献代码的人。",
+      "repos": "源码",
+      "commitPlaceholder": "正在获取最新提交…",
+      "pillars": {
+        "license": {
+          "title": "Apache-2.0 许可",
+          "body": "在清晰的开源许可下使用、审计与扩展平台。"
+        },
+        "openDev": {
+          "title": "开放开发",
+          "body": "路线图、Issue 与架构决策都在 GitHub 可见。"
+        },
+        "contributions": {
+          "title": "社区贡献",
+          "body": "欢迎交易者与工程师提交 PR 与讨论。"
+        },
+        "issues": {
+          "title": "Issue 跟踪",
+          "body": "缺陷与需求就在代码所在之处。"
+        },
+        "prs": {
+          "title": "Pull Requests",
+          "body": "公开审阅 diff、讨论设计并合并改进。"
+        },
+        "roadmap": {
+          "title": "路线图",
+          "body": "查看正在做、接下来做和以后做的事项。"
+        },
+        "releases": {
+          "title": "发布说明",
+          "body": "带标签的版本记录变更内容与原因。"
+        },
+        "activity": {
+          "title": "GitHub 动态",
+          "body": "Stars、Forks、Commits 与贡献者实时更新。"
+        }
+      }
+    },
+    "roadmap": {
+      "eyebrow": "路线图",
+      "title": "CopyOdds 的下一步",
+      "body": "我们公开建造。在 GitHub Issues 跟踪进度，持续交付 AI 交易栈。",
+      "viewIssues": "在 GitHub 查看 Issues",
+      "status": {
+        "now": "进行中",
+        "next": "下一步",
+        "later": "之后"
+      },
+      "items": [
+        {
+          "status": "now",
+          "title": "开源平台",
+          "body": "公开 web + services 仓库、文档与开发者优先官网。"
+        },
+        {
+          "status": "next",
+          "title": "API 与文档打磨",
+          "body": "更强的 API 参考、Mintlify 风格文档与贡献指南。"
+        },
+        {
+          "status": "later",
+          "title": "社区触点",
+          "body": "Discord、更丰富的研究文章与贡献者上手体验。"
+        }
+      ]
+    },
+    "cta": {
+      "title": "启动开源 AI 交易平台",
+      "body": "打开应用发现交易者，或克隆仓库与我们一起构建。",
+      "primary": "启动应用"
+    },
+
     "heroMock": {
       "aria": "仪表盘预览：顶尖交易者、回测与跟单设置",
       "dashboardTitle": "CopyOdds 仪表盘",

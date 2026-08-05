@@ -43,11 +43,11 @@ export function LanguageSwitcher({ className = '' }) {
         aria-controls={listId}
         aria-haspopup="listbox"
         onClick={() => setOpen((v) => !v)}
-        className="interactive-focus flex min-w-[7.5rem] items-center justify-between gap-2 rounded-full border border-[#F5C542]/20 bg-[linear-gradient(165deg,rgba(248,217,120,0.12),rgba(17,22,29,0.92))] px-3 py-1.5 text-[11px] font-medium text-slate-100 shadow-[0_0_0_1px_rgba(255,255,255,0.06)_inset] backdrop-blur-sm sm:min-w-[9.5rem] sm:px-3.5 sm:py-2 sm:text-xs"
+        className="interactive-focus flex min-w-[7.5rem] items-center justify-between gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[11px] font-medium text-zinc-100 sm:min-w-[9.5rem] sm:px-3.5 sm:py-2 sm:text-xs"
       >
         <span className="truncate">{localeNativeLabels[locale]}</span>
         <svg
-          className={`size-3.5 shrink-0 text-[#F8D978] transition-transform duration-200 sm:size-4 ${open ? 'rotate-180' : ''}`}
+          className={`size-3.5 shrink-0 text-zinc-400 transition-transform duration-200 sm:size-4 ${open ? 'rotate-180' : ''}`}
           viewBox="0 0 20 20"
           fill="currentColor"
           aria-hidden
@@ -62,7 +62,7 @@ export function LanguageSwitcher({ className = '' }) {
 
       {open ? (
         <div
-          className="absolute left-0 right-auto z-[100] mt-1.5 min-w-[11rem] max-w-[min(18rem,calc(100vw-1.5rem))] overflow-hidden rounded-2xl border border-white/12 bg-[rgba(11,15,20,0.96)] py-1 shadow-[0_16px_48px_rgba(0,0,0,0.55),0_0_0_1px_rgba(245,197,66,0.08)] backdrop-blur-md sm:left-auto sm:right-0 sm:max-w-none sm:min-w-[12rem] sm:rounded-[20px] sm:py-1.5"
+          className="absolute left-0 right-auto z-[100] mt-1.5 min-w-[11rem] max-w-[min(18rem,calc(100vw-1.5rem))] overflow-hidden rounded-xl border border-white/10 bg-[rgba(9,9,11,0.96)] py-1 shadow-[0_16px_48px_rgba(0,0,0,0.55)] backdrop-blur-md sm:left-auto sm:right-0 sm:max-w-none sm:min-w-[12rem] sm:py-1.5"
           id={listId}
           role="listbox"
           aria-label={t('common.langAria')}
@@ -77,8 +77,8 @@ export function LanguageSwitcher({ className = '' }) {
                 aria-selected={active}
                 className={`flex w-full items-center justify-between gap-2 px-3 py-2 text-left text-[12px] font-medium transition sm:px-3.5 sm:py-2.5 sm:text-sm ${
                   active
-                    ? 'bg-[#F8D978]/12 text-[#F8D978]'
-                    : 'text-slate-200 hover:bg-white/[0.06] hover:text-white'
+                    ? 'bg-blue-500/15 text-blue-200'
+                    : 'text-zinc-200 hover:bg-white/[0.06] hover:text-white'
                 }`}
                 onClick={() => {
                   setLocale(code)
@@ -87,7 +87,7 @@ export function LanguageSwitcher({ className = '' }) {
               >
                 <span>{localeNativeLabels[code]}</span>
                 {active ? (
-                  <svg className="size-3.5 shrink-0 text-[#F8D978]" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+                  <svg className="size-3.5 shrink-0 text-blue-300" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
                     <path
                       fillRule="evenodd"
                       d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"

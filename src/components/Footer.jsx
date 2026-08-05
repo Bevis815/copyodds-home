@@ -1,59 +1,78 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { SupportFooterLink } from './SupportEntry'
+import { SITE } from '../lib/site'
+import { IconGitHub, IconTelegram, IconX } from './ui/Icons'
 
-function FooterLink({ href, children }) {
-  const className =
-    'interactive-focus rounded-full px-3 py-1.5 text-xs font-medium text-slate-300 transition hover:bg-white/5 hover:text-[#F8D978] sm:px-4 sm:py-2 sm:text-sm'
+const LOGO_SRC = '/home-logo.jpg'
 
-  if (href.startsWith('#')) {
-    return (
-      <a className={className} href={href}>
-        {children}
-      </a>
-    )
-  }
-
-  return (
-    <Link className={className} to={href}>
-      {children}
-    </Link>
-  )
-}
-
-export function Footer({ links = [], fullWidth = false, showSupport = false }) {
+export function Footer({ fullWidth = false, links = [] }) {
   const { t } = useTranslation()
-  const resolvedLinks = links
-  const hasLinks = Array.isArray(resolvedLinks) && resolvedLinks.length > 0
-  const hasActions = showSupport || hasLinks
+  const year = new Date().getFullYear()
+
+  const defaultLinks = [
+    { href: SITE.github.web.url, label: 'GitHub', external: true },
+    { href: SITE.social.x, label: 'X', external: true },
+    { href: SITE.social.telegram, label: 'Telegram', external: true },
+    { href: SITE.docs.home, label: t('landing.nav.docs'), external: true },
+    { href: SITE.docs.api, label: t('landing.nav.api'), external: true },
+    { href: SITE.docs.privacy, label: t('footer.privacy') },
+    { href: SITE.docs.terms, label: t('footer.terms') },
+    { href: SITE.docs.license, label: t('footer.license'), external: true },
+  ]
+
+  const resolvedLinks = Array.isArray(links) && links.length > 0 ? links : defaultLinks
 
   return (
     <footer
-      className={`surface-panel relative z-10 flex w-full flex-col gap-3 py-5 sm:gap-4 sm:py-6 lg:flex-row lg:items-center lg:justify-between ${
-        fullWidth
-          ? 'landing-shell landing-footer--full mt-8 rounded-none border-x-0 sm:mt-10'
-          : 'mx-auto mb-4 max-w-[1280px] rounded-2xl px-4 sm:mb-6 sm:rounded-[28px] sm:px-7 lg:px-8'
-      }`}
+      className={`site-footer ${fullWidth ? 'landing-shell landing-footer--full' : 'mx-auto mb-6 max-w-[1280px] px-4 sm:px-6 lg:px-8'}`}
       id="footer"
     >
-      <div>
-        <p className="font-display text-base font-bold tracking-[0.2em] text-white uppercase sm:text-lg">
-          {t('footer.brand')}
-        </p>
-        <p className="mt-1.5 max-w-[56ch] text-[13px] leading-6 text-slate-400 sm:mt-2 sm:text-sm sm:leading-7">
-          {t('footer.tagline')}
-        </p>
-      </div>
-      {hasActions ? (
-        <div className="flex flex-wrap items-center gap-2">
-          {showSupport ? <SupportFooterLink /> : null}
-          {resolvedLinks.map((link) => (
-            <FooterLink key={`${link.href}-${link.label}`} href={link.href}>
-              {link.label}
-            </FooterLink>
-          ))}
+      <div className="site-footer__top">
+        <Link className="site-logo site-logo--footer" to="/" aria-label={t('header.logoHomeAria')}>
+          <img src={LOGO_SRC} alt={t('header.logoAlt')} width={140} height={42} decoding="async" />
+        </Link>
+
+        <div className="site-footer__social">
+          <a href={SITE.github.web.url} target="_blank" rel="noreferrer" aria-label="GitHub">
+            <IconGitHub className="size-4" />
+          </a>
+          <a href={SITE.social.x} target="_blank" rel="noreferrer" aria-label="X">
+            <IconX className="size-4" />
+          </a>
+          <a href={SITE.social.telegram} target="_blank" rel="noreferrer" aria-label="Telegram">
+            <IconTelegram className="size-4" />
+          </a>
         </div>
-      ) : null}
+      </div>
+
+      <nav className="site-footer__nav" aria-label={t('footer.navAria')}>
+        {resolvedLinks.map((link) =>
+          link.href.startsWith('#') || link.href.startsWith('/') ? (
+            link.href.startsWith('/') ? (
+              <Link key={`${link.href}-${link.label}`} to={link.href}>
+                {link.label}
+              </Link>
+            ) : (
+              <a key={`${link.href}-${link.label}`} href={link.href}>
+                {link.label}
+              </a>
+            )
+          ) : (
+            <a
+              key={`${link.href}-${link.label}`}
+              href={link.href}
+              target={link.external ? '_blank' : undefined}
+              rel={link.external ? 'noreferrer' : undefined}
+            >
+              {link.label}
+            </a>
+          ),
+        )}
+      </nav>
+
+      <p className="site-footer__copy">
+        © {year} {t('footer.brand')} · {SITE.license}
+      </p>
     </footer>
   )
 }

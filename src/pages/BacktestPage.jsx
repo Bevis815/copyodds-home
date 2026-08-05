@@ -1520,24 +1520,14 @@ export function BacktestPage() {
       toneClass: getValueToneClass(backtest?.worstDay?.changeValue),
     },
   ]
-  const badges = [
-    {
-      tone: 'metal',
-      text: isRefreshing ? t('common.updating') : t('common.riskProfile'),
-    },
-  ]
 
   return (
     <div className="relative min-h-screen">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_top,rgba(245,197,66,0.18),transparent_62%)]" />
-      <div className="pointer-events-none absolute right-[-10rem] top-24 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(245,197,66,0.14),transparent_68%)] blur-3xl" />
-      <div className="pointer-events-none absolute left-[-8rem] top-[28rem] h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.08),transparent_70%)] blur-3xl" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.16),transparent_62%)]" />
+      <div className="pointer-events-none absolute right-[-10rem] top-24 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.12),transparent_68%)] blur-3xl" />
+      <div className="pointer-events-none absolute left-[-8rem] top-[28rem] h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.06),transparent_70%)] blur-3xl" />
 
-      <Header
-        logoHref={localizePath('/')}
-        navigation={[]}
-        badges={badges}
-      />
+      <Header logoHref={localizePath('/')} compact />
 
       <main className="relative z-10 mx-auto flex w-full max-w-[1320px] flex-col gap-3 px-3 pb-8 pt-2 min-[400px]:px-4 sm:gap-4 sm:px-5 sm:pt-3 lg:px-7">
         <section

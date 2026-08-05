@@ -162,11 +162,15 @@
   },
   "footer": {
     "brand": "CopyOdds",
-    "tagline": "Polymarket smart money copy trading — discover, backtest, and copy with risk controls.",
+    "tagline": "Open source AI trading platform for Polymarket.",
     "backToTop": "Back to top",
     "leaderboard": "Leaderboard",
     "methodology": "Methodology",
-    "docs": "User guide"
+    "docs": "Docs",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "license": "License",
+    "navAria": "Footer"
   },
   "support": {
     "title": "Support",
@@ -179,7 +183,18 @@
     "whatsappFloatingAria": "Contact support on WhatsApp"
   },
   "landing": {
+    "header": {
+      "starsAria": "GitHub stars and forks",
+      "forks": "{{count}} forks",
+      "menu": "Open menu"
+    },
     "nav": {
+      "product": "Product",
+      "features": "Features",
+      "docs": "Docs",
+      "api": "API",
+      "roadmap": "Roadmap",
+      "community": "Community",
       "leaderboard": "Leaderboard",
       "backtest": "Backtest",
       "copyTrading": "Copy Trading",
@@ -187,11 +202,166 @@
       "why": "Why CopyOdds"
     },
     "hero": {
-      "badge": "Polymarket copy trading",
-      "title": "Copy the Smartest Traders on Polymarket",
-      "subtitle": "Discover profitable Polymarket wallets, backtest their performance, and copy trades with risk controls.",
-      "primaryCta": "View Leaderboard",
-      "secondaryCta": "See How It Works"
+      "badge": "Open Source · AI Trading",
+      "titleLine1": "Open Source AI Trading Platform",
+      "titleLine2": "for Polymarket",
+      "title": "Open Source AI Trading Platform for Polymarket",
+      "subtitle": "Copy the world's best prediction traders with AI-powered analysis and automated execution.",
+      "launchApp": "Launch App",
+      "viewGithub": "View on GitHub",
+      "docs": "Documentation",
+      "watchDemo": "Watch Demo",
+      "primaryCta": "Launch App",
+      "secondaryCta": "View on GitHub"
+    },
+    "heroBoard": {
+      "aria": "Top traders leaderboard",
+      "kicker": "Live board",
+      "title": "Top Traders",
+      "live": "Live",
+      "sample": "Sample",
+      "colTrader": "Trader",
+      "colWinRate": "Win Rate",
+      "colRoi": "ROI",
+      "colFollowers": "Followers",
+      "colAiScore": "AI Score",
+      "explore": "Explore leaderboard"
+    },
+    "stats": {
+      "aria": "Open source statistics",
+      "stars": "GitHub Stars",
+      "forks": "Forks",
+      "contributors": "Contributors",
+      "release": "Latest Release",
+      "releaseSoon": "Coming soon",
+      "weeklyCommits": "Weekly Commits",
+      "license": "License"
+    },
+    "product": {
+      "eyebrow": "Product",
+      "title": "Built for developers and serious traders.",
+      "body": "CopyOdds is an open source AI trading platform — not a casino UI. Discover smart money, score wallets with AI, and automate copy execution with transparent controls.",
+      "features": {
+        "discovery": {
+          "title": "Smart money discovery",
+          "body": "Rank Polymarket wallets by signal quality, consistency, and risk — not just headline PnL."
+        },
+        "ai": {
+          "title": "AI-powered analysis",
+          "body": "Composite AI scores help shortlist traders worth following before you allocate capital."
+        },
+        "execution": {
+          "title": "Automated execution",
+          "body": "Mirror trades with position caps, per-market limits, and guardrails you control."
+        },
+        "backtest": {
+          "title": "Backtest before you copy",
+          "body": "Inspect return curves, drawdowns, and activity history with research-grade detail."
+        },
+        "api": {
+          "title": "API-first architecture",
+          "body": "Open services for leaderboards, auth, wallets, and copy workflows — inspect the source."
+        },
+        "opensource": {
+          "title": "Fully open source",
+          "body": "Frontend and backend live on GitHub under Apache-2.0. Fork it, audit it, contribute."
+        }
+      }
+    },
+    "community": {
+      "eyebrow": "Community",
+      "title": "Join the Community",
+      "body": "Ship in public with contributors, traders, and builders who care about transparent prediction-market tooling.",
+      "join": "Join →",
+      "soon": "Coming soon",
+      "github": "Star the repos, open issues, and ship pull requests.",
+      "x": "Product updates, releases, and research notes.",
+      "telegram": "Chat with the team and other builders.",
+      "discord": "Community server planned — stay tuned.",
+      "docs": "Guides, architecture notes, and setup docs.",
+      "blogTitle": "Blog",
+      "blog": "Changelogs and deep dives from the team.",
+      "api": "Backend API references for copyodds-services."
+    },
+    "openSource": {
+      "eyebrow": "Open Source",
+      "title": "Built in Public",
+      "body": "Development happens in the open across copyodds-web and copyodds-services — Apache-2.0 licensing, issues, PRs, and releases.",
+      "recentCommits": "Recent Commits",
+      "viewRepo": "View repos",
+      "latestRelease": "Latest Release",
+      "releaseHint": "Track tagged releases on GitHub.",
+      "contributors": "Contributors",
+      "contributorsHint": "People shipping code in public.",
+      "repos": "Source code",
+      "commitPlaceholder": "Fetching latest commits…",
+      "pillars": {
+        "license": {
+          "title": "Apache-2.0 License",
+          "body": "Use, audit, and extend the platform with a clear open source license."
+        },
+        "openDev": {
+          "title": "Open Development",
+          "body": "Roadmaps, issues, and architecture decisions stay visible on GitHub."
+        },
+        "contributions": {
+          "title": "Community Contributions",
+          "body": "PRs and discussions welcome from traders and engineers alike."
+        },
+        "issues": {
+          "title": "Issue Tracking",
+          "body": "Bugs and feature requests live where the code lives."
+        },
+        "prs": {
+          "title": "Pull Requests",
+          "body": "Review diffs, discuss design, and merge improvements in public."
+        },
+        "roadmap": {
+          "title": "Roadmap",
+          "body": "See what is shipping now, next, and later."
+        },
+        "releases": {
+          "title": "Release Notes",
+          "body": "Tagged releases document what changed and why."
+        },
+        "activity": {
+          "title": "GitHub Activity",
+          "body": "Stars, forks, commits, and contributors update live."
+        }
+      }
+    },
+    "roadmap": {
+      "eyebrow": "Roadmap",
+      "title": "Where CopyOdds is headed",
+      "body": "We build in public. Track progress on GitHub issues and keep shipping the AI trading stack.",
+      "viewIssues": "View issues on GitHub",
+      "status": {
+        "now": "Now",
+        "next": "Next",
+        "later": "Later"
+      },
+      "items": [
+        {
+          "status": "now",
+          "title": "Open source platform",
+          "body": "Public web + services repos, docs, and developer-first landing."
+        },
+        {
+          "status": "next",
+          "title": "API & docs polish",
+          "body": "Stronger API references, Mintlify-style docs, and contribution guides."
+        },
+        {
+          "status": "later",
+          "title": "Community surface",
+          "body": "Discord, richer research posts, and contributor onboarding."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Launch the open source AI trading platform",
+      "body": "Open the app to discover traders, or clone the repos and build with us.",
+      "primary": "Launch App"
     },
     "heroMock": {
       "aria": "Dashboard preview with top trader, backtest, and copy settings",
@@ -414,10 +584,6 @@
           "body": "Backtests and rule presets help you decide whether a wallet fits your risk budget."
         }
       ]
-    },
-    "cta": {
-      "title": "Start with the Smart Money Leaderboard",
-      "primary": "View Leaderboard"
     }
   },
   "hero": {

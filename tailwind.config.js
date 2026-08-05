@@ -5,35 +5,31 @@ export default {
     extend: {
       colors: {
         brand: {
-          bg: '#0B0F14',
-          surface: '#11161D',
-          elevated: '#161C24',
-          border: '#27303B',
-          gold: '#F5C542',
-          goldSoft: '#F8D978',
-          goldDeep: '#B8891E',
-          text: '#F6F7F9',
-          muted: '#8E98A8',
+          bg: '#09090B',
+          surface: '#111113',
+          elevated: '#18181B',
+          border: '#27272A',
+          blue: '#3B82F6',
+          blueSoft: '#93C5FD',
+          blueDeep: '#1D4ED8',
+          gold: '#3B82F6',
+          goldSoft: '#93C5FD',
+          goldDeep: '#1D4ED8',
+          text: '#FAFAFA',
+          muted: '#A1A1AA',
           profit: '#22C55E',
           loss: '#F87171',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['Space Grotesk', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+        sans: ['Instrument Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Newsreader', 'Instrument Sans', 'ui-serif', 'Georgia', 'serif'],
+        mono: ['IBM Plex Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       boxShadow: {
-        panel:
-          '0 24px 80px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04)',
-        gold: '0 0 0 1px rgba(245, 197, 66, 0.22), 0 18px 44px rgba(245, 197, 66, 0.18)',
+        panel: '0 24px 80px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04)',
+        blue: '0 0 0 1px rgba(59, 130, 246, 0.22), 0 18px 44px rgba(59, 130, 246, 0.18)',
         glow: '0 20px 60px rgba(0, 0, 0, 0.5)',
-      },
-      backgroundImage: {
-        'gold-radial':
-          'radial-gradient(circle at center, rgba(245, 197, 66, 0.24), transparent 70%)',
-        'panel-gradient':
-          'linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))',
       },
     },
   },
