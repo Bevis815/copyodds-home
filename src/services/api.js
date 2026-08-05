@@ -1,4 +1,6 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL?.trim() ?? ''
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL?.trim() ||
+  (import.meta.env.DEV ? '' : 'https://api.copyodds.io')
 const API_KEY = import.meta.env.VITE_API_KEY?.trim() ?? ''
 
 function resolveUrl(path) {
@@ -6,6 +8,7 @@ function resolveUrl(path) {
     return path
   }
 
+  // Dev: empty base → same-origin `/api` (Vite proxy → api.copyodds.io)
   if (!API_BASE_URL) {
     return path
   }

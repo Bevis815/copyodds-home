@@ -224,6 +224,7 @@
       "colWinRate": "胜率",
       "colRoi": "ROI",
       "colFollowers": "关注者",
+      "colPredictions": "预测数",
       "colAiScore": "AI 评分",
       "explore": "查看完整排行榜"
     },

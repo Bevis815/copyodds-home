@@ -151,7 +151,7 @@ export function Header({ logoHref = '#top', fullWidth = false, compact = false }
               </div>
             ) : null}
 
-            <LanguageSwitcher />
+            <LanguageSwitcher className="header-lang" />
 
             <a className="btn-primary btn-primary--sm" href={SITE.appUrl}>
               {t('landing.hero.launchApp')}

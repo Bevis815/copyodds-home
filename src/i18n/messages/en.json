@@ -224,6 +224,7 @@
       "colWinRate": "Win Rate",
       "colRoi": "ROI",
       "colFollowers": "Followers",
+      "colPredictions": "Predictions",
       "colAiScore": "AI Score",
       "explore": "Explore leaderboard"
     },

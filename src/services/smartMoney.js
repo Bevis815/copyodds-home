@@ -160,6 +160,10 @@ function normalizeDistributionBucket(bucket) {
 
 /** @param {Record<string, unknown>} item */
 function normalizeSmartMoneyItem(item) {
+  const displayProfile =
+    item.displayProfile && typeof item.displayProfile === 'object' ? item.displayProfile : null
+  const traderCard = item.traderCard && typeof item.traderCard === 'object' ? item.traderCard : null
+
   return {
     rank: item.rank ?? null,
     wallet: item.wallet,
@@ -171,6 +175,10 @@ function normalizeSmartMoneyItem(item) {
     xUsername: nullableString(item.xUsername),
     joinedAtText: item.joinedAtText ?? null,
     score: toNumber(item.score) ?? 0,
+    displayScore: toNumber(item.displayScore),
+    traderScore: toNumber(item.traderScore ?? traderCard?.traderScore),
+    copyabilityScore: toNumber(item.copyabilityScore ?? traderCard?.factors?.copyability),
+    tier: nullableString(item.tier ?? traderCard?.tier),
     pnlQuality: toNumber(item.pnlQuality),
     activityScore: toNumber(item.activityScore),
     consistencyScore: toNumber(item.consistencyScore),
@@ -182,6 +190,7 @@ function normalizeSmartMoneyItem(item) {
     holdingsValue: toNumber(item.holdingsValue),
     totalPnl: toNumber(item.totalPnl),
     totalVolume: toNumber(item.totalVolume),
+    totalReturn1y: toNumber(item.totalReturn1y ?? displayProfile?.totalReturnRatio),
     sourceRankWeek: item.sourceRankWeek ?? null,
     sourceRankMonth: item.sourceRankMonth ?? null,
     sourceRankAll: item.sourceRankAll ?? null,
@@ -191,7 +200,7 @@ function normalizeSmartMoneyItem(item) {
     externalSourceRankWeek: item.externalSourceRankWeek ?? null,
     externalSourceRankMonth: item.externalSourceRankMonth ?? null,
     externalSourceRankAll: item.externalSourceRankAll ?? null,
-    externalWinRate: toNumber(item.externalWinRate),
+    externalWinRate: toNumber(item.externalWinRate ?? displayProfile?.winRate),
     externalSharpeRatio: toNumber(item.externalSharpeRatio),
     externalTotalReturn: toNumber(item.externalTotalReturn),
     externalMetricsPeriod: item.externalMetricsPeriod ?? null,
@@ -206,6 +215,8 @@ function normalizeSmartMoneyItem(item) {
     lastScoredAt: item.lastScoredAt ?? null,
     sourceFetchedAt: item.sourceFetchedAt ?? null,
     syncedAt: item.syncedAt ?? null,
+    displayProfile,
+    traderCard,
   }
 }
 
@@ -352,6 +363,7 @@ export async function fetchSmartMoneyLeaderboard({
   limit = 100,
   offset = 0,
   eligibleOnly = true,
+  includeCopyability = false,
   rankBy,
   candidatePeriod,
   sortBy,
@@ -362,6 +374,9 @@ export async function fetchSmartMoneyLeaderboard({
     offset: String(offset),
     eligibleOnly: String(eligibleOnly),
   })
+  if (includeCopyability) {
+    params.set('includeCopyability', 'true')
+  }
   if (rankBy) {
     params.set('rankBy', rankBy)
   }
