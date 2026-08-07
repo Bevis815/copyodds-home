@@ -280,6 +280,7 @@
       "telegram": "与团队和其他构建者交流。",
       "discord": "社区服务器规划中，敬请期待。",
       "docs": "指南、架构说明与安装文档。",
+      "partners": "合作伙伴 Telegram 机器人与 Mini App 接入指南。",
       "blogTitle": "博客",
       "blog": "团队变更日志与深度文章。",
       "api": "copyodds-services 的后端 API 参考。"
@@ -771,6 +772,179 @@
     "confidenceJoin": " · ",
     "snapshotPnlFootnote": "Polymarket 主页总盈亏（快照）：{{value}}。",
     "winRateHint": "来源 {{source}}"
+  },
+  "partnerGuide": {
+    "eyebrow": "合作伙伴接入",
+    "breadcrumb": "合作伙伴",
+    "breadcrumbAria": "面包屑导航",
+    "metaAria": "指南摘要",
+    "title": "CopyOdds 合作伙伴 Telegram 指南",
+    "subtitle": "本页按步骤说明如何完成合作伙伴机器人与 Mini App 的 Telegram 配置。完成后，把 Bot Token 和邀请码发给我们即可，其余由我们处理。",
+    "meta": {
+      "time": "约 10–15 分钟",
+      "tools": "仅需 Telegram + BotFather",
+      "outcome": "Bot Token + 邀请码"
+    },
+    "labels": {
+      "search": "搜索",
+      "command": "命令",
+      "example": "示例",
+      "token": "Token 格式"
+    },
+    "overview": {
+      "title": "你需要完成的内容",
+      "body": "共三个阶段，请按顺序完成——每一阶段都会解锁下一阶段。",
+      "items": {
+        "bot": {
+          "title": "创建 Telegram 机器人",
+          "body": "通过 BotFather 注册机器人，保存 Token，并设置名称与头像。"
+        },
+        "miniApp": {
+          "title": "绑定 Mini App",
+          "body": "在该机器人上创建 Mini App，并粘贴我们提供的 Web App URL。"
+        },
+        "send": {
+          "title": "提交凭证",
+          "body": "将 Bot Token 与邀请码 / Referral Code 发送给客服。"
+        }
+      }
+    },
+    "part1": {
+      "kicker": "第 1 / 3 阶段",
+      "title": "创建 Telegram 机器人",
+      "intro": "BotFather 是 Telegram 官方的机器人创建工具。你将创建新机器人、设置公开用户名，并妥善保存 BotFather 返回的 API Token。",
+      "steps": {
+        "open": {
+          "title": "打开 BotFather",
+          "body": "在 Telegram 中搜索 <code>@BotFather</code>。打开带<strong>蓝色认证勾</strong>的官方账号，并点击 <strong>Start</strong>，以便发送命令。",
+          "tip": "如果出现多个结果，请选择带认证标识的官方 BotFather，不要点仿冒账号。",
+          "caption": "搜索 @BotFather 并打开官方认证账号",
+          "imageAlt": "在 Telegram 中搜索 @BotFather"
+        },
+        "create": {
+          "title": "创建新机器人",
+          "body": "在 BotFather 对话中发送下方命令。BotFather 会回复并要求你为新机器人设置显示名称。",
+          "tip": "命令区分大小写，请精确输入 <code>/newbot</code>，前后不要有多余空格。",
+          "caption": "发送 /newbot 开始创建机器人",
+          "imageAlt": "向 BotFather 发送 /newbot"
+        },
+        "name": {
+          "title": "设置机器人显示名称",
+          "body": "输入用户在 Telegram 中看到的显示名称。可使用 <code>CopyOdds</code>，或更符合你渠道品牌的名称——这不是唯一用户名。",
+          "tip": "之后如需修改，可用 <code>/setname</code> 重新设置显示名称。",
+          "caption": "选择清晰易识别的显示名称",
+          "imageAlt": "在 BotFather 中设置机器人显示名称"
+        },
+        "username": {
+          "title": "设置唯一用户名",
+          "body": "选择以 <code>bot</code> 结尾的唯一用户名（Telegram 强制要求）。例如：<code>copyodds_demo_bot</code>。若已被占用，BotFather 会要求你换一个。",
+          "tip": "用户名仅支持字母、数字和下划线。尽量选合作伙伴容易辨认的名字。",
+          "caption": "用户名必须唯一，并以 bot 结尾",
+          "imageAlt": "设置以 bot 结尾的机器人用户名"
+        },
+        "token": {
+          "title": "保存 Bot Token",
+          "body": "创建成功后，BotFather 会发送类似下方格式的 API Token。请复制完整 Token 并私下保存——这就是你稍后要发给我们的内容。",
+          "tip": "切勿把 Token 发到公开群、随意外传的截图或 GitHub。任何人拿到 Token 都能控制你的机器人。",
+          "caption": "复制完整 API Token 并妥善保管",
+          "imageAlt": "BotFather 返回的 Bot API Token"
+        },
+        "avatar": {
+          "title": "设置机器人头像",
+          "body": "发送 <code>/setuserpic</code>，选择刚创建的机器人，再上传正方形 <strong>512×512 PNG</strong> 图标。清晰的头像有助于用户信任 Mini App 入口。",
+          "tip": "建议使用透明或纯色背景 PNG，避免过小的图案在头像尺寸下看不清。",
+          "caption": "使用 /setuserpic 上传 512×512 PNG",
+          "imageAlt": "使用 /setuserpic 上传机器人头像"
+        },
+        "setName": {
+          "title": "确认或更新机器人名称",
+          "body": "可选：发送 <code>/setname</code>，选择你的机器人，确认显示名称符合品牌后再进入 Mini App 配置。",
+          "tip": "若创建时的名称已经合适，可跳过本步。",
+          "caption": "可选：用 /setname 微调显示名称",
+          "imageAlt": "使用 /setname 修改机器人名称"
+        }
+      }
+    },
+    "part2": {
+      "kicker": "第 2 / 3 阶段",
+      "title": "创建 Telegram Mini App",
+      "intro": "Mini App 会把你的机器人变成 Telegram 内打开 CopyOdds 网页体验的入口。你将创建应用、选择机器人、填写基础信息，然后粘贴我们提供的 Web App URL。",
+      "steps": {
+        "create": {
+          "title": "开始创建 Mini App",
+          "body": "继续留在 <code>@BotFather</code> 对话中，发送 <code>/newapp</code>。BotFather 会引导你为某个机器人绑定 Web App。",
+          "tip": "如果提示你还没有机器人，请先完成第 1 阶段。"
+        },
+        "select": {
+          "title": "选择机器人",
+          "body": "按提示选择第 1 阶段创建的机器人。Mini App 只会绑定到该机器人。",
+          "tip": "若你管理多个机器人，请再确认选中的是合作伙伴机器人，而不是个人测试号。",
+          "caption": "选择将承载 Mini App 的机器人",
+          "imageAlt": "创建 Mini App 时选择机器人"
+        },
+        "info": {
+          "title": "填写应用信息",
+          "body": "按 BotFather 要求填写应用元数据。若我们未另行提供品牌包，可使用以下推荐值。",
+          "appName": "应用名称",
+          "shortDesc": "简短描述",
+          "tip": "简短描述请保持简洁，它会出现在 Telegram 应用相关界面中。"
+        },
+        "url": {
+          "title": "填写 Web App URL",
+          "body": "我们会向你提供专属的合作伙伴 Web App URL。当 BotFather 询问 URL 时，请原样粘贴，不要改动路径或查询参数。",
+          "tip": "若还没有 URL，请先联系客服。你可以先创建 Mini App，等我们下发 URL 后再填写。",
+          "caption": "粘贴我们提供的合作伙伴 Web App URL",
+          "imageAlt": "在 BotFather 中填写 Web App URL"
+        },
+        "test": {
+          "title": "测试 Mini App 启动",
+          "body": "打开你的机器人对话，点击 <strong>Open App</strong>（或 Telegram 显示的菜单按钮）。确认 Mini App 能正常加载后，再把凭证发给我们。",
+          "tip": "若打不开，请回到 BotFather 核对 Web App URL，并确认选择了正确的机器人。",
+          "caption": "确认可通过 Open App 正常打开 Mini App",
+          "imageAlt": "从 Telegram 机器人打开 Mini App"
+        }
+      }
+    },
+    "send": {
+      "kicker": "第 3 / 3 阶段",
+      "title": "需要发给我们的内容",
+      "intro": "机器人与 Mini App 就绪后，请通过 Telegram 客服发送以下两项。我们收到后即可在后台完成合作伙伴配置。",
+      "items": {
+        "token": {
+          "title": "Bot Token",
+          "body": "BotFather 在 /newbot 后返回的完整 API Token（如需重新获取，可用 /token）。"
+        },
+        "referral": {
+          "title": "邀请码 / Referral Code",
+          "body": "你的合作伙伴邀请码或 Referral Code，用于绑定流量与归因。"
+        }
+      },
+      "note": "你这边无需其他 Telegram 配置。我们收到两项信息后会完成后端绑定，并与你确认上线。",
+      "cta": "联系 Telegram 客服",
+      "ctaHint": "建议把两项内容写在同一条消息里，接入会更快。"
+    },
+    "tips": {
+      "kicker": "开始前",
+      "title": "实用提示",
+      "items": {
+        "verified": {
+          "title": "只用官方认证 BotFather",
+          "body": "只信任带官方认证标识的 @BotFather。仿冒机器人可能骗取 Token。"
+        },
+        "username": {
+          "title": "用户名必须以 bot 结尾",
+          "body": "不以 bot 结尾的用户名会被 Telegram 拒绝。建议提前准备几个备选名。"
+        },
+        "token": {
+          "title": "把 Token 当密码保管",
+          "body": "任何人拿到 Token 都能以你的机器人身份发消息。请私下保存，并只发给我们的客服渠道。"
+        },
+        "url": {
+          "title": "等待我们下发 Web App URL",
+          "body": "请不要自行编造 URL。我们会在核对机器人信息后发放合作伙伴链接。"
+        }
+      }
+    }
   },
   "errors": {
     "generic": "出错了。"

@@ -31,6 +31,7 @@ export const SITE = {
   docs: {
     home: 'https://github.com/Copyodds/copyodds-web/tree/main/docs',
     api: 'https://github.com/Copyodds/copyodds-services/tree/main/docs',
+    partners: '/partners',
     roadmap: 'https://github.com/Copyodds/copyodds-web/issues',
     blog: 'https://github.com/Copyodds/copyodds-web#readme',
     releases: 'https://github.com/Copyodds/copyodds-web/releases',

@@ -280,6 +280,7 @@
       "telegram": "Chat with the team and other builders.",
       "discord": "Community server planned — stay tuned.",
       "docs": "Guides, architecture notes, and setup docs.",
+      "partners": "Telegram bot & Mini App setup for partners.",
       "blogTitle": "Blog",
       "blog": "Changelogs and deep dives from the team.",
       "api": "Backend API references for copyodds-services."
@@ -766,6 +767,179 @@
     "confidenceJoin": " · ",
     "snapshotPnlFootnote": "Polymarket profile total PnL (snapshot): {{value}}.",
     "winRateHint": "Source {{source}}"
+  },
+  "partnerGuide": {
+    "eyebrow": "Partner onboarding",
+    "breadcrumb": "Partners",
+    "breadcrumbAria": "Breadcrumb",
+    "metaAria": "Guide summary",
+    "title": "CopyOdds Partner Telegram Guide",
+    "subtitle": "This page walks you through every Telegram step needed to launch your partner bot and Mini App. When you finish, send us your Bot Token and Referral Code — we handle the rest.",
+    "meta": {
+      "time": "~10–15 minutes",
+      "tools": "Telegram + BotFather only",
+      "outcome": "Bot Token + Referral Code"
+    },
+    "labels": {
+      "search": "Search",
+      "command": "Command",
+      "example": "Example",
+      "token": "Token format"
+    },
+    "overview": {
+      "title": "What you will complete",
+      "body": "There are three short stages. Follow them in order — each stage unlocks the next.",
+      "items": {
+        "bot": {
+          "title": "Create your Telegram bot",
+          "body": "Register a bot with BotFather, save the token, and set a name + avatar."
+        },
+        "miniApp": {
+          "title": "Attach a Mini App",
+          "body": "Create a Mini App on that bot and paste the Web App URL we provide."
+        },
+        "send": {
+          "title": "Send credentials",
+          "body": "Share your Bot Token and Referral / Invitation Code with support."
+        }
+      }
+    },
+    "part1": {
+      "kicker": "Stage 1 of 3",
+      "title": "Create your Telegram bot",
+      "intro": "BotFather is Telegram’s official tool for creating bots. You will create a new bot, choose a public username, and securely store the API token BotFather returns.",
+      "steps": {
+        "open": {
+          "title": "Open BotFather",
+          "body": "In Telegram, search for <code>@BotFather</code>. Open the <strong>verified</strong> account (blue checkmark) and tap <strong>Start</strong> so the chat can accept commands.",
+          "tip": "If multiple results appear, pick the official BotFather with the verification badge — avoid lookalike bots.",
+          "caption": "Search for @BotFather and open the verified account",
+          "imageAlt": "Telegram search results for @BotFather"
+        },
+        "create": {
+          "title": "Create a new bot",
+          "body": "In the BotFather chat, send the command below. BotFather will reply and ask you to choose a display name for the new bot.",
+          "tip": "Commands are case-sensitive. Type exactly <code>/newbot</code> with no extra spaces.",
+          "caption": "Send /newbot to begin bot creation",
+          "imageAlt": "Sending /newbot to BotFather"
+        },
+        "name": {
+          "title": "Set a bot display name",
+          "body": "Enter any display name users will see in Telegram. You can use <code>CopyOdds</code> or a branded name for your audience — this is not the unique username.",
+          "tip": "You can rename the display name later with <code>/setname</code> if needed.",
+          "caption": "Choose a friendly display name",
+          "imageAlt": "Setting the bot display name in BotFather"
+        },
+        "username": {
+          "title": "Set a unique username",
+          "body": "Choose a unique username that ends with <code>bot</code> (required by Telegram). Example: <code>copyodds_demo_bot</code>. If the name is taken, BotFather will ask you to try another.",
+          "tip": "Usernames can only use letters, numbers, and underscores. Pick something easy for partners to recognize.",
+          "caption": "Username must be unique and end with “bot”",
+          "imageAlt": "Choosing a unique bot username ending with bot"
+        },
+        "token": {
+          "title": "Save your Bot Token",
+          "body": "When creation succeeds, BotFather sends an API token that looks like the example below. Copy the full token and store it somewhere private — this is what you will send to us.",
+          "tip": "Never post the token in public chats, screenshots shared broadly, or GitHub. Anyone with the token can control your bot.",
+          "caption": "Copy the full API token and keep it private",
+          "imageAlt": "BotFather returning the bot API token"
+        },
+        "avatar": {
+          "title": "Set the bot avatar",
+          "body": "Send <code>/setuserpic</code>, select the bot you just created, then upload a square <strong>512×512 PNG</strong> logo. A clear logo helps users trust the Mini App entry point.",
+          "tip": "Use a transparent or solid background PNG. Avoid tiny logos that become unreadable at avatar size.",
+          "caption": "Upload a 512×512 PNG with /setuserpic",
+          "imageAlt": "Using /setuserpic to upload a bot avatar"
+        },
+        "setName": {
+          "title": "Confirm or update the bot name",
+          "body": "Optionally send <code>/setname</code>, choose your bot, and confirm the display name looks right for your brand before moving on to the Mini App.",
+          "tip": "This step is optional if the name from creation already looks good.",
+          "caption": "Optional: refine the display name with /setname",
+          "imageAlt": "Using /setname to update the bot name"
+        }
+      }
+    },
+    "part2": {
+      "kicker": "Stage 2 of 3",
+      "title": "Create your Telegram Mini App",
+      "intro": "A Mini App turns your bot into a launch button for the CopyOdds web experience inside Telegram. You will create the app, select your bot, fill in basic metadata, then paste the Web App URL we give you.",
+      "steps": {
+        "create": {
+          "title": "Start Mini App creation",
+          "body": "Stay in the <code>@BotFather</code> chat and send <code>/newapp</code>. BotFather will walk you through attaching a web app to one of your bots.",
+          "tip": "If BotFather says you have no bots, finish Stage 1 first."
+        },
+        "select": {
+          "title": "Select your bot",
+          "body": "When prompted, choose the bot you created in Stage 1. The Mini App will be linked to that bot only.",
+          "tip": "If you manage multiple bots, double-check you selected the partner bot — not a personal test bot.",
+          "caption": "Select the bot that will host the Mini App",
+          "imageAlt": "Selecting your bot when creating a Mini App"
+        },
+        "info": {
+          "title": "Enter app information",
+          "body": "Fill in the app metadata BotFather asks for. You can use the recommended values below unless we provide a custom brand pack.",
+          "appName": "App name",
+          "shortDesc": "Short description",
+          "tip": "Keep the short description concise — it appears in Telegram’s app listing UI."
+        },
+        "url": {
+          "title": "Enter the Web App URL",
+          "body": "We will send you the exact Web App URL for your partner deployment. When BotFather asks for the URL, paste it exactly as provided — do not modify the path or query string.",
+          "tip": "If you do not have the URL yet, message support first. Creating the Mini App shell is fine; the URL can be set once we issue it.",
+          "caption": "Paste the partner Web App URL from our team",
+          "imageAlt": "Entering the Web App URL in BotFather"
+        },
+        "test": {
+          "title": "Test the Mini App launch",
+          "body": "Open your bot chat and tap <strong>Open App</strong> (or the menu button Telegram shows). Confirm the Mini App loads correctly before sending us your credentials.",
+          "tip": "If the app fails to open, re-check the Web App URL in BotFather and make sure you selected the correct bot.",
+          "caption": "Verify “Open App” launches the Mini App",
+          "imageAlt": "Opening the Mini App from the Telegram bot"
+        }
+      }
+    },
+    "send": {
+      "kicker": "Stage 3 of 3",
+      "title": "What to send us",
+      "intro": "Once the bot and Mini App are ready, message Telegram support with the two items below. That is enough for us to finish partner setup on our side.",
+      "items": {
+        "token": {
+          "title": "Bot Token",
+          "body": "The full API token BotFather returned after /newbot (or from /token if you need to retrieve it again)."
+        },
+        "referral": {
+          "title": "Referral / Invitation Code",
+          "body": "Your partner Referral Code or Invitation Code so we can bind traffic and attribution correctly."
+        }
+      },
+      "note": "No other Telegram configuration is required on your side. After we receive both items, we complete backend binding and confirm go-live with you.",
+      "cta": "Contact Telegram support",
+      "ctaHint": "Send both items in one message so onboarding is faster."
+    },
+    "tips": {
+      "kicker": "Before you start",
+      "title": "Quick tips",
+      "items": {
+        "verified": {
+          "title": "Use the verified BotFather",
+          "body": "Only trust @BotFather with the official verification badge. Fake bots can steal tokens."
+        },
+        "username": {
+          "title": "Username must end with bot",
+          "body": "Telegram rejects usernames that do not end with “bot”. Keep a few backup names ready."
+        },
+        "token": {
+          "title": "Treat the token like a password",
+          "body": "Anyone with the token can message users as your bot. Store it privately and only share it with our support channel."
+        },
+        "url": {
+          "title": "Wait for our Web App URL",
+          "body": "Do not invent a URL. We issue the partner Web App link after reviewing your bot details."
+        }
+      }
+    }
   },
   "errors": {
     "generic": "Something went wrong."

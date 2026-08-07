@@ -4,6 +4,7 @@ import { defaultLocale, locales } from './i18n/constants'
 import { parsePathLocale } from './i18n/path'
 import { HomePage } from './pages/HomePage'
 import { BacktestPage } from './pages/BacktestPage'
+import { PartnerGuidePage } from './pages/PartnerGuidePage'
 function isHomeRoutePath(pathname) {
   const { pathnameWithoutLocale } = parsePathLocale(pathname)
   return pathnameWithoutLocale === '/' || pathnameWithoutLocale === ''
@@ -35,7 +36,7 @@ function App() {
   /** 首页 Keep-Alive + RR 默认不滚顶：从长列表进详情时视口仍停在原 scrollY，移动端 Edge 同样如此 */
   useLayoutEffect(() => {
     const { pathnameWithoutLocale } = parsePathLocale(pathname)
-    if (pathnameWithoutLocale.startsWith('/backtest/')) {
+    if (pathnameWithoutLocale.startsWith('/backtest/') || pathnameWithoutLocale === '/partners') {
       scrollWindowToTop()
     }
   }, [pathname])
@@ -61,6 +62,10 @@ function App() {
         <Route path="/backtest/:segment" element={<BacktestPage />} />
         {nonDefaultLocales.map((locale) => (
           <Route key={`${locale}-backtest`} path={`/${locale}/backtest/:segment`} element={<BacktestPage />} />
+        ))}
+        <Route path="/partners" element={<PartnerGuidePage />} />
+        {nonDefaultLocales.map((locale) => (
+          <Route key={`${locale}-partners`} path={`/${locale}/partners`} element={<PartnerGuidePage />} />
         ))}
         <Route path="/" element={shellActive ? <EmptyHomeRoute /> : <HomePage visible />} />
         {nonDefaultLocales.map((locale) => (

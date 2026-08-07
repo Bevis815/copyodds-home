@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import { SITE } from '../../lib/site'
+import { useLocale } from '../../hooks/useLocale'
 import {
   IconApi,
   IconArrowRight,
@@ -14,6 +16,7 @@ import { SectionReveal, Stagger, StaggerItem } from '../ui/Motion'
 
 export function CommunitySection() {
   const { t } = useTranslation()
+  const { localizePath } = useLocale()
 
   const items = [
     {
@@ -47,6 +50,14 @@ export function CommunitySection() {
       href: SITE.social.discord || undefined,
       icon: IconDiscord,
       soon: !SITE.social.discord,
+    },
+    {
+      key: 'partners',
+      title: t('partnerGuide.breadcrumb'),
+      body: t('landing.community.partners'),
+      href: localizePath(SITE.docs.partners),
+      icon: IconBook,
+      internal: true,
     },
     {
       key: 'docs',
@@ -85,28 +96,57 @@ export function CommunitySection() {
       <Stagger className="community-grid" delay={0.05}>
         {items.map((item) => {
           const Icon = item.icon
-          const Tag = item.soon ? 'div' : 'a'
-          const linkProps = item.soon
-            ? {}
-            : {
-                href: item.href,
-                target: item.external ? '_blank' : undefined,
-                rel: item.external ? 'noreferrer' : undefined,
-              }
+          if (item.soon) {
+            return (
+              <StaggerItem key={item.key}>
+                <div className="community-card is-soon">
+                  <span className="community-card__icon">
+                    <Icon className="size-5" />
+                  </span>
+                  <h3 className="community-card__title">{item.title}</h3>
+                  <p className="community-card__body">{item.body}</p>
+                  <span className="community-card__cta">{t('landing.community.soon')}</span>
+                </div>
+              </StaggerItem>
+            )
+          }
+
+          if (item.internal) {
+            return (
+              <StaggerItem key={item.key}>
+                <Link className="community-card" to={item.href}>
+                  <span className="community-card__icon">
+                    <Icon className="size-5" />
+                  </span>
+                  <h3 className="community-card__title">{item.title}</h3>
+                  <p className="community-card__body">{item.body}</p>
+                  <span className="community-card__cta">
+                    {t('landing.community.join')}
+                    <IconArrowRight className="size-3.5" />
+                  </span>
+                </Link>
+              </StaggerItem>
+            )
+          }
 
           return (
             <StaggerItem key={item.key}>
-              <Tag className={`community-card ${item.soon ? 'is-soon' : ''}`} {...linkProps}>
+              <a
+                className="community-card"
+                href={item.href}
+                target={item.external ? '_blank' : undefined}
+                rel={item.external ? 'noreferrer' : undefined}
+              >
                 <span className="community-card__icon">
                   <Icon className="size-5" />
                 </span>
                 <h3 className="community-card__title">{item.title}</h3>
                 <p className="community-card__body">{item.body}</p>
                 <span className="community-card__cta">
-                  {item.soon ? t('landing.community.soon') : t('landing.community.join')}
-                  {!item.soon ? <IconArrowRight className="size-3.5" /> : null}
+                  {t('landing.community.join')}
+                  <IconArrowRight className="size-3.5" />
                 </span>
-              </Tag>
+              </a>
             </StaggerItem>
           )
         })}

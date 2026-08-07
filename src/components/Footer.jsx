@@ -1,18 +1,21 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { SITE } from '../lib/site'
+import { useLocale } from '../hooks/useLocale'
 import { IconGitHub, IconTelegram, IconX } from './ui/Icons'
 
 const LOGO_SRC = '/home-logo.jpg'
 
 export function Footer({ fullWidth = false, links = [] }) {
   const { t } = useTranslation()
+  const { localizePath } = useLocale()
   const year = new Date().getFullYear()
 
   const defaultLinks = [
     { href: SITE.github.web.url, label: 'GitHub', external: true },
     { href: SITE.social.x, label: 'X', external: true },
     { href: SITE.social.telegram, label: 'Telegram', external: true },
+    { href: localizePath(SITE.docs.partners), label: t('partnerGuide.breadcrumb') },
     { href: SITE.docs.home, label: t('landing.nav.docs'), external: true },
     { href: SITE.docs.api, label: t('landing.nav.api'), external: true },
     { href: SITE.docs.privacy, label: t('footer.privacy') },
