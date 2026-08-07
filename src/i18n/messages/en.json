@@ -846,9 +846,10 @@
         },
         "avatar": {
           "title": "Set the bot avatar",
-          "body": "Send <code>/setuserpic</code>, select the bot you just created, then upload a square <strong>512×512 PNG</strong> logo. A clear logo helps users trust the Mini App entry point.",
-          "tip": "Use a transparent or solid background PNG. Avoid tiny logos that become unreadable at avatar size.",
-          "caption": "Upload a 512×512 PNG with /setuserpic",
+          "body": "Send <code>/setuserpic</code>, select the bot you just created, then upload our official logo (or your own square logo). A clear logo helps users trust the Mini App entry point.",
+          "downloadLogo": "Download CopyOdds logo",
+          "tip": "Prefer a square image. You can download our official logo below and upload it directly in BotFather.",
+          "caption": "Upload the official logo with /setuserpic",
           "imageAlt": "Using /setuserpic to upload a bot avatar"
         },
         "setName": {

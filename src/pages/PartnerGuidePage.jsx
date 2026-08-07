@@ -121,6 +121,27 @@ function StepBody({ ns, stepKey }) {
     )
   }
 
+  if (stepKey === 'avatar' && ns === 'part1') {
+    return (
+      <>
+        <Trans
+          i18nKey={`${base}.body`}
+          components={{
+            code: <InlineCode />,
+            strong: <strong />,
+          }}
+        />
+        <a
+          className="partner-guide__download"
+          href="/logo.jpg"
+          download="CopyOdds-logo.jpg"
+        >
+          {t(`${base}.downloadLogo`)}
+        </a>
+      </>
+    )
+  }
+
   return (
     <Trans
       i18nKey={`${base}.body`}

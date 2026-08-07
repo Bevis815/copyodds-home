@@ -851,9 +851,10 @@
         },
         "avatar": {
           "title": "设置机器人头像",
-          "body": "发送 <code>/setuserpic</code>，选择刚创建的机器人，再上传正方形 <strong>512×512 PNG</strong> 图标。清晰的头像有助于用户信任 Mini App 入口。",
-          "tip": "建议使用透明或纯色背景 PNG，避免过小的图案在头像尺寸下看不清。",
-          "caption": "使用 /setuserpic 上传 512×512 PNG",
+          "body": "发送 <code>/setuserpic</code>，选择刚创建的机器人，再上传我们的官方 Logo（或你自己的正方形图标）。清晰的头像有助于用户信任 Mini App 入口。",
+          "downloadLogo": "下载 CopyOdds Logo",
+          "tip": "建议使用正方形图片。可直接下载下方官方 Logo，再在 BotFather 中上传。",
+          "caption": "使用 /setuserpic 上传官方 Logo",
           "imageAlt": "使用 /setuserpic 上传机器人头像"
         },
         "setName": {
