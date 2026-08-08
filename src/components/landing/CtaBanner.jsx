@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { SITE } from '../../lib/site'
+import { IconTelegram } from '../ui/Icons'
 import { SectionReveal } from '../ui/Motion'
 
 export function CtaBanner() {
@@ -14,7 +15,16 @@ export function CtaBanner() {
           <a className="btn-primary" href={SITE.appUrl}>
             {t('landing.hero.launchApp')}
           </a>
-          <a className="btn-secondary" href={SITE.github.web.url} target="_blank" rel="noreferrer">
+          <a
+            className="btn-secondary"
+            href={SITE.social.telegram}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IconTelegram className="size-4" />
+            {t('landing.hero.openTelegramBot')}
+          </a>
+          <a className="btn-ghost" href={SITE.github.web.url} target="_blank" rel="noreferrer">
             {t('landing.hero.viewGithub')}
           </a>
         </div>

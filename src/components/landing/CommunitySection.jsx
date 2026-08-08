@@ -37,7 +37,7 @@ export function CommunitySection() {
     },
     {
       key: 'telegram',
-      title: 'Telegram',
+      title: t('landing.community.telegramTitle'),
       body: t('landing.community.telegram'),
       href: SITE.social.telegram,
       icon: IconTelegram,

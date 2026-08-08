@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { SITE } from '../lib/site'
 import { LiveLeaderboard } from './landing/LiveLeaderboard'
 import { OpenSourceStatsBar } from './landing/OpenSourceStatsBar'
-import { IconGitHub, IconPlay } from './ui/Icons'
+import { IconGitHub, IconPlay, IconTelegram } from './ui/Icons'
 
 const ease = [0.22, 1, 0.36, 1]
 const MotionDiv = motion.div
@@ -35,20 +35,21 @@ export function Hero() {
             </a>
             <a
               className="btn-secondary"
+              href={SITE.social.telegram}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconTelegram className="size-4" />
+              {t('landing.hero.openTelegramBot')}
+            </a>
+            <a
+              className="btn-ghost"
               href={SITE.github.web.url}
               target="_blank"
               rel="noreferrer"
             >
               <IconGitHub className="size-4" />
               {t('landing.hero.viewGithub')}
-            </a>
-            <a
-              className="btn-ghost"
-              href={SITE.docs.home}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t('landing.hero.docs')}
             </a>
             <a className="btn-ghost" href="#product">
               <IconPlay className="size-3.5" />

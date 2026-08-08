@@ -25,7 +25,8 @@ export const SITE = {
   },
   social: {
     x: import.meta.env.VITE_X_URL || 'https://x.com/copyodds',
-    telegram: import.meta.env.VITE_TELEGRAM_URL || 'https://t.me/bevis815',
+    /** Official Telegram bot (@copyodds_bot). Support stays in `lib/support.js`. */
+    telegram: import.meta.env.VITE_TELEGRAM_URL || 'https://t.me/copyodds_bot',
     discord: import.meta.env.VITE_DISCORD_URL || '',
   },
   docs: {

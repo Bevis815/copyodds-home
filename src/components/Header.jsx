@@ -144,7 +144,7 @@ export function Header({ logoHref = '#top', fullWidth = false, compact = false }
                   href={SITE.social.telegram}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="Telegram"
+                  aria-label={t('landing.community.telegramTitle')}
                 >
                   <IconTelegram className="size-4" />
                 </a>

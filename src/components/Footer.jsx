@@ -14,7 +14,7 @@ export function Footer({ fullWidth = false, links = [] }) {
   const defaultLinks = [
     { href: SITE.github.web.url, label: 'GitHub', external: true },
     { href: SITE.social.x, label: 'X', external: true },
-    { href: SITE.social.telegram, label: 'Telegram', external: true },
+    { href: SITE.social.telegram, label: t('landing.community.telegramTitle'), external: true },
     { href: localizePath(SITE.docs.partners), label: t('partnerGuide.breadcrumb') },
     { href: SITE.docs.home, label: t('landing.nav.docs'), external: true },
     { href: SITE.docs.api, label: t('landing.nav.api'), external: true },
@@ -42,7 +42,7 @@ export function Footer({ fullWidth = false, links = [] }) {
           <a href={SITE.social.x} target="_blank" rel="noreferrer" aria-label="X">
             <IconX className="size-4" />
           </a>
-          <a href={SITE.social.telegram} target="_blank" rel="noreferrer" aria-label="Telegram">
+          <a href={SITE.social.telegram} target="_blank" rel="noreferrer" aria-label={t('landing.community.telegramTitle')}>
             <IconTelegram className="size-4" />
           </a>
         </div>
