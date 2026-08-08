@@ -794,7 +794,7 @@
       "items": {
         "bot": {
           "title": "Create your Telegram bot",
-          "body": "Register a bot with BotFather, save the token, and set a name + avatar."
+          "body": "Register a bot with BotFather, save the token, set name + avatar, and disable Group Privacy."
         },
         "miniApp": {
           "title": "Attach a Mini App",
@@ -809,7 +809,7 @@
     "part1": {
       "kicker": "Stage 1 of 3",
       "title": "Create your Telegram bot",
-      "intro": "BotFather is Telegram’s official tool for creating bots. You will create a new bot, choose a public username, and securely store the API token BotFather returns.",
+      "intro": "BotFather is Telegram’s official tool for creating bots. You will create a new bot, choose a public username, securely store the API token, and disable Group Privacy so Telegram can deliver group messages to your bot.",
       "steps": {
         "open": {
           "title": "Open BotFather",
@@ -860,6 +860,11 @@
           "tip": "This step is optional if the name from creation already looks good.",
           "caption": "Optional: refine the display name with /setname",
           "imageAlt": "Using /setname to update the bot name"
+        },
+        "privacy": {
+          "title": "Disable Group Privacy",
+          "body": "This step is <strong>required after the bot is created</strong> (and again after any redeploy if privacy was reset). In BotFather, send <code>/setprivacy</code>, select your bot, then choose <strong>Disable</strong>.",
+          "tip": "If Group Privacy stays enabled, Telegram will <strong>not</strong> push group messages to your bot — commands and group traffic will look broken even when the token is correct."
         }
       }
     },
@@ -917,7 +922,7 @@
           "body": "Your partner Referral Code or Invitation Code so we can bind traffic and attribution correctly."
         }
       },
-      "note": "No other Telegram configuration is required on your side. After we receive both items, we complete backend binding and confirm go-live with you.",
+      "note": "Aside from disabling Group Privacy with /setprivacy → Disable, no other Telegram configuration is required on your side. After we receive both items, we complete backend binding and confirm go-live with you.",
       "cta": "Contact Telegram support",
       "ctaHint": "Send both items in one message so onboarding is faster."
     },
@@ -936,6 +941,10 @@
         "token": {
           "title": "Treat the token like a password",
           "body": "Anyone with the token can message users as your bot. Store it privately and only share it with our support channel."
+        },
+        "privacy": {
+          "title": "Disable /setprivacy or group messages never arrive",
+          "body": "Send /setprivacy in BotFather, pick your bot, and choose Disable. Otherwise Telegram will not push group messages to the bot."
         },
         "url": {
           "title": "Wait for our Web App URL",

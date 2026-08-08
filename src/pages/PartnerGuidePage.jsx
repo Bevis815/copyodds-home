@@ -23,6 +23,7 @@ const PART1_STEPS = [
   { key: 'token', image: `${IMG}/image5.png`, highlight: '123456789:AAHxxxxxxxxxxxxxxxx', highlightKind: 'token', warn: true },
   { key: 'avatar', image: `${IMG}/image6.jpeg`, highlight: '/setuserpic', highlightKind: 'command' },
   { key: 'setName', image: `${IMG}/image7.jpeg`, highlight: '/setname', highlightKind: 'command' },
+  { key: 'privacy', image: null, highlight: '/setprivacy → Disable', highlightKind: 'command', warn: true },
 ]
 
 const PART2_STEPS = [
@@ -34,7 +35,7 @@ const PART2_STEPS = [
 ]
 
 const DELIVERABLES = ['token', 'referral']
-const TIPS = ['verified', 'username', 'token', 'url']
+const TIPS = ['verified', 'username', 'token', 'privacy', 'url']
 
 function InlineCode({ children }) {
   return <code className="partner-guide__code">{children}</code>

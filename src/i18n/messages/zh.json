@@ -799,7 +799,7 @@
       "items": {
         "bot": {
           "title": "创建 Telegram 机器人",
-          "body": "通过 BotFather 注册机器人，保存 Token，并设置名称与头像。"
+          "body": "通过 BotFather 注册机器人，保存 Token，设置名称与头像，并关闭 Group Privacy。"
         },
         "miniApp": {
           "title": "绑定 Mini App",
@@ -814,7 +814,7 @@
     "part1": {
       "kicker": "第 1 / 3 阶段",
       "title": "创建 Telegram 机器人",
-      "intro": "BotFather 是 Telegram 官方的机器人创建工具。你将创建新机器人、设置公开用户名，并妥善保存 BotFather 返回的 API Token。",
+      "intro": "BotFather 是 Telegram 官方的机器人创建工具。你将创建新机器人、设置公开用户名、妥善保存 API Token，并关闭 Group Privacy，否则 Telegram 不会把群消息推送给机器人。",
       "steps": {
         "open": {
           "title": "打开 BotFather",
@@ -865,6 +865,11 @@
           "tip": "若创建时的名称已经合适，可跳过本步。",
           "caption": "可选：用 /setname 微调显示名称",
           "imageAlt": "使用 /setname 修改机器人名称"
+        },
+        "privacy": {
+          "title": "关闭 Group Privacy",
+          "body": "这一步在<strong>机器人创建后必须做</strong>（部署后若隐私被重置，也要再做一次）。在 BotFather 中发送 <code>/setprivacy</code>，选择你的机器人，然后选择 <strong>Disable</strong>。",
+          "tip": "如果 Group Privacy 仍为开启，Telegram <strong>不会</strong>把群消息推送给机器人——即使 Token 正确，群内命令和消息也会像“没反应”一样。"
         }
       }
     },
@@ -922,7 +927,7 @@
           "body": "你的合作伙伴邀请码或 Referral Code，用于绑定流量与归因。"
         }
       },
-      "note": "你这边无需其他 Telegram 配置。我们收到两项信息后会完成后端绑定，并与你确认上线。",
+      "note": "除必须在 BotFather 执行 /setprivacy → Disable 外，你这边无需其他 Telegram 配置。我们收到两项信息后会完成后端绑定，并与你确认上线。",
       "cta": "联系 Telegram 客服",
       "ctaHint": "建议把两项内容写在同一条消息里，接入会更快。"
     },
@@ -941,6 +946,10 @@
         "token": {
           "title": "把 Token 当密码保管",
           "body": "任何人拿到 Token 都能以你的机器人身份发消息。请私下保存，并只发给我们的客服渠道。"
+        },
+        "privacy": {
+          "title": "必须 /setprivacy → Disable，否则收不到群消息",
+          "body": "在 BotFather 发送 /setprivacy，选择机器人后选 Disable。否则 Telegram 根本不会把群消息推送给机器人。"
         },
         "url": {
           "title": "等待我们下发 Web App URL",
