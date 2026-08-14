@@ -853,10 +853,10 @@
         },
         "avatar": {
           "title": "设置机器人头像",
-          "body": "发送 <code>/setuserpic</code>，选择刚创建的机器人，再上传我们的官方 Logo（或你自己的正方形图标）。清晰的头像有助于用户信任 Mini App 入口。",
-          "downloadLogo": "下载 CopyOdds Logo",
-          "tip": "建议使用正方形图片。可直接下载下方官方 Logo，再在 BotFather 中上传。",
-          "caption": "使用 /setuserpic 上传官方 Logo",
+          "body": "发送 <code>/setuserpic</code> 后，<strong>先点选你的机器人名称</strong>，再上传下方 <strong>512×512</strong> 头像。不要在未选择机器人前就发图片。",
+          "downloadAvatar": "下载机器人头像",
+          "tip": "/setuserpic 请用 512×512 文件。官网方形 Logo（400×400）尺寸不够，Mini App 封面（640×360）比例也不对。",
+          "caption": "先选择机器人，再上传 512×512 头像",
           "imageAlt": "使用 /setuserpic 上传机器人头像"
         },
         "setName": {
@@ -895,7 +895,9 @@
           "body": "按 BotFather 要求填写应用元数据。若我们未另行提供品牌包，可使用以下推荐值。",
           "appName": "应用名称",
           "shortDesc": "简短描述",
-          "tip": "简短描述请保持简洁，它会出现在 Telegram 应用相关界面中。"
+          "photoNote": "当 BotFather 要求上传封面图时，请使用下方 640×360 文件。方形 Logo 会被拒绝。",
+          "downloadCover": "下载 Mini App 封面",
+          "tip": "Mini App 封面必须是 640×360。不要复用机器人头像文件。"
         },
         "url": {
           "title": "填写 Web App URL",

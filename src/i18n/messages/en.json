@@ -848,10 +848,10 @@
         },
         "avatar": {
           "title": "Set the bot avatar",
-          "body": "Send <code>/setuserpic</code>, select the bot you just created, then upload our official logo (or your own square logo). A clear logo helps users trust the Mini App entry point.",
-          "downloadLogo": "Download CopyOdds logo",
-          "tip": "Prefer a square image. You can download our official logo below and upload it directly in BotFather.",
-          "caption": "Upload the official logo with /setuserpic",
+          "body": "Send <code>/setuserpic</code>, <strong>tap your bot name</strong> when BotFather asks, then upload the <strong>512×512</strong> avatar below. Do not upload before selecting the bot.",
+          "downloadAvatar": "Download bot avatar",
+          "tip": "Use the 512×512 file for /setuserpic. The square site logo (400×400) is too small and the Mini App cover (640×360) is the wrong shape.",
+          "caption": "Select your bot first, then upload the 512×512 avatar",
           "imageAlt": "Using /setuserpic to upload a bot avatar"
         },
         "setName": {
@@ -890,7 +890,9 @@
           "body": "Fill in the app metadata BotFather asks for. You can use the recommended values below unless we provide a custom brand pack.",
           "appName": "App name",
           "shortDesc": "Short description",
-          "tip": "Keep the short description concise — it appears in Telegram’s app listing UI."
+          "photoNote": "When BotFather asks for a photo, upload the 640×360 cover below. Square logos will be rejected.",
+          "downloadCover": "Download Mini App cover",
+          "tip": "BotFather requires exactly 640×360 for the Mini App photo. Do not reuse the bot avatar file."
         },
         "url": {
           "title": "Enter the Web App URL",

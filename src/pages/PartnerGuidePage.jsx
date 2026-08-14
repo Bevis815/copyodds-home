@@ -15,6 +15,10 @@ const OVERVIEW = [
   { key: 'send', href: '#partner-send' },
 ]
 
+const PARTNER_ASSETS = `${IMG}`
+const LOGO_AVATAR = `${PARTNER_ASSETS}/logo-avatar-512.jpg`
+const LOGO_MINIAPP = `${PARTNER_ASSETS}/logo-miniapp-640x360.jpg`
+
 const PART1_STEPS = [
   { key: 'open', image: `${IMG}/image1.jpeg`, highlight: '@BotFather', highlightKind: 'search' },
   { key: 'create', image: `${IMG}/image2.png`, highlight: '/newbot', highlightKind: 'command' },
@@ -53,6 +57,25 @@ function GuideFigure({ src, alt, caption }) {
 
 function Tip({ children, tone = 'tip' }) {
   return <p className={`partner-guide__callout partner-guide__callout--${tone}`}>{children}</p>
+}
+
+function GuideDownloads({ items }) {
+  if (!items?.length) return null
+  return (
+    <div className="partner-guide__downloads">
+      {items.map((item) => (
+        <a
+          key={item.href}
+          className="partner-guide__download"
+          href={item.href}
+          download={item.filename}
+        >
+          <span className="partner-guide__download-label">{item.label}</span>
+          <span className="partner-guide__download-size">{item.size}</span>
+        </a>
+      ))}
+    </div>
+  )
 }
 
 function GuideStep({
@@ -104,6 +127,30 @@ function StepBody({ ns, stepKey }) {
   const { t } = useTranslation()
   const base = `partnerGuide.${ns}.steps.${stepKey}`
 
+  if (stepKey === 'avatar' && ns === 'part1') {
+    return (
+      <>
+        <Trans
+          i18nKey={`${base}.body`}
+          components={{
+            code: <InlineCode />,
+            strong: <strong />,
+          }}
+        />
+        <GuideDownloads
+          items={[
+            {
+              href: LOGO_AVATAR,
+              filename: 'CopyOdds-avatar-512.jpg',
+              label: t(`${base}.downloadAvatar`),
+              size: '512 × 512',
+            },
+          ]}
+        />
+      </>
+    )
+  }
+
   if (stepKey === 'info' && ns === 'part2') {
     return (
       <>
@@ -118,27 +165,17 @@ function StepBody({ ns, stepKey }) {
             <InlineCode>Copy Trading Platform</InlineCode>
           </li>
         </ul>
-      </>
-    )
-  }
-
-  if (stepKey === 'avatar' && ns === 'part1') {
-    return (
-      <>
-        <Trans
-          i18nKey={`${base}.body`}
-          components={{
-            code: <InlineCode />,
-            strong: <strong />,
-          }}
+        <p className="partner-guide__step-note">{t(`${base}.photoNote`)}</p>
+        <GuideDownloads
+          items={[
+            {
+              href: LOGO_MINIAPP,
+              filename: 'CopyOdds-miniapp-640x360.jpg',
+              label: t(`${base}.downloadCover`),
+              size: '640 × 360',
+            },
+          ]}
         />
-        <a
-          className="partner-guide__download"
-          href="/logo.jpg"
-          download="CopyOdds-logo.jpg"
-        >
-          {t(`${base}.downloadLogo`)}
-        </a>
       </>
     )
   }
