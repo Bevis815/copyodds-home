@@ -128,7 +128,7 @@ export function buildJsonLd({ title, description, canonical, locale, page, faqIt
     '@id': `${origin}/#organization`,
     name: SITE.name,
     url: `${origin}/`,
-    logo: ogImageUrl(),
+    logo: SITE.logo || `${origin}/logo.jpg`,
     sameAs: sameAs(),
   }
 
@@ -247,6 +247,8 @@ export function applyDocumentSeo({
   upsertMeta('property', 'og:url', canonical)
   upsertMeta('property', 'og:image', ogImageUrl())
   upsertMeta('property', 'og:image:alt', title)
+  if (SITE.bannerWidth) upsertMeta('property', 'og:image:width', String(SITE.bannerWidth))
+  if (SITE.bannerHeight) upsertMeta('property', 'og:image:height', String(SITE.bannerHeight))
   upsertMeta('property', 'og:site_name', SITE.name)
   upsertMeta('property', 'og:locale', SEO_LOCALES[locale]?.og ?? 'en_US')
 

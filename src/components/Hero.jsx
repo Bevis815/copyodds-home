@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useLocale } from '../hooks/useLocale'
+import { SITE } from '../lib/site'
 import { resolveAnalyzeIdentifier } from '../services/smartMoney'
 import { LiveLeaderboard } from './landing/LiveLeaderboard'
 import { OpenSourceStatsBar } from './landing/OpenSourceStatsBar'
@@ -31,12 +32,29 @@ export function Hero() {
 
   return (
     <section className="hero" id="top">
+      <MotionDiv
+        className="hero-banner"
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease }}
+      >
+        <img
+          className="hero-banner__img"
+          src={SITE.bannerImage}
+          alt={t('landing.hero.title')}
+          width={SITE.bannerWidth}
+          height={SITE.bannerHeight}
+          decoding="async"
+          fetchPriority="high"
+        />
+      </MotionDiv>
+
       <div className="hero__grid">
         <MotionDiv
           className="hero__copy"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, ease }}
+          transition={{ duration: 0.75, delay: 0.08, ease }}
         >
           <p className="hero__badge">{t('landing.hero.badge')}</p>
           <h1 className="hero__title">

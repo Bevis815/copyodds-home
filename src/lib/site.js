@@ -1,11 +1,18 @@
 import { APP_URL, loginUrl, leaderboardUrl } from './app-links'
 
 /** Official open-source repos and community links for the marketing site. */
+const BANNER_IMAGE =
+  'https://copyodds-media-1442243915.cos.ap-singapore.myqcloud.com/images/copyodds-banner.png'
+
 export const SITE = {
   name: 'CopyOdds',
   tagline: 'Open Source AI Trading Platform for Polymarket',
   url: 'https://copyodds.io',
-  ogImage: 'https://copyodds.io/logo.jpg',
+  logo: 'https://copyodds.io/logo.jpg',
+  bannerImage: BANNER_IMAGE,
+  bannerWidth: 1672,
+  bannerHeight: 941,
+  ogImage: BANNER_IMAGE,
   twitterHandle: '@copyodds',
   appUrl: APP_URL,
   loginUrl: loginUrl(),

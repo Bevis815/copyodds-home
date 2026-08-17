@@ -526,7 +526,31 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: clamp(2.5rem, 5vh, 3.5rem);
+    gap: clamp(1.75rem, 4vh, 3rem);
+  }
+
+  .hero-banner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.15rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #050508;
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+  }
+
+  .hero-banner__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1672 / 941;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media (max-width: 639px) {
+    .hero-banner {
+      border-radius: 0.85rem;
+    }
   }
 
   .hero__grid {
