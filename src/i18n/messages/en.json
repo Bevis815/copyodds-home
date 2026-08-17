@@ -213,7 +213,11 @@
       "docs": "Documentation",
       "watchDemo": "Watch Demo",
       "primaryCta": "Launch App",
-      "secondaryCta": "View on GitHub"
+      "secondaryCta": "View on GitHub",
+      "analyzeLabel": "Analyze a Polymarket wallet",
+      "analyzePlaceholder": "Paste 0x address or trader name",
+      "analyzeCta": "Analyze",
+      "analyzeHint": "Open PnL curves, drawdowns, and copy-fit for any wallet."
     },
     "heroBoard": {
       "aria": "Top traders leaderboard",
@@ -224,6 +228,8 @@
       "colTrader": "Trader",
       "colWinRate": "Win Rate",
       "colRoi": "ROI",
+      "colPnl": "PnL",
+      "colCurve": "Curve",
       "colFollowers": "Followers",
       "colPredictions": "Predictions",
       "colAiScore": "AI Score",

@@ -1,15 +1,30 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { SITE } from '../lib/site'
+import { useLocale } from '../hooks/useLocale'
+import { resolveAnalyzeIdentifier } from '../services/smartMoney'
 import { LiveLeaderboard } from './landing/LiveLeaderboard'
 import { OpenSourceStatsBar } from './landing/OpenSourceStatsBar'
-import { IconGitHub, IconPlay, IconTelegram } from './ui/Icons'
+import { IconSearch } from './ui/Icons'
 
 const ease = [0.22, 1, 0.36, 1]
 const MotionDiv = motion.div
 
 export function Hero() {
   const { t } = useTranslation()
+  const navigate = useNavigate()
+  const { localizePath } = useLocale()
+  const [analyzeQuery, setAnalyzeQuery] = useState('')
+
+  function handleAnalyze(event) {
+    event.preventDefault()
+    const identifier = resolveAnalyzeIdentifier(analyzeQuery)
+    if (!identifier) {
+      return
+    }
+    navigate(localizePath(`/backtest/${encodeURIComponent(identifier)}`))
+  }
 
   return (
     <section className="hero" id="top">
@@ -29,33 +44,28 @@ export function Hero() {
           </h1>
           <p className="hero__subtitle">{t('landing.hero.subtitle')}</p>
 
-          <div className="hero__actions">
-            <a className="btn-primary" href={SITE.appUrl}>
-              {t('landing.hero.launchApp')}
-            </a>
-            <a
-              className="btn-secondary"
-              href={SITE.social.telegram}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <IconTelegram className="size-4" />
-              {t('landing.hero.openTelegramBot')}
-            </a>
-            <a
-              className="btn-ghost"
-              href={SITE.github.web.url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <IconGitHub className="size-4" />
-              {t('landing.hero.viewGithub')}
-            </a>
-            <a className="btn-ghost" href="#product">
-              <IconPlay className="size-3.5" />
-              {t('landing.hero.watchDemo')}
-            </a>
-          </div>
+          <form className="hero-lookup" onSubmit={handleAnalyze}>
+            <label className="sr-only" htmlFor="hero-analyze-input">
+              {t('landing.hero.analyzeLabel')}
+            </label>
+            <div className="hero-lookup__field">
+              <IconSearch className="hero-lookup__icon" />
+              <input
+                id="hero-analyze-input"
+                className="hero-lookup__input"
+                type="search"
+                value={analyzeQuery}
+                onChange={(e) => setAnalyzeQuery(e.target.value)}
+                placeholder={t('landing.hero.analyzePlaceholder')}
+                autoComplete="off"
+                spellCheck={false}
+              />
+            </div>
+            <button className="btn-primary" type="submit" disabled={!analyzeQuery.trim()}>
+              {t('landing.hero.analyzeCta')}
+            </button>
+          </form>
+          <p className="hero-lookup__hint">{t('landing.hero.analyzeHint')}</p>
         </MotionDiv>
 
         <LiveLeaderboard />

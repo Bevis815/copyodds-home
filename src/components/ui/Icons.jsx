@@ -78,6 +78,14 @@ export function IconExternal({ className = 'size-3.5' }) {
   )
 }
 
+export function IconSearch({ className = 'size-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35m1.35-5.15a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" />
+    </svg>
+  )
+}
+
 export function IconPlay({ className = 'size-4' }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>

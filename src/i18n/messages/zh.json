@@ -213,7 +213,11 @@
       "docs": "文档",
       "watchDemo": "观看演示",
       "primaryCta": "启动应用",
-      "secondaryCta": "在 GitHub 查看"
+      "secondaryCta": "在 GitHub 查看",
+      "analyzeLabel": "分析 Polymarket 钱包",
+      "analyzePlaceholder": "粘贴 0x 地址或交易者名称",
+      "analyzeCta": "分析",
+      "analyzeHint": "查看任意地址的盈亏曲线、回撤与跟单适配度。"
     },
     "heroBoard": {
       "aria": "顶尖交易者排行榜",
@@ -224,6 +228,8 @@
       "colTrader": "交易者",
       "colWinRate": "胜率",
       "colRoi": "ROI",
+      "colPnl": "盈亏",
+      "colCurve": "曲线",
       "colFollowers": "关注者",
       "colPredictions": "预测数",
       "colAiScore": "AI 评分",

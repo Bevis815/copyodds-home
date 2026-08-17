@@ -14,6 +14,23 @@ export function extractWalletFromSegment(value) {
   return m ? m[1].toLowerCase() : null
 }
 
+/** Wallet from a pasted address/URL, otherwise a display-name lookup key. */
+export function resolveAnalyzeIdentifier(value) {
+  const trimmed = String(value ?? '').trim()
+  if (!trimmed) {
+    return null
+  }
+  const fromStart = extractWalletFromSegment(trimmed)
+  if (fromStart) {
+    return fromStart
+  }
+  const embedded = trimmed.match(/0x[a-fA-F0-9]{40}/i)
+  if (embedded) {
+    return embedded[0].toLowerCase()
+  }
+  return trimmed.replace(/^@+/, '')
+}
+
 function nullableString(value) {
   if (value == null || value === '') {
     return null
@@ -66,6 +83,40 @@ function normalizeCurvePointTs(ts) {
   }
   const t = Date.parse(s)
   return Number.isNaN(t) ? s : new Date(t).toISOString()
+}
+
+function normalizeSparklinePoints(raw) {
+  if (!Array.isArray(raw)) {
+    return []
+  }
+
+  return raw
+    .map((point) => {
+      if (!point || typeof point !== 'object') {
+        return null
+      }
+
+      let t = null
+      if (typeof point.t === 'number' && Number.isFinite(point.t)) {
+        t = point.t < 1e12 ? point.t * 1000 : point.t
+      } else {
+        const iso = normalizeCurvePointTs(point.ts ?? point.t)
+        const parsed = iso ? Date.parse(iso) : NaN
+        t = Number.isFinite(parsed) ? parsed : null
+      }
+
+      const v =
+        typeof point.v === 'number' && Number.isFinite(point.v)
+          ? point.v
+          : parseCurvePointValue(point.value)
+
+      if (t == null || v == null) {
+        return null
+      }
+      return { t, v }
+    })
+    .filter(Boolean)
+    .sort((a, b) => a.t - b.t)
 }
 
 function normalizeCurvePoints(points) {
@@ -211,6 +262,7 @@ function normalizeSmartMoneyItem(item) {
       : Array.isArray(item.riskFlags)
         ? item.riskFlags
         : [],
+    sparkline: normalizeSparklinePoints(item.sparkline ?? displayProfile?.sparkline),
     scoreExplain: item.scoreExplain ?? null,
     lastScoredAt: item.lastScoredAt ?? null,
     sourceFetchedAt: item.sourceFetchedAt ?? null,

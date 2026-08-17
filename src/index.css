@@ -164,9 +164,9 @@
 
   .landing-shell {
     width: 100%;
-    max-width: min(72rem, 100%);
+    max-width: min(108rem, 100%);
     margin-inline: auto;
-    padding-inline: clamp(1rem, 4vw, 2rem);
+    padding-inline: clamp(1rem, 2.4vw, 2.75rem);
   }
 
   .landing-hero-screen {
@@ -180,8 +180,8 @@
 
   @media (min-width: 1024px) {
     .landing-hero-screen {
-      min-height: calc(100svh - 4.5rem);
-      align-items: center;
+      min-height: auto;
+      align-items: flex-start;
     }
   }
 
@@ -531,14 +531,9 @@
 
   .hero__grid {
     display: grid;
-    gap: clamp(2rem, 4vw, 3rem);
-    align-items: center;
-  }
-
-  @media (min-width: 1024px) {
-    .hero__grid {
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    }
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(2rem, 4vh, 3.25rem);
+    align-items: stretch;
   }
 
   .hero__badge {
@@ -575,7 +570,7 @@
 
   .hero__subtitle {
     margin-top: 1rem;
-    max-width: 38rem;
+    max-width: 46rem;
     font-size: clamp(0.95rem, 3.4vw, 1.15rem);
     line-height: 1.65;
     color: #a1a1aa;
@@ -596,6 +591,66 @@
 
   .hero__actions .btn-ghost {
     flex: 0 1 auto;
+  }
+
+  .hero-lookup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 1.35rem;
+    max-width: 42rem;
+  }
+
+  .hero-lookup__field {
+    position: relative;
+    flex: 1 1 14rem;
+    min-width: 0;
+  }
+
+  .hero-lookup__icon {
+    position: absolute;
+    top: 50%;
+    left: 0.85rem;
+    width: 1rem;
+    height: 1rem;
+    transform: translateY(-50%);
+    color: #71717a;
+    pointer-events: none;
+  }
+
+  .hero-lookup__input {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.7rem 0.95rem 0.7rem 2.35rem;
+    color: #fafafa;
+    outline: none;
+    transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+  }
+
+  .hero-lookup__input::placeholder {
+    color: #71717a;
+  }
+
+  .hero-lookup__input:focus {
+    border-color: rgba(59, 130, 246, 0.45);
+    background: rgba(59, 130, 246, 0.06);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+  }
+
+  .hero-lookup .btn-primary:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .hero-lookup__hint {
+    margin-top: 0.55rem;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: #71717a;
   }
 
   .hero-board {
@@ -677,6 +732,14 @@
     border-bottom: 0;
   }
 
+  .hero-board__card.is-clickable {
+    cursor: pointer;
+  }
+
+  .hero-board__card.is-clickable:hover {
+    background: rgba(59, 130, 246, 0.05);
+  }
+
   .hero-board__card-head {
     display: flex;
     align-items: center;
@@ -689,6 +752,16 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.55rem 0.75rem;
+  }
+
+  .hero-board__card-spark {
+    grid-column: 1 / -1;
+    margin-top: 0.15rem;
+  }
+
+  .hero-board__card-spark .hero-board__spark {
+    width: 100%;
+    height: 2rem;
   }
 
   .hero-board__card-metrics span {
@@ -717,7 +790,7 @@
   .hero-board__table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 520px;
+    min-width: 720px;
   }
 
   @media (min-width: 720px) {
@@ -731,25 +804,58 @@
   }
 
   .hero-board__table th {
-    padding: 0.65rem 0.85rem;
+    padding: 0.55rem 0.7rem;
     text-align: left;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #71717a;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
   }
 
   .hero-board__table td {
-    padding: 0.75rem 0.85rem;
-    font-size: 0.82rem;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.8rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     color: #e4e4e7;
+    vertical-align: middle;
   }
 
   .hero-board__table tr:last-child td {
     border-bottom: 0;
+  }
+
+  .hero-board__table tr.is-clickable {
+    cursor: pointer;
+  }
+
+  .hero-board__table tr.is-clickable:hover td {
+    background: rgba(59, 130, 246, 0.06);
+  }
+
+  .hero-board__spark {
+    width: 7.25rem;
+    height: 2rem;
+    display: block;
+  }
+
+  .hero-board__spark-empty {
+    display: block;
+    width: 7.25rem;
+    height: 2rem;
+    border-radius: 6px;
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .hero-board__pnl.is-up {
+    color: #4ade80;
+  }
+
+  .hero-board__pnl.is-down {
+    color: #f87171;
   }
 
   .hero-board__trader {
