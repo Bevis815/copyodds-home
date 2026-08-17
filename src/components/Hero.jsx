@@ -6,7 +6,7 @@ import { useLocale } from '../hooks/useLocale'
 import { resolveAnalyzeIdentifier } from '../services/smartMoney'
 import { LiveLeaderboard } from './landing/LiveLeaderboard'
 import { OpenSourceStatsBar } from './landing/OpenSourceStatsBar'
-import { IconSearch } from './ui/Icons'
+import { IconSearch, IconSpinner } from './ui/Icons'
 
 const ease = [0.22, 1, 0.36, 1]
 const MotionDiv = motion.div
@@ -16,14 +16,16 @@ export function Hero() {
   const navigate = useNavigate()
   const { localizePath } = useLocale()
   const [analyzeQuery, setAnalyzeQuery] = useState('')
+  const [analyzing, setAnalyzing] = useState(false)
   const analyzeWallet = resolveAnalyzeIdentifier(analyzeQuery)
   const analyzeInvalid = Boolean(analyzeQuery.trim()) && !analyzeWallet
 
   function handleAnalyze(event) {
     event.preventDefault()
-    if (!analyzeWallet) {
+    if (!analyzeWallet || analyzing) {
       return
     }
+    setAnalyzing(true)
     navigate(localizePath(`/backtest/${encodeURIComponent(analyzeWallet)}`))
   }
 
@@ -62,7 +64,8 @@ export function Hero() {
                 spellCheck={false}
               />
             </div>
-            <button className="btn-primary" type="submit" disabled={!analyzeWallet}>
+            <button className="btn-primary" type="submit" disabled={!analyzeWallet || analyzing}>
+              {analyzing ? <IconSpinner className="analysis-spinner-icon size-4" /> : null}
               {t('landing.hero.analyzeCta')}
             </button>
           </form>

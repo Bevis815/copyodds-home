@@ -5,6 +5,7 @@ import { useLocale } from '../hooks/useLocale'
 import i18n from '../i18n/i18n'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
+import { IconSpinner } from '../components/ui/Icons'
 import { extractWalletFromSegment, fetchSmartMoneyRiskProfile } from '../services/smartMoney'
 import {
   getCachedSmartMoneyProfile,
@@ -661,6 +662,43 @@ function RiskMetric({ label, value }) {
   )
 }
 
+function AnalysisLoadingPanel() {
+  const { t } = useTranslation()
+  return (
+    <section className="surface-panel rounded-2xl p-4 sm:p-6" aria-busy="true" aria-live="polite">
+      <div className="flex items-center gap-3">
+        <span className="analysis-spinner" aria-hidden>
+          <IconSpinner className="size-5" />
+        </span>
+        <div className="min-w-0">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-blue-soft sm:text-sm">
+            {t('common.loading')}
+          </p>
+          <h2 className="mt-1 font-display text-lg font-semibold text-white sm:text-xl">
+            {t('backtest.loadingTitle')}
+          </h2>
+        </div>
+      </div>
+      <div className="analysis-skeleton mt-5 h-44 w-full sm:h-56" />
+      <div className="mt-4 grid grid-cols-2 gap-2 md:grid-cols-3">
+        {Array.from({ length: 6 }, (_, index) => (
+          <div key={index} className="analysis-skeleton h-14 sm:h-16" />
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function ChartLoadingOverlay() {
+  return (
+    <div className="analysis-overlay" aria-hidden>
+      <span className="analysis-spinner">
+        <IconSpinner className="size-6" />
+      </span>
+    </div>
+  )
+}
+
 function BacktestChart({
   rawPoints,
   curveMeta,
@@ -784,7 +822,8 @@ function BacktestChart({
 
   if (!displayPoints.length) {
     return (
-      <div className="backtest-chart-shell flex min-h-[200px] items-center justify-center rounded-2xl p-4 sm:min-h-[240px]">
+      <div className="backtest-chart-shell relative flex min-h-[200px] items-center justify-center rounded-2xl p-4 sm:min-h-[240px]">
+        {loading ? <ChartLoadingOverlay /> : null}
         <div className="text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
             {t('common.noCurveData')}
@@ -804,7 +843,8 @@ function BacktestChart({
   }
 
   return (
-    <div className="backtest-chart-shell rounded-2xl p-3 sm:p-4">
+    <div className="backtest-chart-shell relative rounded-2xl p-3 sm:p-4">
+      {loading ? <ChartLoadingOverlay /> : null}
       <div className="flex flex-col gap-2.5">
         {chartModeOptions.length > 1 ? (
           <div className="flex flex-wrap items-center gap-1.5">
@@ -1720,19 +1760,7 @@ export function BacktestPage() {
           </div>
         </section>
 
-        {isInitialLoading ? (
-          <section className="surface-panel rounded-2xl p-4 sm:p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#F8D978] sm:text-sm sm:tracking-[0.18em]">
-              {t('common.loading')}
-            </p>
-            <h2 className="mt-2 font-display text-xl font-semibold text-white sm:mt-3 sm:text-2xl">
-              {t('backtest.loadingTitle')}
-            </h2>
-            <p className="mt-2 max-w-[44ch] text-xs leading-relaxed text-slate-400 sm:mt-3 sm:text-sm sm:leading-6">
-              {t('backtest.loadingBody')}
-            </p>
-          </section>
-        ) : null}
+        {isInitialLoading ? <AnalysisLoadingPanel /> : null}
 
         {status === 'error' ? (
           <section className="surface-panel rounded-2xl border border-rose-400/20 p-4 sm:p-6">

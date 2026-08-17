@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
@@ -7,29 +7,12 @@ import { useLocale } from '../../hooks/useLocale'
 import { formatNumber, formatScore, formatSignedCurrency, abbreviateWallet } from '../../utils/format'
 import { fetchSmartMoneyLeaderboard } from '../../services/smartMoney'
 import { setSmartMoneyListPreview } from '../../lib/smartMoneySessionCache'
-import { IconChevronDown, IconCopy, IconMedal, IconTrendingUp } from '../ui/Icons'
+import { IconCopy, IconMedal, IconTrendingUp } from '../ui/Icons'
 import { PnlSparkline } from './PnlSparkline'
 
 const MotionAside = motion.aside
 const MotionLi = motion.li
 const BOARD_LIMIT = 12
-
-const PRIMARY_CATEGORIES = [
-  { value: null, key: 'all' },
-  { value: 'POLITICS', key: 'politics' },
-  { value: 'SPORTS', key: 'sports' },
-  { value: 'CRYPTO', key: 'crypto' },
-  { value: 'ESPORTS', key: 'esports' },
-]
-
-const MORE_CATEGORIES = [
-  { value: 'FINANCE', key: 'finance' },
-  { value: 'TECH', key: 'tech' },
-  { value: 'CULTURE', key: 'culture' },
-  { value: 'ECONOMICS', key: 'economics' },
-  { value: 'WEATHER', key: 'weather' },
-  { value: 'MENTIONS', key: 'mentions' },
-]
 
 function sampleSparkline(seed, trend = 1) {
   const points = []
@@ -274,71 +257,9 @@ function TraderMetrics({ trader, t }) {
       </MetricCell>
       <div className="hero-board__card-spark">
         <span>{t('landing.heroBoard.colCurve')}</span>
-        <PnlSparkline points={trader.sparkline} width={180} height={32} />
+        <PnlSparkline points={trader.sparkline} width={240} height={56} />
       </div>
     </>
-  )
-}
-
-function CategoryBar({ category, onChange, t }) {
-  const [moreOpen, setMoreOpen] = useState(false)
-  const moreRef = useRef(null)
-  const moreActive = MORE_CATEGORIES.some((item) => item.value === category)
-
-  useEffect(() => {
-    if (!moreOpen) return undefined
-    const onPointer = (event) => {
-      if (moreRef.current && !moreRef.current.contains(event.target)) {
-        setMoreOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', onPointer)
-    return () => document.removeEventListener('mousedown', onPointer)
-  }, [moreOpen])
-
-  return (
-    <div className="hero-board__filters">
-      {PRIMARY_CATEGORIES.map((item) => (
-        <button
-          key={item.key}
-          type="button"
-          className={`hero-board__chip ${category === item.value ? 'is-active' : ''}`}
-          aria-pressed={category === item.value}
-          onClick={() => onChange(item.value)}
-        >
-          {t(`landing.heroBoard.cat.${item.key}`)}
-        </button>
-      ))}
-      <div className="hero-board__more" ref={moreRef}>
-        <button
-          type="button"
-          className={`hero-board__chip ${moreActive || moreOpen ? 'is-active' : ''}`}
-          aria-expanded={moreOpen}
-          aria-haspopup="menu"
-          onClick={() => setMoreOpen((open) => !open)}
-        >
-          {t('landing.heroBoard.cat.more')}
-          <IconChevronDown className={`hero-board__more-caret ${moreOpen ? 'is-open' : ''}`} />
-        </button>
-        {moreOpen ? (
-          <div className="hero-board__more-menu" role="menu">
-            {MORE_CATEGORIES.map((item) => (
-              <button
-                key={item.key}
-                type="button"
-                className={`hero-board__chip ${category === item.value ? 'is-active' : ''}`}
-                onClick={() => {
-                  onChange(item.value)
-                  setMoreOpen(false)
-                }}
-              >
-                {t(`landing.heroBoard.cat.${item.key}`)}
-              </button>
-            ))}
-          </div>
-        ) : null}
-      </div>
-    </div>
   )
 }
 
@@ -348,7 +269,6 @@ export function LiveLeaderboard() {
   const { localizePath } = useLocale()
   const [traders, setTraders] = useState(FALLBACK_TRADERS)
   const [live, setLive] = useState(false)
-  const [category, setCategory] = useState(null)
   const [empty, setEmpty] = useState(false)
 
   useEffect(() => {
@@ -358,7 +278,6 @@ export function LiveLeaderboard() {
       offset: 0,
       eligibleOnly: true,
       includeCopyability: true,
-      category: category || undefined,
     })
       .then((data) => {
         if (cancelled) return
@@ -373,15 +292,12 @@ export function LiveLeaderboard() {
         }
       })
       .catch(() => {
-        if (!cancelled && category) {
-          setTraders([])
-          setEmpty(true)
-        }
+        /* keep fallback sample */
       })
     return () => {
       cancelled = true
     }
-  }, [category])
+  }, [])
 
   const metricCols = useMemo(
     () => [
@@ -433,8 +349,6 @@ export function LiveLeaderboard() {
           {live ? t('landing.heroBoard.live') : t('landing.heroBoard.sample')}
         </span>
       </div>
-
-      <CategoryBar category={category} onChange={setCategory} t={t} />
 
       {empty ? (
         <p className="hero-board__empty">{t('landing.heroBoard.emptyCategory')}</p>
