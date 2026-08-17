@@ -195,6 +195,7 @@
       "api": "API",
       "roadmap": "路线图",
       "community": "社区",
+      "faq": "常见问题",
       "leaderboard": "排行榜",
       "backtest": "回测",
       "copyTrading": "跟单",
@@ -203,10 +204,10 @@
     },
     "hero": {
       "badge": "开源 · AI 交易",
-      "titleLine1": "Open Source AI Trading Platform",
-      "titleLine2": "for Polymarket",
+      "titleLine1": "面向 Polymarket 的开源交易平台",
+      "titleLine2": "聪明钱发现与地址分析",
       "title": "面向 Polymarket 的开源 AI 交易平台",
-      "subtitle": "用 AI 分析与自动执行，复制全球顶尖预测市场交易者。",
+      "subtitle": "发现 Polymarket 聪明钱，分析钱包地址，回测跟单并自动执行交易。",
       "launchApp": "启动应用",
       "openTelegramBot": "打开 Telegram 机器人",
       "viewGithub": "在 GitHub 查看",
@@ -399,6 +400,37 @@
       "title": "启动开源 AI 交易平台",
       "body": "打开应用发现交易者，或克隆仓库与我们一起构建。",
       "primary": "启动应用"
+    },
+    "faq": {
+      "eyebrow": "常见问题",
+      "title": "Polymarket 交易、聪明钱与地址分析。",
+      "body": "CopyOdds 是面向 Polymarket 的开源交易平台：研究钱包、发现聪明钱、分析地址，并在透明风控下跟单。",
+      "items": [
+        {
+          "q": "CopyOdds 是什么？",
+          "a": "CopyOdds 是面向 Polymarket 的开源 AI 交易平台。用来发现聪明钱钱包、做地址分析、回测跟单适配度，并自动执行交易。"
+        },
+        {
+          "q": "CopyOdds 如何用于 Polymarket 交易？",
+          "a": "平台按信号质量、稳定性与风险给 Polymarket 交易者排序，而不是只看表面盈亏。你可以先看曲线，再决定是否跟单。"
+        },
+        {
+          "q": "什么是 Polymarket 聪明钱？",
+          "a": "聪明钱指值得研究的钱包：有持续优势、回撤可控、适合跟单——而不是靠一两笔运气暴赚的地址。"
+        },
+        {
+          "q": "如何做钱包地址分析？",
+          "a": "粘贴任意 0x Polymarket 钱包，即可查看盈亏曲线、回撤、胜率与跟单适配度。地址分析是自动跟单前的研究步骤。"
+        },
+        {
+          "q": "CopyOdds 是开源的吗？",
+          "a": "是。前端与后端都在 GitHub 公开，采用 Apache-2.0 许可，可审计、Fork 与贡献。"
+        },
+        {
+          "q": "可以跟单 Polymarket 交易者吗？",
+          "a": "可以。分析地址后，可在仓位上限、单市场限额等你可控的护栏下镜像交易。"
+        }
+      ]
     },
 
     "heroMock": {
@@ -991,6 +1023,23 @@
           "body": "请不要自行编造 URL。我们会在核对机器人信息后发放合作伙伴链接。"
         }
       }
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "CopyOdds | Polymarket 开源交易平台 — 聪明钱发现与地址分析",
+      "description": "CopyOdds 是面向 Polymarket 的开源 AI 交易平台。发现聪明钱、分析钱包地址、回测跟单表现，并自动执行交易。",
+      "keywords": "Polymarket, CopyOdds, 开源, 交易, 聪明钱, 地址分析, 钱包分析, 跟单, 预测市场, 排行榜, copy trading, smart money"
+    },
+    "partners": {
+      "title": "合作伙伴 Telegram 指南 | CopyOdds",
+      "description": "按步骤配置 CopyOdds 合作伙伴 Telegram 机器人与 Mini App：BotFather、Mini App URL，以及需要提交的凭证。",
+      "keywords": "CopyOdds, Telegram, Mini App, BotFather, 合作伙伴, Polymarket"
+    },
+    "backtest": {
+      "title": "{{name}} | Polymarket 地址分析 | CopyOdds",
+      "description": "分析 {{name}} 的 Polymarket 表现：聪明钱指标、盈亏曲线、回撤与跟单适配度，来自钱包地址研究。",
+      "keywords": "Polymarket, 地址分析, 钱包分析, 聪明钱, 跟单, 回测, CopyOdds"
     }
   },
   "errors": {

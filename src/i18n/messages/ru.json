@@ -106,5 +106,22 @@
     "noPoints": "Нет точек кривой",
     "fullWindow": "Полное окно",
     "partialHistory": "Частичная история"
+  },
+  "seo": {
+    "home": {
+      "title": "CopyOdds | Open-source трейдинг на Polymarket — smart money и анализ адресов",
+      "description": "CopyOdds — open-source AI-платформа для торговли на Polymarket. Ищите smart money, анализируйте кошельки, делайте бэктест копитрейдинга и автоматизируйте сделки.",
+      "keywords": "Polymarket, CopyOdds, open source, трейдинг, smart money, анализ кошельков, копитрейдинг, рынки предсказаний"
+    },
+    "partners": {
+      "title": "Гайд Telegram для партнёров | CopyOdds",
+      "description": "Настройте партнёрского Telegram-бота и Mini App CopyOdds: BotFather, URL Mini App и данные для поддержки.",
+      "keywords": "CopyOdds, Telegram, Mini App, BotFather, партнёр, Polymarket"
+    },
+    "backtest": {
+      "title": "{{name}} | Анализ кошелька Polymarket | CopyOdds",
+      "description": "Анализ {{name}} на Polymarket: метрики smart money, кривые PnL, просадки и пригодность для копитрейдинга.",
+      "keywords": "Polymarket, анализ кошелька, smart money, копитрейдинг, бэктест, CopyOdds"
+    }
   }
 }

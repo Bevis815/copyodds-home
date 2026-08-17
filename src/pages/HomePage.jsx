@@ -8,6 +8,8 @@ import { LandingBackdrop } from '../components/landing/LandingBackdrop'
 import { OpenSourceSection } from '../components/landing/OpenSourceSection'
 import { ProductFeaturesSection } from '../components/landing/ProductFeaturesSection'
 import { RoadmapSection } from '../components/landing/RoadmapSection'
+import { SeoFaqSection } from '../components/landing/SeoFaqSection'
+import { useDocumentSeo } from '../hooks/useDocumentSeo'
 
 /**
  * @param {{ visible?: boolean }} props
@@ -15,6 +17,7 @@ import { RoadmapSection } from '../components/landing/RoadmapSection'
  */
 export function HomePage({ visible = true }) {
   const savedWindowScrollY = useRef(0)
+  useDocumentSeo({ page: 'home', enabled: visible })
 
   useEffect(() => {
     if (!visible) {
@@ -54,6 +57,7 @@ export function HomePage({ visible = true }) {
           <ProductFeaturesSection />
           <OpenSourceSection />
           <RoadmapSection />
+          <SeoFaqSection />
           <CommunitySection />
           <CtaBanner />
         </div>

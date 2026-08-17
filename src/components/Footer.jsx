@@ -16,6 +16,7 @@ export function Footer({ fullWidth = false, links = [] }) {
     { href: SITE.social.x, label: 'X', external: true },
     { href: SITE.social.telegram, label: t('landing.community.telegramTitle'), external: true },
     { href: localizePath(SITE.docs.partners), label: t('partnerGuide.breadcrumb') },
+    { href: `${localizePath('/')}#faq`, label: t('landing.nav.faq') },
     { href: SITE.docs.home, label: t('landing.nav.docs'), external: true },
     { href: SITE.docs.api, label: t('landing.nav.api'), external: true },
     { href: SITE.docs.privacy, label: t('footer.privacy') },
@@ -31,7 +32,7 @@ export function Footer({ fullWidth = false, links = [] }) {
       id="footer"
     >
       <div className="site-footer__top">
-        <Link className="site-logo site-logo--footer" to="/" aria-label={t('header.logoHomeAria')}>
+        <Link className="site-logo site-logo--footer" to={localizePath('/')} aria-label={t('header.logoHomeAria')}>
           <img src={LOGO_SRC} alt={t('header.logoAlt')} width={140} height={42} decoding="async" />
         </Link>
 

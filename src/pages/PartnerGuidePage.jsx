@@ -5,6 +5,7 @@ import { Header } from '../components/Header'
 import { LandingBackdrop } from '../components/landing/LandingBackdrop'
 import { IconTelegram } from '../components/ui/Icons'
 import { useLocale } from '../hooks/useLocale'
+import { useDocumentSeo } from '../hooks/useDocumentSeo'
 import { getTelegramSupportHref } from '../lib/support'
 
 const IMG = '/partner-guide'
@@ -195,6 +196,7 @@ export function PartnerGuidePage() {
   const { t } = useTranslation()
   const { localizePath } = useLocale()
   const supportHref = getTelegramSupportHref()
+  useDocumentSeo({ page: 'partners' })
 
   return (
     <div className="landing-page relative min-h-screen w-full">

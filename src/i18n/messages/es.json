@@ -106,5 +106,22 @@
     "noPoints": "Sin puntos de curva",
     "fullWindow": "Ventana completa",
     "partialHistory": "Historial parcial"
+  },
+  "seo": {
+    "home": {
+      "title": "CopyOdds | Trading open source en Polymarket — Smart money y análisis de wallets",
+      "description": "CopyOdds es una plataforma open source de trading con IA para Polymarket. Descubre smart money, analiza direcciones de wallet, haz backtest de copy trading y automatiza la ejecución.",
+      "keywords": "Polymarket, CopyOdds, open source, trading, smart money, análisis de wallets, copy trading, mercados de predicción"
+    },
+    "partners": {
+      "title": "Guía de Telegram para partners | CopyOdds",
+      "description": "Configura el bot de Telegram y Mini App de partner de CopyOdds: BotFather, URL de Mini App y credenciales para soporte.",
+      "keywords": "CopyOdds, Telegram, Mini App, BotFather, partner, Polymarket"
+    },
+    "backtest": {
+      "title": "{{name}} | Análisis de wallet en Polymarket | CopyOdds",
+      "description": "Analiza {{name}} en Polymarket: métricas de smart money, curvas de PnL, drawdowns y encaje para copy trading.",
+      "keywords": "Polymarket, análisis de wallet, smart money, copy trading, backtest, CopyOdds"
+    }
   }
 }

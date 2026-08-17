@@ -5,6 +5,8 @@ export const SITE = {
   name: 'CopyOdds',
   tagline: 'Open Source AI Trading Platform for Polymarket',
   url: 'https://copyodds.io',
+  ogImage: 'https://copyodds.io/logo.jpg',
+  twitterHandle: '@copyodds',
   appUrl: APP_URL,
   loginUrl: loginUrl(),
   leaderboardUrl: leaderboardUrl(),

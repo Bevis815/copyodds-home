@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Host: copyodds.io
+Sitemap: https://copyodds.io/sitemap.xml

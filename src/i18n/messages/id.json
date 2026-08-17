@@ -106,5 +106,22 @@
     "noPoints": "Tidak ada titik kurva",
     "fullWindow": "Jendela penuh",
     "partialHistory": "Riwayat parsial"
+  },
+  "seo": {
+    "home": {
+      "title": "CopyOdds | Trading open source Polymarket — Smart money & analisis wallet",
+      "description": "CopyOdds adalah platform trading AI open source untuk Polymarket. Temukan smart money, analisis alamat wallet, backtest copy trading, dan otomatisasi eksekusi.",
+      "keywords": "Polymarket, CopyOdds, open source, trading, smart money, analisis wallet, copy trading, prediction market"
+    },
+    "partners": {
+      "title": "Panduan Telegram partner | CopyOdds",
+      "description": "Siapkan bot Telegram dan Mini App partner CopyOdds: langkah BotFather, URL Mini App, dan kredensial untuk dukungan.",
+      "keywords": "CopyOdds, Telegram, Mini App, BotFather, partner, Polymarket"
+    },
+    "backtest": {
+      "title": "{{name}} | Analisis wallet Polymarket | CopyOdds",
+      "description": "Analisis {{name}} di Polymarket: metrik smart money, kurva PnL, drawdown, dan kecocokan copy trading.",
+      "keywords": "Polymarket, analisis wallet, smart money, copy trading, backtest, CopyOdds"
+    }
   }
 }

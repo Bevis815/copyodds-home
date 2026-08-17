@@ -195,6 +195,7 @@
       "api": "API",
       "roadmap": "Roadmap",
       "community": "Community",
+      "faq": "FAQ",
       "leaderboard": "Leaderboard",
       "backtest": "Backtest",
       "copyTrading": "Copy Trading",
@@ -206,7 +207,7 @@
       "titleLine1": "Open Source AI Trading Platform",
       "titleLine2": "for Polymarket",
       "title": "Open Source AI Trading Platform for Polymarket",
-      "subtitle": "Copy the world's best prediction traders with AI-powered analysis and automated execution.",
+      "subtitle": "Open-source Polymarket copy trading: discover smart money, analyze wallet addresses, and automate execution.",
       "launchApp": "Launch App",
       "openTelegramBot": "Open Telegram Bot",
       "viewGithub": "View on GitHub",
@@ -399,6 +400,37 @@
       "title": "Launch the open source AI trading platform",
       "body": "Open the app to discover traders, or clone the repos and build with us.",
       "primary": "Launch App"
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Polymarket trading, smart money, and wallet analysis.",
+      "body": "CopyOdds is an open-source platform for Polymarket traders who want to research wallets, rank smart money, and copy trades with transparent controls.",
+      "items": [
+        {
+          "q": "What is CopyOdds?",
+          "a": "CopyOdds is an open-source AI trading platform for Polymarket. It helps you discover smart-money wallets, analyze addresses, backtest copy-trading fit, and automate execution."
+        },
+        {
+          "q": "How does CopyOdds help with Polymarket trading?",
+          "a": "Instead of chasing headline PnL, CopyOdds ranks Polymarket traders by signal quality, consistency, and risk — then lets you inspect curves before you copy."
+        },
+        {
+          "q": "What is smart money on Polymarket?",
+          "a": "Smart money means wallets whose Polymarket activity is worth studying: durable edge, controlled drawdowns, and copy-suitable behavior — not just a lucky streak."
+        },
+        {
+          "q": "How does wallet / address analysis work?",
+          "a": "Paste any 0x Polymarket wallet to open PnL curves, drawdowns, win rate, and copy-fit. Address analysis is the research step before automated copy trading."
+        },
+        {
+          "q": "Is CopyOdds open source?",
+          "a": "Yes. The web app and backend services are public on GitHub under Apache-2.0, so you can audit, fork, and contribute."
+        },
+        {
+          "q": "Can I copy trade Polymarket wallets?",
+          "a": "Yes. After you analyze an address, you can mirror trades with position caps, per-market limits, and other guardrails you control."
+        }
+      ]
     },
     "heroMock": {
       "aria": "Dashboard preview with top trader, backtest, and copy settings",
@@ -986,6 +1018,23 @@
           "body": "Do not invent a URL. We issue the partner Web App link after reviewing your bot details."
         }
       }
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "CopyOdds | Open Source Polymarket Trading — Smart Money & Wallet Analysis",
+      "description": "CopyOdds is an open-source AI trading platform for Polymarket. Discover smart money, analyze wallet addresses, backtest copy trading, and automate execution.",
+      "keywords": "Polymarket, CopyOdds, open source, trading, smart money, wallet analysis, copy trading, prediction market, leaderboard, 开源, 交易, 聪明钱, 地址分析"
+    },
+    "partners": {
+      "title": "Partner Telegram Guide | CopyOdds",
+      "description": "Set up a CopyOdds partner Telegram bot and Mini App: BotFather steps, Mini App URL, and the credentials to send to support.",
+      "keywords": "CopyOdds, Telegram, Mini App, BotFather, partner, Polymarket"
+    },
+    "backtest": {
+      "title": "{{name}} | Polymarket Wallet Analysis | CopyOdds",
+      "description": "Analyze {{name}} on Polymarket: smart-money metrics, PnL curves, drawdowns, and copy-trading fit from wallet address research.",
+      "keywords": "Polymarket, wallet analysis, address analysis, smart money, copy trading, backtest, CopyOdds"
     }
   },
   "errors": {

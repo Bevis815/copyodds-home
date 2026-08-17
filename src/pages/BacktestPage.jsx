@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { useLocale } from '../hooks/useLocale'
+import { useDocumentSeo } from '../hooks/useDocumentSeo'
 import i18n from '../i18n/i18n'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
@@ -1432,6 +1433,11 @@ export function BacktestPage() {
   const avatarUrl = identity?.profileImage ?? listPreview?.profileImage ?? null
   const coverageState = getCoverageState(curve)
   const analystNotes = useMemo(() => buildAnalystNotes(profile, period, t), [period, profile, t])
+  useDocumentSeo({
+    page: 'backtest',
+    name: titleText || undefined,
+    wallet: resolvedWallet || undefined,
+  })
 
   /** 优先「窗口高点→低点」（与图表一致）；无则回退 UTC 日内口径 */
   const peakDrawdownDisplay = useMemo(() => {

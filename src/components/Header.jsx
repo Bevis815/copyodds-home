@@ -16,6 +16,7 @@ const NAV = [
   { href: '#features', key: 'features' },
   { href: 'docs', key: 'docs', external: true },
   { href: 'api', key: 'api', external: true },
+  { href: '#faq', key: 'faq' },
   { href: '#roadmap', key: 'roadmap' },
   { href: '#community', key: 'community' },
 ]
