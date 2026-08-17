@@ -86,6 +86,41 @@ export function IconSearch({ className = 'size-4' }) {
   )
 }
 
+export function IconCopy({ className = 'size-3.5' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
+      <rect x="9" y="9" width="13" height="13" rx="2" />
+      <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+    </svg>
+  )
+}
+
+export function IconMedal({ className = 'size-5' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1.5" aria-hidden>
+      <circle cx="12" cy="8" r="5.25" fill="currentColor" fillOpacity="0.28" />
+      <path fill="none" strokeLinecap="round" strokeLinejoin="round" d="M15.48 12.89L17 22l-5-3-5 3 1.52-9.11" />
+    </svg>
+  )
+}
+
+export function IconTrendingUp({ className = 'size-3.5' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 17l6-6 4 4 8-8" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M14 7h7v7" />
+    </svg>
+  )
+}
+
+export function IconChevronDown({ className = 'size-3.5' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
+    </svg>
+  )
+}
+
 export function IconPlay({ className = 'size-4' }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>

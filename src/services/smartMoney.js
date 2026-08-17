@@ -14,7 +14,7 @@ export function extractWalletFromSegment(value) {
   return m ? m[1].toLowerCase() : null
 }
 
-/** Wallet from a pasted address/URL, otherwise a display-name lookup key. */
+/** Extract a wallet from a pasted address or URL. Names are not valid. */
 export function resolveAnalyzeIdentifier(value) {
   const trimmed = String(value ?? '').trim()
   if (!trimmed) {
@@ -25,10 +25,7 @@ export function resolveAnalyzeIdentifier(value) {
     return fromStart
   }
   const embedded = trimmed.match(/0x[a-fA-F0-9]{40}/i)
-  if (embedded) {
-    return embedded[0].toLowerCase()
-  }
-  return trimmed.replace(/^@+/, '')
+  return embedded ? embedded[0].toLowerCase() : null
 }
 
 function nullableString(value) {
@@ -263,6 +260,13 @@ function normalizeSmartMoneyItem(item) {
         ? item.riskFlags
         : [],
     sparkline: normalizeSparklinePoints(item.sparkline ?? displayProfile?.sparkline),
+    profitFactor: toNumber(item.profitFactor ?? displayProfile?.profitFactor),
+    profitFactorNoLoss: Boolean(item.profitFactorNoLoss ?? displayProfile?.profitFactorNoLoss),
+    trades7d: toNumber(item.trades7d ?? displayProfile?.trades7d),
+    recentPnl7d: toNumber(item.recentPnl7d ?? displayProfile?.recentPnl7d),
+    avgClosedReturnRate: toNumber(
+      displayProfile?.avgClosedReturnRate ?? displayProfile?.winningMktRoi
+    ),
     scoreExplain: item.scoreExplain ?? null,
     lastScoredAt: item.lastScoredAt ?? null,
     sourceFetchedAt: item.sourceFetchedAt ?? null,
@@ -420,6 +424,7 @@ export async function fetchSmartMoneyLeaderboard({
   candidatePeriod,
   sortBy,
   sortDir,
+  category,
 } = {}) {
   const params = new URLSearchParams({
     limit: String(limit),
@@ -440,6 +445,9 @@ export async function fetchSmartMoneyLeaderboard({
   }
   if (sortDir) {
     params.set('sortDir', sortDir)
+  }
+  if (category) {
+    params.set('category', category)
   }
 
   const data = await apiFetch(`/api/polymarket/smart-money/cached?${params.toString()}`)

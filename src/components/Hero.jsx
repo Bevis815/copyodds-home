@@ -16,14 +16,15 @@ export function Hero() {
   const navigate = useNavigate()
   const { localizePath } = useLocale()
   const [analyzeQuery, setAnalyzeQuery] = useState('')
+  const analyzeWallet = resolveAnalyzeIdentifier(analyzeQuery)
+  const analyzeInvalid = Boolean(analyzeQuery.trim()) && !analyzeWallet
 
   function handleAnalyze(event) {
     event.preventDefault()
-    const identifier = resolveAnalyzeIdentifier(analyzeQuery)
-    if (!identifier) {
+    if (!analyzeWallet) {
       return
     }
-    navigate(localizePath(`/backtest/${encodeURIComponent(identifier)}`))
+    navigate(localizePath(`/backtest/${encodeURIComponent(analyzeWallet)}`))
   }
 
   return (
@@ -61,11 +62,13 @@ export function Hero() {
                 spellCheck={false}
               />
             </div>
-            <button className="btn-primary" type="submit" disabled={!analyzeQuery.trim()}>
+            <button className="btn-primary" type="submit" disabled={!analyzeWallet}>
               {t('landing.hero.analyzeCta')}
             </button>
           </form>
-          <p className="hero-lookup__hint">{t('landing.hero.analyzeHint')}</p>
+          <p className={`hero-lookup__hint ${analyzeInvalid ? 'is-error' : ''}`}>
+            {analyzeInvalid ? t('landing.hero.analyzeAddressOnly') : t('landing.hero.analyzeHint')}
+          </p>
         </MotionDiv>
 
         <LiveLeaderboard />
