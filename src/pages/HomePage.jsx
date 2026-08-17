@@ -49,9 +49,7 @@ export function HomePage({ visible = true }) {
       <Header fullWidth />
 
       <main className="relative z-[1] flex w-full flex-col">
-        <div className="landing-shell landing-hero-screen">
-          <Hero />
-        </div>
+        <Hero />
 
         <div className="landing-shell flex flex-col gap-24 pb-20 pt-8 sm:gap-28 sm:pb-24 lg:gap-32">
           <ProductFeaturesSection />

@@ -32,70 +32,58 @@ export function Hero() {
 
   return (
     <section className="hero" id="top">
-      <MotionDiv
-        className="hero-banner"
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease }}
-      >
+      <div className="hero-stage">
         <img
-          className="hero-banner__img"
+          className="hero-stage__img"
           src={SITE.bannerImage}
-          alt={t('landing.hero.title')}
+          alt=""
           width={SITE.bannerWidth}
           height={SITE.bannerHeight}
           decoding="async"
           fetchPriority="high"
         />
-      </MotionDiv>
-
-      <div className="hero__grid">
+        <div className="hero-stage__wash" aria-hidden />
         <MotionDiv
-          className="hero__copy"
-          initial={{ opacity: 0, y: 20 }}
+          className="landing-shell hero-stage__panel"
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.08, ease }}
+          transition={{ duration: 0.7, ease }}
         >
-          <p className="hero__badge">{t('landing.hero.badge')}</p>
-          <h1 className="hero__title">
-            <span className="hero__title-line">{t('landing.hero.titleLine1')}</span>
-            <span className="hero__title-line hero__title-line--accent">
-              {t('landing.hero.titleLine2')}
-            </span>
-          </h1>
-          <p className="hero__subtitle">{t('landing.hero.subtitle')}</p>
-
-          <form className="hero-lookup" onSubmit={handleAnalyze}>
-            <label className="sr-only" htmlFor="hero-analyze-input">
-              {t('landing.hero.analyzeLabel')}
-            </label>
-            <div className="hero-lookup__field">
-              <IconSearch className="hero-lookup__icon" />
-              <input
-                id="hero-analyze-input"
-                className="hero-lookup__input"
-                type="search"
-                value={analyzeQuery}
-                onChange={(e) => setAnalyzeQuery(e.target.value)}
-                placeholder={t('landing.hero.analyzePlaceholder')}
-                autoComplete="off"
-                spellCheck={false}
-              />
-            </div>
-            <button className="btn-primary" type="submit" disabled={!analyzeWallet || analyzing}>
-              {analyzing ? <IconSpinner className="analysis-spinner-icon size-4" /> : null}
-              {t('landing.hero.analyzeCta')}
-            </button>
-          </form>
-          <p className={`hero-lookup__hint ${analyzeInvalid ? 'is-error' : ''}`}>
-            {analyzeInvalid ? t('landing.hero.analyzeAddressOnly') : t('landing.hero.analyzeHint')}
-          </p>
+          <h1 className="sr-only">{t('landing.hero.title')}</h1>
+          <div className="hero-lookup-card">
+            <form className="hero-lookup" onSubmit={handleAnalyze}>
+              <label className="sr-only" htmlFor="hero-analyze-input">
+                {t('landing.hero.analyzeLabel')}
+              </label>
+              <div className="hero-lookup__field">
+                <IconSearch className="hero-lookup__icon" />
+                <input
+                  id="hero-analyze-input"
+                  className="hero-lookup__input"
+                  type="search"
+                  value={analyzeQuery}
+                  onChange={(e) => setAnalyzeQuery(e.target.value)}
+                  placeholder={t('landing.hero.analyzePlaceholder')}
+                  autoComplete="off"
+                  spellCheck={false}
+                />
+              </div>
+              <button className="btn-primary" type="submit" disabled={!analyzeWallet || analyzing}>
+                {analyzing ? <IconSpinner className="analysis-spinner-icon size-4" /> : null}
+                {t('landing.hero.analyzeCta')}
+              </button>
+            </form>
+            <p className={`hero-lookup__hint ${analyzeInvalid ? 'is-error' : ''}`}>
+              {analyzeInvalid ? t('landing.hero.analyzeAddressOnly') : t('landing.hero.analyzeHint')}
+            </p>
+          </div>
         </MotionDiv>
-
-        <LiveLeaderboard />
       </div>
 
-      <OpenSourceStatsBar />
+      <div className="landing-shell hero__body">
+        <LiveLeaderboard />
+        <OpenSourceStatsBar />
+      </div>
     </section>
   )
 }
