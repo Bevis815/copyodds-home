@@ -32,19 +32,22 @@ export function Hero() {
 
   return (
     <section className="hero" id="top">
-      <div className="hero-stage">
-        <img
-          className="hero-stage__img"
-          src={SITE.bannerImage}
-          alt=""
-          width={SITE.bannerWidth}
-          height={SITE.bannerHeight}
-          decoding="async"
-          fetchPriority="high"
-        />
-        <div className="hero-stage__wash" aria-hidden />
+      <div className="landing-shell hero__inner">
+        <div className="hero-stage">
+          <img
+            className="hero-stage__img"
+            src={SITE.bannerImage}
+            alt={t('landing.hero.title')}
+            width={SITE.bannerWidth}
+            height={SITE.bannerHeight}
+            decoding="async"
+            fetchPriority="high"
+          />
+          <div className="hero-stage__wash" aria-hidden />
+        </div>
+
         <MotionDiv
-          className="landing-shell hero-stage__panel"
+          className="hero-stage__panel"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease }}
@@ -78,11 +81,11 @@ export function Hero() {
             </p>
           </div>
         </MotionDiv>
-      </div>
 
-      <div className="landing-shell hero__body">
-        <LiveLeaderboard />
-        <OpenSourceStatsBar />
+        <div className="hero__body">
+          <LiveLeaderboard />
+          <OpenSourceStatsBar />
+        </div>
       </div>
     </section>
   )

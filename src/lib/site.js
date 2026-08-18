@@ -2,7 +2,7 @@ import { APP_URL, loginUrl, leaderboardUrl } from './app-links'
 
 /** Official open-source repos and community links for the marketing site. */
 const BANNER_IMAGE =
-  'https://copyodds-media-1442243915.cos.ap-singapore.myqcloud.com/images/copyodds-banner.png'
+  'https://copyodds-media-1442243915.cos.ap-singapore.myqcloud.com/images/copyodds-banner.png?v=1920x1080'
 
 export const SITE = {
   name: 'CopyOdds',
@@ -10,8 +10,8 @@ export const SITE = {
   url: 'https://copyodds.io',
   logo: 'https://copyodds.io/logo.jpg',
   bannerImage: BANNER_IMAGE,
-  bannerWidth: 1672,
-  bannerHeight: 941,
+  bannerWidth: 1920,
+  bannerHeight: 1080,
   ogImage: BANNER_IMAGE,
   twitterHandle: '@copyodds',
   appUrl: APP_URL,

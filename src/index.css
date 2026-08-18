@@ -524,6 +524,9 @@
 
   .hero {
     width: 100%;
+  }
+
+  .hero__inner {
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -532,9 +535,8 @@
   .hero-stage {
     position: relative;
     width: 100%;
-    margin-top: -3.75rem;
-    padding-top: 3.75rem;
     overflow: hidden;
+    border-radius: 16px;
     background:
       radial-gradient(ellipse 58% 140% at 10% 42%, rgba(34, 211, 238, 0.16), transparent 58%),
       radial-gradient(ellipse 48% 150% at 92% 46%, rgba(251, 146, 60, 0.16), transparent 54%),
@@ -544,24 +546,25 @@
   .hero-stage__img {
     display: block;
     width: 100%;
-    height: clamp(16rem, 46vw, 34rem);
-    object-fit: cover;
-    object-position: center 38%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    object-position: center;
   }
 
   .hero-stage__wash {
     position: absolute;
-    inset: 0;
+    inset: auto 0 0;
+    height: 10%;
     pointer-events: none;
-    background:
-      linear-gradient(180deg, rgba(9, 9, 11, 0.42) 0%, rgba(9, 9, 11, 0.08) 22%, transparent 38%, transparent 48%, rgba(9, 9, 11, 0.88) 78%, #09090b 100%),
-      linear-gradient(90deg, rgba(9, 9, 11, 0.28), transparent 14%, transparent 86%, rgba(9, 9, 11, 0.28));
+    background: linear-gradient(180deg, transparent, #09090b);
   }
 
   .hero-stage__panel {
     position: relative;
     z-index: 1;
-    margin-top: -4.25rem;
+    margin-top: 0;
+    padding-top: 1rem;
     padding-bottom: 1.25rem;
   }
 
@@ -584,13 +587,8 @@
   }
 
   @media (max-width: 639px) {
-    .hero-stage__img {
-      height: 14.5rem;
-      object-position: center 34%;
-    }
-
     .hero-stage__panel {
-      margin-top: -3.25rem;
+      padding-top: 0.75rem;
     }
   }
 
