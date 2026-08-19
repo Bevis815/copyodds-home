@@ -1,6 +1,6 @@
 // Hard-coded Telegram customer support entrypoint.
 // Update this value when the support account changes.
-const TELEGRAM_SUPPORT_URL = 'https://t.me/bevis815'
+const TELEGRAM_SUPPORT_URL = 'https://t.me/oddsFine'
 
 // WhatsApp customer support (E.164 digits only, no + or spaces).
 const WHATSAPP_SUPPORT_PHONE = '8613427442130'
