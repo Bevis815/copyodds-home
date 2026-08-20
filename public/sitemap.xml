@@ -157,4 +157,82 @@
     <priority>0.4</priority>
     <lastmod>2026-08-17</lastmod>
   </url>
+  <url>
+    <loc>https://copyodds.io/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/privacy" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/privacy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/privacy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/privacy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+    <lastmod>2026-08-20</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/zh/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/privacy" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/privacy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/privacy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/privacy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-08-20</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/id/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/privacy" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/privacy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/privacy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/privacy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-08-20</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/fr/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/privacy" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/privacy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/privacy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/privacy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-08-20</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/ru/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/privacy" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/privacy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/privacy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/privacy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-08-20</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/es/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/privacy" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/privacy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/privacy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/privacy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2026-08-20</lastmod>
+  </url>
 </urlset>

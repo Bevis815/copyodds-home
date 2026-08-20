@@ -840,6 +840,9 @@
     "snapshotPnlFootnote": "Polymarket 主页总盈亏（快照）：{{value}}。",
     "winRateHint": "来源 {{source}}"
   },
+  "privacyPolicy": {
+    "breadcrumbAria": "面包屑导航"
+  },
   "partnerGuide": {
     "eyebrow": "合作伙伴接入",
     "breadcrumb": "合作伙伴",
@@ -1035,6 +1038,11 @@
       "title": "合作伙伴 Telegram 指南 | CopyOdds",
       "description": "按步骤配置 CopyOdds 合作伙伴 Telegram 机器人与 Mini App：BotFather、Mini App URL，以及需要提交的凭证。",
       "keywords": "CopyOdds, Telegram, Mini App, BotFather, 合作伙伴, Polymarket"
+    },
+    "privacy": {
+      "title": "隐私政策 | CopyOdds",
+      "description": "CopyOdds 隐私政策：说明我们如何在使用网站、移动应用及相关服务时收集、使用、存储、共享和保护您的信息。",
+      "keywords": "CopyOdds, 隐私政策, 数据保护, 个人信息, 区块链, 跟单"
     },
     "backtest": {
       "title": "{{name}} | Polymarket 地址分析 | CopyOdds",

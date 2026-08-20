@@ -19,7 +19,7 @@ export function Footer({ fullWidth = false, links = [] }) {
     { href: `${localizePath('/')}#faq`, label: t('landing.nav.faq') },
     { href: SITE.docs.home, label: t('landing.nav.docs'), external: true },
     { href: SITE.docs.api, label: t('landing.nav.api'), external: true },
-    { href: SITE.docs.privacy, label: t('footer.privacy') },
+    { href: localizePath(SITE.docs.privacy), label: t('footer.privacy') },
     { href: SITE.docs.terms, label: t('footer.terms') },
     { href: SITE.docs.license, label: t('footer.license'), external: true },
   ]

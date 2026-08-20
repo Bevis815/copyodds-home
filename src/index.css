@@ -2260,6 +2260,152 @@
     color: #a1a1aa;
   }
 
+  .legal-doc {
+    max-width: 760px;
+  }
+
+  .legal-doc__crumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.78rem;
+    color: #71717a;
+  }
+
+  .legal-doc__crumb a {
+    color: #a1a1aa;
+    text-decoration: none;
+  }
+
+  .legal-doc__crumb a:hover {
+    color: #e4e4e7;
+  }
+
+  .legal-doc__hero {
+    margin-bottom: 1.75rem;
+  }
+
+  .legal-doc__title {
+    margin-top: 0.35rem;
+    font-size: clamp(1.85rem, 4vw, 2.45rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: #fafafa;
+  }
+
+  .legal-doc__updated {
+    margin-top: 0.85rem;
+    font-size: 0.88rem;
+    color: #a1a1aa;
+  }
+
+  .legal-doc__panel {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
+      rgba(12, 12, 14, 0.72);
+    padding: 1.35rem 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .legal-doc__panel {
+      padding: 1.75rem 2rem;
+    }
+  }
+
+  .legal-doc__section + .legal-doc__section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .legal-doc__h2 {
+    margin-bottom: 0.85rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #f4f4f5;
+  }
+
+  .legal-doc__h3 {
+    margin-top: 1.35rem;
+    margin-bottom: 0.65rem;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #e4e4e7;
+  }
+
+  .legal-doc__p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #a1a1aa;
+  }
+
+  .legal-doc__p + .legal-doc__p,
+  .legal-doc__list + .legal-doc__p,
+  .legal-doc__p + .legal-doc__list {
+    margin-top: 0.85rem;
+  }
+
+  .legal-doc__list {
+    margin-top: 0.65rem;
+    padding-left: 1.2rem;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: #a1a1aa;
+  }
+
+  .legal-doc__list li + li {
+    margin-top: 0.35rem;
+  }
+
+  .legal-doc__subsection + .legal-doc__subsection {
+    margin-top: 1.25rem;
+  }
+
+  .legal-doc__contact {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .legal-doc__contact dt {
+    font-weight: 600;
+    color: #e4e4e7;
+  }
+
+  .legal-doc__contact dd {
+    margin-top: 0.2rem;
+    color: #a1a1aa;
+  }
+
+  .legal-doc__contact a {
+    color: #93c5fd;
+    text-decoration: none;
+  }
+
+  .legal-doc__contact a:hover {
+    color: #bfdbfe;
+    text-decoration: underline;
+  }
+
+  .legal-doc__footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #71717a;
+  }
+
+  .legal-doc__footer p + p {
+    margin-top: 0.35rem;
+  }
+
   /* Backtest / shared surfaces kept functional under new palette */
   .surface-panel,
   .surface-card {

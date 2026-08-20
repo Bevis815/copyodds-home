@@ -191,7 +191,7 @@ export function buildJsonLd({ title, description, canonical, locale, page, faqIt
     })
   }
 
-  if (page === 'partners') {
+  if (page === 'partners' || page === 'privacy') {
     graph.push({
       '@type': 'BreadcrumbList',
       itemListElement: [

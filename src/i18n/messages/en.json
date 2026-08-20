@@ -835,6 +835,9 @@
     "snapshotPnlFootnote": "Polymarket profile total PnL (snapshot): {{value}}.",
     "winRateHint": "Source {{source}}"
   },
+  "privacyPolicy": {
+    "breadcrumbAria": "Breadcrumb"
+  },
   "partnerGuide": {
     "eyebrow": "Partner onboarding",
     "breadcrumb": "Partners",
@@ -1030,6 +1033,11 @@
       "title": "Partner Telegram Guide | CopyOdds",
       "description": "Set up a CopyOdds partner Telegram bot and Mini App: BotFather steps, Mini App URL, and the credentials to send to support.",
       "keywords": "CopyOdds, Telegram, Mini App, BotFather, partner, Polymarket"
+    },
+    "privacy": {
+      "title": "Privacy Policy | CopyOdds",
+      "description": "CopyOdds Privacy Policy: how we collect, use, store, share, and protect your information when you use our website, mobile app, and related services.",
+      "keywords": "CopyOdds, privacy policy, data protection, personal information, blockchain, copy trading"
     },
     "backtest": {
       "title": "{{name}} | Polymarket Wallet Analysis | CopyOdds",
