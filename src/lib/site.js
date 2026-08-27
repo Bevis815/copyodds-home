@@ -43,7 +43,7 @@ export const SITE = {
     api: 'https://github.com/Copyodds/copyodds-services/tree/main/docs',
     partners: '/partners',
     roadmap: 'https://github.com/Copyodds/copyodds-web/issues',
-    blog: 'https://github.com/Copyodds/copyodds-web#readme',
+    blog: '/blog',
     releases: 'https://github.com/Copyodds/copyodds-web/releases',
     license: 'https://github.com/Copyodds/copyodds-web/blob/main/LICENSE',
     privacy: '/privacy',

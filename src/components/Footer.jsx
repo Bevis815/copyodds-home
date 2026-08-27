@@ -16,6 +16,7 @@ export function Footer({ fullWidth = false, links = [] }) {
     { href: SITE.social.x, label: 'X', external: true },
     { href: SITE.social.telegram, label: t('landing.community.telegramTitle'), external: true },
     { href: localizePath(SITE.docs.partners), label: t('partnerGuide.breadcrumb') },
+    { href: localizePath(SITE.docs.blog), label: t('landing.community.blogTitle') },
     { href: `${localizePath('/')}#faq`, label: t('landing.nav.faq') },
     { href: SITE.docs.home, label: t('landing.nav.docs'), external: true },
     { href: SITE.docs.api, label: t('landing.nav.api'), external: true },

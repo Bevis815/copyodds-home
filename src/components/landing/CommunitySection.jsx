@@ -71,9 +71,9 @@ export function CommunitySection() {
       key: 'blog',
       title: t('landing.community.blogTitle'),
       body: t('landing.community.blog'),
-      href: SITE.docs.blog,
+      href: localizePath(SITE.docs.blog),
       icon: IconBlog,
-      external: true,
+      internal: true,
     },
     {
       key: 'api',

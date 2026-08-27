@@ -122,6 +122,16 @@
       "title": "{{name}} | Analyse de wallet Polymarket | CopyOdds",
       "description": "Analysez {{name}} sur Polymarket : métriques smart money, courbes de PnL, drawdowns et adéquation au copy trading.",
       "keywords": "Polymarket, analyse de wallet, smart money, copy trading, backtest, CopyOdds"
+    },
+    "blog": {
+      "title": "Blog CopyOdds | Guides de copy trading Polymarket",
+      "description": "Guides pour le copy trading sur Polymarket : smart money, analyse de wallets, backtest et mirroring automatique avec des limites de risque.",
+      "keywords": "Polymarket, copy trading, CopyOdds, blog, smart money, analyse de wallet"
+    },
+    "copyTrade": {
+      "title": "Copy Trade Polymarket : copier automatiquement les meilleurs wallets | CopyOdds",
+      "description": "Polymarket n’a pas de copy trading natif. Découvrez comment CopyOdds classe les wallets smart money, backteste et recopie les trades avec des plafonds que vous contrôlez.",
+      "keywords": "copy trade Polymarket, copy trading Polymarket, CopyOdds, smart money"
     }
   }
 }

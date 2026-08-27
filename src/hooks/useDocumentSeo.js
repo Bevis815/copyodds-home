@@ -4,13 +4,13 @@ import { useLocation } from 'react-router-dom'
 import { applyDocumentSeo, localizedAbsoluteUrl } from '../lib/seo'
 import { useLocale } from './useLocale'
 
-function readFaqItems(t) {
-  const items = t('landing.faq.items', { returnObjects: true })
+function readFaqItems(t, key) {
+  const items = t(key, { returnObjects: true })
   return Array.isArray(items) ? items.filter((item) => item?.q && item?.a) : []
 }
 
 /**
- * @param {{ page: 'home' | 'partners' | 'privacy' | 'backtest', enabled?: boolean, name?: string, wallet?: string }} options
+ * @param {{ page: 'home' | 'partners' | 'privacy' | 'backtest' | 'blog' | 'copyTrade', enabled?: boolean, name?: string, wallet?: string }} options
  */
 export function useDocumentSeo({ page, enabled = true, name, wallet } = { page: 'home' }) {
   const { t, i18n } = useTranslation()
@@ -30,7 +30,12 @@ export function useDocumentSeo({ page, enabled = true, name, wallet } = { page: 
     const description = t(`seo.${page}.description`, vars)
     const keywords = t(`seo.${page}.keywords`)
     const canonical = localizedAbsoluteUrl(locale, pathnameWithoutLocale)
-    const faqItems = page === 'home' ? readFaqItems(t) : []
+    const faqItems =
+      page === 'home'
+        ? readFaqItems(t, 'landing.faq.items')
+        : page === 'copyTrade'
+          ? readFaqItems(t, 'blog.copyTrade.faq.items')
+          : []
 
     applyDocumentSeo({
       title,

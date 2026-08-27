@@ -122,6 +122,16 @@
       "title": "{{name}} | Анализ кошелька Polymarket | CopyOdds",
       "description": "Анализ {{name}} на Polymarket: метрики smart money, кривые PnL, просадки и пригодность для копитрейдинга.",
       "keywords": "Polymarket, анализ кошелька, smart money, копитрейдинг, бэктест, CopyOdds"
+    },
+    "blog": {
+      "title": "Блог CopyOdds | Гайды по копитрейдингу на Polymarket",
+      "description": "Гайды по копитрейдингу на Polymarket: smart money, анализ кошельков, бэктест и автокопирование с лимитами риска.",
+      "keywords": "Polymarket, копитрейдинг, CopyOdds, блог, smart money"
+    },
+    "copyTrade": {
+      "title": "Copy Trade Polymarket: автоматически копировать топ-кошельки | CopyOdds",
+      "description": "У Polymarket нет встроенного копитрейдинга. Как CopyOdds ранжирует smart money, делает бэктест и копирует сделки в рамках ваших лимитов.",
+      "keywords": "copy trade Polymarket, копитрейдинг Polymarket, CopyOdds, smart money"
     }
   }
 }

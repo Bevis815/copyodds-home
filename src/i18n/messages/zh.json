@@ -318,7 +318,7 @@
       "docs": "指南、架构说明与安装文档。",
       "partners": "合作伙伴 Telegram 机器人与 Mini App 接入指南。",
       "blogTitle": "博客",
-      "blog": "团队变更日志与深度文章。",
+      "blog": "Polymarket 跟单、聪明钱与地址分析指南。",
       "api": "copyodds-services 的后端 API 参考。"
     },
     "openSource": {
@@ -1028,6 +1028,197 @@
       }
     }
   },
+  "blog": {
+    "breadcrumb": "博客",
+    "breadcrumbAria": "面包屑导航",
+    "index": {
+      "eyebrow": "指南",
+      "title": "CopyOdds 博客",
+      "subtitle": "面向 Polymarket 跟单、聪明钱发现与钱包地址分析的实操指南。",
+      "readCta": "阅读指南 →"
+    },
+    "copyTrade": {
+      "eyebrow": "指南",
+      "crumb": "Polymarket 跟单",
+      "title": "在 Polymarket 跟单：如何自动复制头部钱包交易",
+      "excerpt": "Polymarket 没有内置跟单。CopyOdds 有 — 发现聪明钱钱包、回测适配度，并在你设定的风控内自动镜像成交。",
+      "subtitle": "Polymarket 本身不提供跟单。CopyOdds 用链上钱包数据给交易者排名、评估跟单适配度，并在仓位上限内自动镜像成交。",
+      "metaAria": "文章信息",
+      "meta": {
+        "time": "约 5 分钟",
+        "category": "跟单交易",
+        "updated": "2026 年 8 月 26 日"
+      },
+      "toc": {
+        "title": "本指南内容",
+        "body": "从 Polymarket 是否支持跟单，到 CopyOdds 如何执行、如何挑选钱包，以及真正起作用的风控。",
+        "items": {
+          "canYou": {
+            "title": "能不能跟单？",
+            "body": "Polymarket 没有原生按钮 — CopyOdds 补上这一层。"
+          },
+          "why": {
+            "title": "为什么要跟单",
+            "body": "优势存在；靠手速通常跟不上。"
+          },
+          "how": {
+            "title": "CopyOdds 怎么做",
+            "body": "发现、回测，再在护栏内镜像。"
+          },
+          "setup": {
+            "title": "如何开通",
+            "body": "网页或 Telegram 机器人 — 大约 10 分钟。"
+          },
+          "pick": {
+            "title": "怎么挑钱包",
+            "body": "看稳定性、活跃度与跟单适配，不只看盈亏。"
+          },
+          "risks": {
+            "title": "风险与风控",
+            "body": "历史成绩不保证下一笔交易。"
+          }
+        }
+      },
+      "canYou": {
+        "kicker": "先说结论",
+        "title": "能在 Polymarket 上跟单吗？",
+        "p1": "Polymarket 没有内置跟单功能。交易所界面里没有官方的「跟随这个钱包」开关。",
+        "p2": "但用来做跟单的数据其实都在链上：每一笔成交都是公开的。<app>CopyOdds</app> 是面向 Polymarket 的开源 AI 交易平台，给这些钱包排名，让你检查地址级表现，并在你设定的规则内自动镜像交易 — 单笔上限、单市场上限、跟单额度。"
+      },
+      "why": {
+        "kicker": "痛点",
+        "title": "为什么要在 Polymarket 跟单？",
+        "p1": "Polymarket 上真正强的交易者通常是研究者，而不是靠运气。他们找到群体隐含概率明显偏离的事件，在市场纠正之前下好仓。",
+        "p2": "找到这些钱包是一件事，及时跟上成交是另一件事。等人工看到一笔成交再自己下单，价格往往已经动了。跟单把「发现到执行」自动化，你就不必拿秒表去抢盘口。"
+      },
+      "how": {
+        "kicker": "产品",
+        "title": "CopyOdds 跟单如何工作",
+        "intro": "CopyOdds 不会只追账面盈亏。它按信号质量、稳定性与风险给钱包打分，并在镜像任何一笔交易之前，让你先回测跟单适配度。",
+        "items": {
+          "discovery": {
+            "title": "聪明钱发现",
+            "body": "排行榜不只按总利润排序：稳定性、活跃度、回撤与风险标记会和收益放在一起，方便你筛出值得跟随的交易者。"
+          },
+          "analysis": {
+            "title": "AI 分析与回测",
+            "body": "打开任意 0x 地址即可查看盈亏曲线、回撤与跟单适配。回测是研究步骤 — 在投入资金前看清这个钱包过去怎么交易。"
+          },
+          "execution": {
+            "title": "带风控的镜像",
+            "body": "当被跟随钱包成交时，CopyOdds 可在你的规则内镜像：单笔上限、单市场上限、跟单预算与钱包保护。"
+          },
+          "opensource": {
+            "title": "开源、可审计",
+            "body": "前端与后端均在 GitHub 以 Apache-2.0 公开。你可以检查排名、跟单流程与执行，而不是相信一个黑盒。"
+          }
+        }
+      },
+      "setup": {
+        "kicker": "开始使用",
+        "title": "通过 CopyOdds 在 Polymarket 开通跟单",
+        "intro": "可以从网页应用或 Telegram 机器人开始。通常不到 10 分钟即可完成设置。",
+        "steps": {
+          "open": {
+            "title": "打开 CopyOdds",
+            "body": "打开 <app>网页应用</app>，或进入官方 Telegram 机器人 <telegram>@copyodds_bot</telegram>。"
+          },
+          "account": {
+            "title": "创建账户并入金",
+            "body": "登录并入金，确保跟单订单有可用余额。"
+          },
+          "pick": {
+            "title": "选择要复制的钱包",
+            "body": "浏览 <leaderboard>聪明钱排行榜</leaderboard>，或粘贴任意 Polymarket 0x 地址进行分析 — 不限于榜上的名字。"
+          },
+          "backtest": {
+            "title": "跟单前先回测",
+            "body": "查看收益曲线、回撤、胜率背景与活跃度。一波暴利但回撤难看的钱包，和适合跟单、表现稳定的钱包，不是同一种产品。"
+          },
+          "activate": {
+            "title": "设置风控并开启跟单",
+            "body": "限制单笔仓位、单市场敞口和总跟单预算。然后打开跟单 — 此后 CopyOdds 会在这些护栏内镜像成交。"
+          }
+        }
+      },
+      "pick": {
+        "kicker": "筛选",
+        "title": "如何挑选要复制的钱包",
+        "intro": "账面盈亏只是起点，不是论点。CopyOdds 的设计就是让你能否掉那些截图好看、曲线却经不起看的钱包。",
+        "items": {
+          "consistency": {
+            "title": "稳定性优先于暴击",
+            "body": "更看重可重复的表现。单笔超额盈利就能撑起历史总盈亏，却仍然可能不适合跟单。"
+          },
+          "history": {
+            "title": "足够的交易历史",
+            "body": "少数几笔上的高胜率是噪声。交易笔数更多、且仍在活跃，统计才有意义。"
+          },
+          "trend": {
+            "title": "近期盈亏与跟单适配",
+            "body": "全历史数字会滞后。查看最近窗口、回撤，以及回测是否仍然适合跟单。"
+          },
+          "diversity": {
+            "title": "市场分散度",
+            "body": "只押一个事件的钱包会把风险集中。跨类别交易的地址通常更好做仓位规划。"
+          }
+        }
+      },
+      "risks": {
+        "kicker": "风险",
+        "title": "有哪些风险？",
+        "intro": "跟单不会消灭市场风险 — 它只是把研究责任转移到你跟随的钱包上。你在信任对方的判断。过往表现不保证未来结果，即使胜率不错，仍有很大一部分交易会亏。",
+        "items": {
+          "judgment": {
+            "title": "你会继承他们的错误",
+            "body": "如果被跟随钱包判断错、下手晚或仓位过大，1:1 镜像也会原样复制。把跟单当成流程，而不是关掉思考的信号。"
+          },
+          "limits": {
+            "title": "用硬上限",
+            "body": "开启前先设定单笔上限、单市场上限和总跟单预算。CopyOdds 会在每一笔镜像动作上执行这些规则。"
+          },
+          "diversify": {
+            "title": "不要只跟一个钱包",
+            "body": "跟随两三个相关性不高的钱包，通常优于把全部跟单预算压在一个地址上。"
+          }
+        }
+      },
+      "vsManual": {
+        "kicker": "对比",
+        "title": "相对手工交易的优势",
+        "p1": "手工做 Polymarket，意味着自己找市场、研究结果、盯钱包，还要执行得够快才能拿到还能用的价格。跟单把最后一公里自动化：被跟随钱包成交时，复制可以在你的限额内触发，而不必一直守盘。",
+        "p2": "CopyOdds 补上多数跟单工具会跳过的研究层 — AI 评分、地址分析、订阅前的回测 — 并以 <github>开源</github> 方式交付，方便你检查排名与执行是怎么工作的。"
+      },
+      "faq": {
+        "kicker": "常见问题",
+        "title": "Polymarket 跟单常见问题",
+        "items": [
+          {
+            "q": "Polymarket 有内置跟单吗？",
+            "a": "没有。Polymarket 不提供原生的跟随或复制功能。CopyOdds 基于公开链上钱包活动提供跟单，并带有排名、回测与风控。"
+          },
+          {
+            "q": "CopyOdds 如何复制 Polymarket 钱包？",
+            "a": "你从排行榜挑选钱包，或粘贴 0x 地址，查看回测，设定仓位与市场上限，然后开启。当该钱包成交时，CopyOdds 可在这些规则内镜像动作。"
+          },
+          {
+            "q": "CopyOdds 是开源的吗？",
+            "a": "是。网页应用与后端服务均在 GitHub 以 Apache-2.0 公开，排名逻辑与跟单流程都可以被审计。"
+          },
+          {
+            "q": "必须复制排行榜上的钱包吗？",
+            "a": "不必。排行榜只是起点。你可以分析任意 Polymarket 0x 地址，先判断是否适合跟单，再决定是否订阅。"
+          }
+        ]
+      },
+      "cta": {
+        "kicker": "开始",
+        "title": "开始在 Polymarket 跟单",
+        "body": "打开应用给钱包排名，或直接进入 Telegram 机器人。先设好限额 — 再让 CopyOdds 镜像你真正研究过的钱包。",
+        "hint": "已经在 Polymarket 交易？接入 CopyOdds，用带护栏的跟单代替手工追单。"
+      }
+    }
+  },
   "seo": {
     "home": {
       "title": "CopyOdds | Polymarket 开源交易平台 — 聪明钱发现与地址分析",
@@ -1048,6 +1239,16 @@
       "title": "{{name}} | Polymarket 地址分析 | CopyOdds",
       "description": "分析 {{name}} 的 Polymarket 表现：聪明钱指标、盈亏曲线、回撤与跟单适配度，来自钱包地址研究。",
       "keywords": "Polymarket, 地址分析, 钱包分析, 聪明钱, 跟单, 回测, CopyOdds"
+    },
+    "blog": {
+      "title": "CopyOdds 博客 | Polymarket 跟单指南",
+      "description": "Polymarket 跟单指南：聪明钱发现、钱包地址分析、回测，以及带风控的自动镜像。",
+      "keywords": "Polymarket, 跟单, CopyOdds, 博客, 聪明钱, 地址分析, 指南, copy trading"
+    },
+    "copyTrade": {
+      "title": "在 Polymarket 跟单：自动复制头部钱包 | CopyOdds",
+      "description": "Polymarket 没有内置跟单。了解 CopyOdds 如何给聪明钱钱包排名、回测跟单适配度，并在你设定的仓位上限内自动镜像交易。",
+      "keywords": "Polymarket 跟单, copy trade Polymarket, 跟单交易, 聪明钱, 地址分析, CopyOdds, 复制钱包, 预测市场"
     }
   },
   "errors": {

@@ -235,4 +235,160 @@
     <priority>0.3</priority>
     <lastmod>2026-08-20</lastmod>
   </url>
+  <url>
+    <loc>https://copyodds.io/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/blog" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/blog" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/zh/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/blog" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/blog" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/id/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/blog" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/blog" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/fr/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/blog" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/blog" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/ru/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/blog" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/blog" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/es/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/blog" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/blog" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/blog" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/blog/copy-trade-polymarket</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/blog/copy-trade-polymarket" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/zh/blog/copy-trade-polymarket</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/blog/copy-trade-polymarket" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/id/blog/copy-trade-polymarket</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/blog/copy-trade-polymarket" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/fr/blog/copy-trade-polymarket</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/blog/copy-trade-polymarket" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/ru/blog/copy-trade-polymarket</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/blog/copy-trade-polymarket" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/es/blog/copy-trade-polymarket</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/blog/copy-trade-polymarket" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/blog/copy-trade-polymarket" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2026-08-27</lastmod>
+  </url>
 </urlset>

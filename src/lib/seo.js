@@ -1,3 +1,4 @@
+import { COPY_TRADE_GUIDE, BLOG_INDEX_PATH } from '../content/blog'
 import { locales, defaultLocale } from '../i18n/constants'
 import { buildLocalizedPath } from '../i18n/path'
 import { SITE } from './site'
@@ -175,7 +176,7 @@ export function buildJsonLd({ title, description, canonical, locale, page, faqIt
 
   const graph = [organization, website, software, webpage]
 
-  if (page === 'home' && Array.isArray(faqItems) && faqItems.length > 0) {
+  if ((page === 'home' || page === 'copyTrade') && Array.isArray(faqItems) && faqItems.length > 0) {
     graph.push({
       '@type': 'FAQPage',
       '@id': `${canonical}#faq`,
@@ -191,7 +192,7 @@ export function buildJsonLd({ title, description, canonical, locale, page, faqIt
     })
   }
 
-  if (page === 'partners' || page === 'privacy') {
+  if (page === 'partners' || page === 'privacy' || page === 'blog' || page === 'backtest') {
     graph.push({
       '@type': 'BreadcrumbList',
       itemListElement: [
@@ -201,13 +202,33 @@ export function buildJsonLd({ title, description, canonical, locale, page, faqIt
     })
   }
 
-  if (page === 'backtest') {
+  if (page === 'copyTrade') {
     graph.push({
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: SITE.name, item: localizedAbsoluteUrl(locale, '/') },
-        { '@type': 'ListItem', position: 2, name: title, item: canonical },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Blog',
+          item: localizedAbsoluteUrl(locale, BLOG_INDEX_PATH),
+        },
+        { '@type': 'ListItem', position: 3, name: title, item: canonical },
       ],
+    })
+    graph.push({
+      '@type': 'Article',
+      '@id': `${canonical}#article`,
+      headline: title,
+      description,
+      inLanguage,
+      datePublished: COPY_TRADE_GUIDE.datePublished,
+      dateModified: COPY_TRADE_GUIDE.datePublished,
+      image: ogImageUrl(),
+      mainEntityOfPage: { '@id': `${canonical}#webpage` },
+      author: { '@id': `${origin}/#organization` },
+      publisher: { '@id': `${origin}/#organization` },
+      about: { '@id': `${origin}/#app` },
     })
   }
 
@@ -243,7 +264,7 @@ export function applyDocumentSeo({
 
   upsertMeta('property', 'og:title', title)
   upsertMeta('property', 'og:description', description)
-  upsertMeta('property', 'og:type', 'website')
+  upsertMeta('property', 'og:type', page === 'copyTrade' ? 'article' : 'website')
   upsertMeta('property', 'og:url', canonical)
   upsertMeta('property', 'og:image', ogImageUrl())
   upsertMeta('property', 'og:image:alt', title)

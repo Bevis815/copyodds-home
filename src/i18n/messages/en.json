@@ -318,7 +318,7 @@
       "docs": "Guides, architecture notes, and setup docs.",
       "partners": "Telegram bot & Mini App setup for partners.",
       "blogTitle": "Blog",
-      "blog": "Changelogs and deep dives from the team.",
+      "blog": "Guides on Polymarket copy trading, smart money, and wallet analysis.",
       "api": "Backend API references for copyodds-services."
     },
     "openSource": {
@@ -1023,6 +1023,197 @@
       }
     }
   },
+  "blog": {
+    "breadcrumb": "Blog",
+    "breadcrumbAria": "Breadcrumb",
+    "index": {
+      "eyebrow": "Guides",
+      "title": "CopyOdds Blog",
+      "subtitle": "Practical guides for Polymarket copy trading, smart-money discovery, and wallet analysis.",
+      "readCta": "Read the guide →"
+    },
+    "copyTrade": {
+      "eyebrow": "Guide",
+      "crumb": "Copy Trade Polymarket",
+      "title": "Copy Trade Polymarket: How to Mirror Top Wallets Automatically",
+      "excerpt": "Polymarket has no built-in copy trading. CopyOdds does — discover smart-money wallets, backtest them, and mirror trades with risk controls you set.",
+      "subtitle": "Polymarket doesn't ship copy trading. CopyOdds uses on-chain wallet data to rank traders, score copy-fit, and mirror fills automatically — with position caps you control.",
+      "metaAria": "Article details",
+      "meta": {
+        "time": "5 min read",
+        "category": "Copy Trading",
+        "updated": "August 26, 2026"
+      },
+      "toc": {
+        "title": "In this guide",
+        "body": "From whether Polymarket supports copy trading, to how CopyOdds executes, how to pick a wallet, and the risk controls that matter.",
+        "items": {
+          "canYou": {
+            "title": "Can you copy trade?",
+            "body": "Polymarket has no native button — CopyOdds fills the gap."
+          },
+          "why": {
+            "title": "Why copy trade",
+            "body": "Edge exists; timing by hand usually doesn't."
+          },
+          "how": {
+            "title": "How CopyOdds works",
+            "body": "Discover, backtest, then mirror with guardrails."
+          },
+          "setup": {
+            "title": "Set it up",
+            "body": "App or Telegram bot — under 10 minutes."
+          },
+          "pick": {
+            "title": "Pick a wallet",
+            "body": "Consistency, activity, and copy-fit — not just PnL."
+          },
+          "risks": {
+            "title": "Risks & controls",
+            "body": "Past results don't guarantee the next trade."
+          }
+        }
+      },
+      "canYou": {
+        "kicker": "The short answer",
+        "title": "Can you copy trade on Polymarket?",
+        "p1": "Polymarket does not include a built-in copy-trading feature. There is no official “follow this wallet” switch inside the exchange UI.",
+        "p2": "The data to do it still exists on-chain: every fill is public. <app>CopyOdds</app> is an open-source AI trading platform that ranks those wallets, lets you inspect address-level performance, and mirrors trades automatically inside rules you set — max position size, per-market caps, and copy limits."
+      },
+      "why": {
+        "kicker": "The problem",
+        "title": "Why copy trade on Polymarket?",
+        "p1": "Polymarket's strongest traders are usually researchers, not lottery tickets. They find events where the crowd's implied probability is meaningfully wrong — then they size in before the market catches up.",
+        "p2": "Finding those wallets is one job. Copying them in time is another. By the time a manual watcher sees a fill and submits their own order, the price has often already moved. Copy trading automates discovery-to-execution so you are not competing with a stopwatch."
+      },
+      "how": {
+        "kicker": "Product",
+        "title": "How CopyOdds copy trading works",
+        "intro": "CopyOdds does not blindly chase headline PnL. It scores wallets for signal quality, consistency, and risk, then lets you backtest copy-fit before a single trade is mirrored.",
+        "items": {
+          "discovery": {
+            "title": "Smart-money discovery",
+            "body": "The leaderboard ranks Polymarket wallets by more than total profit: consistency, activity, drawdowns, and risk flags sit next to returns so you can shortlist traders worth following."
+          },
+          "analysis": {
+            "title": "AI analysis and backtest",
+            "body": "Open any 0x address for PnL curves, drawdowns, and copy-fit. Backtest is the research step — you see how a wallet behaved before you allocate capital."
+          },
+          "execution": {
+            "title": "Risk-controlled mirroring",
+            "body": "When a followed wallet trades, CopyOdds can mirror the action inside your rules: max position, per-market cap, copy budget, and wallet protection."
+          },
+          "opensource": {
+            "title": "Open source, inspectable",
+            "body": "Frontend and backend are public on GitHub under Apache-2.0. You can audit ranking, copy workflows, and execution instead of trusting a black box."
+          }
+        }
+      },
+      "setup": {
+        "kicker": "Get started",
+        "title": "Setting up copy trading on Polymarket via CopyOdds",
+        "intro": "You can start from the web app or the Telegram bot. Typical setup is under 10 minutes.",
+        "steps": {
+          "open": {
+            "title": "Open CopyOdds",
+            "body": "Launch the <app>web app</app> or open the official Telegram bot at <telegram>@copyodds_bot</telegram>."
+          },
+          "account": {
+            "title": "Create your account and fund it",
+            "body": "Sign in and deposit so copy orders have a balance to work with."
+          },
+          "pick": {
+            "title": "Pick a wallet to copy",
+            "body": "Browse the <leaderboard>smart-money leaderboard</leaderboard>, or paste any Polymarket 0x address to analyze it — you are not limited to names on the board."
+          },
+          "backtest": {
+            "title": "Backtest before you copy",
+            "body": "Inspect return curves, drawdowns, win-rate context, and activity. A profitable streak with ugly drawdowns is a different product than a consistent, copy-suitable wallet."
+          },
+          "activate": {
+            "title": "Set risk controls and activate",
+            "body": "Cap max position size, per-market exposure, and total copy budget. Then turn copy trading on — CopyOdds mirrors fills inside those guardrails from that point forward."
+          }
+        }
+      },
+      "pick": {
+        "kicker": "Selection",
+        "title": "How to pick which wallet to copy",
+        "intro": "Headline PnL is a starting point, not a thesis. CopyOdds is built so you can reject wallets that look good on a leaderboard screenshot and fail under a curve.",
+        "items": {
+          "consistency": {
+            "title": "Consistency over spikes",
+            "body": "Prefer wallets with repeatable performance. One outsized win can dominate all-time PnL and still be a poor copy target."
+          },
+          "history": {
+            "title": "Enough trade history",
+            "body": "A high win rate on a handful of bets is noise. More trades — and live activity — make the stats meaningful."
+          },
+          "trend": {
+            "title": "Recent PnL and copy-fit",
+            "body": "All-time numbers lag. Check the latest window, drawdowns, and whether the backtest still looks copy-suitable."
+          },
+          "diversity": {
+            "title": "Market diversity",
+            "body": "Wallets that only sit in one event concentrate risk. Traders who work across categories are usually easier to size around."
+          }
+        }
+      },
+      "risks": {
+        "kicker": "Risk",
+        "title": "What are the risks?",
+        "intro": "Copy trading does not remove market risk — it relocates the research. You are trusting the wallet you follow. Past performance does not guarantee future results, and a strong win rate still means a large share of trades lose.",
+        "items": {
+          "judgment": {
+            "title": "You inherit their mistakes",
+            "body": "If the lead wallet is wrong, late, or over-sized, a 1:1 mirror copies that too. Treat copy as a process, not a signal to turn off thinking."
+          },
+          "limits": {
+            "title": "Use hard caps",
+            "body": "Set a maximum position per trade, a per-market cap, and a total copy budget before you activate. CopyOdds enforces those rules on every mirrored action."
+          },
+          "diversify": {
+            "title": "Don't copy only one wallet",
+            "body": "Following two or three uncorrelated wallets usually beats putting the entire copy budget on a single address."
+          }
+        }
+      },
+      "vsManual": {
+        "kicker": "Comparison",
+        "title": "The advantage over manual trading",
+        "p1": "Manual Polymarket trading means finding markets, researching outcomes, watching wallets, and executing fast enough to keep a usable price. Copy trading automates the last mile: when a followed wallet trades, the copy can fire inside your limits without you sitting on the book.",
+        "p2": "CopyOdds adds the research layer most copy bots skip — AI scoring, address analysis, and backtest before you subscribe — and ships it <github>open source</github> so you can inspect how ranking and execution work."
+      },
+      "faq": {
+        "kicker": "FAQ",
+        "title": "Copy trade Polymarket — common questions",
+        "items": [
+          {
+            "q": "Does Polymarket have built-in copy trading?",
+            "a": "No. Polymarket does not include a native follow-or-copy feature. CopyOdds adds copy trading on top of public on-chain wallet activity, with ranking, backtest, and risk controls."
+          },
+          {
+            "q": "How does CopyOdds copy a Polymarket wallet?",
+            "a": "You pick a wallet from the leaderboard or paste a 0x address, review its backtest, set position and market caps, then activate. When that wallet trades, CopyOdds can mirror the action inside those rules."
+          },
+          {
+            "q": "Is CopyOdds open source?",
+            "a": "Yes. The web app and backend services are public on GitHub under Apache-2.0, so ranking logic and copy workflows can be audited."
+          },
+          {
+            "q": "Do I have to copy a leaderboard wallet?",
+            "a": "No. The leaderboard is a starting point. You can analyze any Polymarket 0x address and decide whether it is copy-suitable before you subscribe."
+          }
+        ]
+      },
+      "cta": {
+        "kicker": "Start",
+        "title": "Start copy trading Polymarket",
+        "body": "Open the app to rank wallets, or jump into the Telegram bot. Set your limits first — then let CopyOdds mirror the wallets you actually researched.",
+        "hint": "Already trading on Polymarket? Connect CopyOdds and copy with guardrails instead of chasing fills by hand."
+      }
+    }
+  },
   "seo": {
     "home": {
       "title": "CopyOdds | Open Source Polymarket Trading — Smart Money & Wallet Analysis",
@@ -1043,6 +1234,16 @@
       "title": "{{name}} | Polymarket Wallet Analysis | CopyOdds",
       "description": "Analyze {{name}} on Polymarket: smart-money metrics, PnL curves, drawdowns, and copy-trading fit from wallet address research.",
       "keywords": "Polymarket, wallet analysis, address analysis, smart money, copy trading, backtest, CopyOdds"
+    },
+    "blog": {
+      "title": "CopyOdds Blog | Polymarket Copy Trading Guides",
+      "description": "Guides for copy trading on Polymarket: smart-money discovery, wallet analysis, backtest, and automated mirroring with risk controls.",
+      "keywords": "Polymarket, copy trading, CopyOdds, blog, smart money, wallet analysis, guide"
+    },
+    "copyTrade": {
+      "title": "Copy Trade Polymarket: Mirror Top Wallets Automatically | CopyOdds",
+      "description": "Polymarket has no built-in copy trading. Learn how CopyOdds ranks smart-money wallets, backtests copy-fit, and mirrors trades with position caps you control.",
+      "keywords": "copy trade Polymarket, Polymarket copy trading, copy trading, smart money, wallet analysis, CopyOdds, mirror wallets, prediction market"
     }
   },
   "errors": {

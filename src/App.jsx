@@ -4,6 +4,8 @@ import { defaultLocale, locales } from './i18n/constants'
 import { parsePathLocale } from './i18n/path'
 import { HomePage } from './pages/HomePage'
 import { BacktestPage } from './pages/BacktestPage'
+import { BlogIndexPage } from './pages/BlogIndexPage'
+import { CopyTradeGuidePage } from './pages/CopyTradeGuidePage'
 import { PartnerGuidePage } from './pages/PartnerGuidePage'
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage'
 function isHomeRoutePath(pathname) {
@@ -40,7 +42,9 @@ function App() {
     if (
       pathnameWithoutLocale.startsWith('/backtest/') ||
       pathnameWithoutLocale === '/partners' ||
-      pathnameWithoutLocale === '/privacy'
+      pathnameWithoutLocale === '/privacy' ||
+      pathnameWithoutLocale === '/blog' ||
+      pathnameWithoutLocale.startsWith('/blog/')
     ) {
       scrollWindowToTop()
     }
@@ -75,6 +79,18 @@ function App() {
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
         {nonDefaultLocales.map((locale) => (
           <Route key={`${locale}-privacy`} path={`/${locale}/privacy`} element={<PrivacyPolicyPage />} />
+        ))}
+        <Route path="/blog" element={<BlogIndexPage />} />
+        {nonDefaultLocales.map((locale) => (
+          <Route key={`${locale}-blog`} path={`/${locale}/blog`} element={<BlogIndexPage />} />
+        ))}
+        <Route path="/blog/copy-trade-polymarket" element={<CopyTradeGuidePage />} />
+        {nonDefaultLocales.map((locale) => (
+          <Route
+            key={`${locale}-copy-trade`}
+            path={`/${locale}/blog/copy-trade-polymarket`}
+            element={<CopyTradeGuidePage />}
+          />
         ))}
         <Route path="/" element={shellActive ? <EmptyHomeRoute /> : <HomePage visible />} />
         {nonDefaultLocales.map((locale) => (
