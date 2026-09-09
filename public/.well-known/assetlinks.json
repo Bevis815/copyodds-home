@@ -1,0 +1,16 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.copyodds.app",
+      "sha256_cert_fingerprints": [
+        "8E:41:7A:9D:C8:CE:53:96:E6:C8:75:11:47:74:2E:C1:63:87:2A:52:B3:12:AA:DF:24:A2:60:60:0A:78:29:9F",
+        "5C:53:B1:03:92:87:86:02:E7:2E:52:2A:41:7B:AC:43:ED:52:3C:25:65:BD:18:E1:7E:5C:FB:3E:E1:7C:ED:5B"
+      ]
+    }
+  }
+]
