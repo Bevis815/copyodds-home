@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { SITE } from '../lib/site'
 import { useGitHubStats } from '../hooks/useGitHubStats'
+import { useLocale } from '../hooks/useLocale'
 import { formatNumber } from '../utils/format'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { SupportFloatingButton } from './SupportEntry'
@@ -12,6 +13,7 @@ import { IconGitHub, IconStar, IconTelegram, IconX } from './ui/Icons'
 const LOGO_SRC = '/home-logo.jpg'
 
 const NAV = [
+  { href: 'cooperation', key: 'cooperation', internal: true },
   { href: '#product', key: 'product' },
   { href: '#features', key: 'features' },
   { href: 'docs', key: 'docs', external: true },
@@ -21,7 +23,8 @@ const NAV = [
   { href: '#community', key: 'community' },
 ]
 
-function resolveNavHref(item) {
+function resolveNavHref(item, localizePath) {
+  if (item.href === 'cooperation') return localizePath(SITE.docs.cooperation)
   if (item.href === 'docs') return SITE.docs.home
   if (item.href === 'api') return SITE.docs.api
   return item.href
@@ -48,6 +51,7 @@ function HeaderLogo({ href, logoAlt, logoHomeAria }) {
 
 export function Header({ logoHref = '#top', fullWidth = false, compact = false }) {
   const { t } = useTranslation()
+  const { localizePath } = useLocale()
   const { stats } = useGitHubStats()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -102,7 +106,19 @@ export function Header({ logoHref = '#top', fullWidth = false, compact = false }
           {!compact ? (
             <nav className="site-nav" aria-label={t('common.primaryNavAria')}>
               {NAV.map((item) => {
-                const href = resolveNavHref(item)
+                const href = resolveNavHref(item, localizePath)
+                if (item.internal) {
+                  return (
+                    <Link
+                      key={item.key}
+                      className="site-nav__link site-nav__link--highlight interactive-focus"
+                      to={href}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {t(`landing.nav.${item.key}`)}
+                    </Link>
+                  )
+                }
                 return (
                   <a
                     key={item.key}
@@ -177,7 +193,14 @@ export function Header({ logoHref = '#top', fullWidth = false, compact = false }
         {!compact && menuOpen ? (
           <div className="mobile-nav landing-shell" id="mobile-nav">
             {NAV.map((item) => {
-              const href = resolveNavHref(item)
+              const href = resolveNavHref(item, localizePath)
+              if (item.internal) {
+                return (
+                  <Link key={item.key} to={href} onClick={() => setMenuOpen(false)}>
+                    {t(`landing.nav.${item.key}`)}
+                  </Link>
+                )
+              }
               return (
                 <a
                   key={item.key}

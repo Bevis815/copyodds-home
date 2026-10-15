@@ -2,6 +2,8 @@ import { APP_URL, loginUrl, leaderboardUrl } from './app-links'
 
 /** Official open-source repos and community links for the marketing site. */
 const BANNER_IMAGE =
+  'https://copyodds-media-1442243915.cos.ap-singapore.myqcloud.com/images/copyodds-b2.png?v=2016x780'
+const OG_IMAGE =
   'https://copyodds-media-1442243915.cos.ap-singapore.myqcloud.com/images/copyodds-banner.png?v=1920x1080'
 
 export const SITE = {
@@ -10,9 +12,11 @@ export const SITE = {
   url: 'https://copyodds.io',
   logo: 'https://copyodds.io/logo.jpg',
   bannerImage: BANNER_IMAGE,
-  bannerWidth: 1920,
-  bannerHeight: 1080,
-  ogImage: BANNER_IMAGE,
+  bannerWidth: 2016,
+  bannerHeight: 780,
+  ogImage: OG_IMAGE,
+  ogImageWidth: 1920,
+  ogImageHeight: 1080,
   twitterHandle: '@copyodds',
   appUrl: APP_URL,
   loginUrl: loginUrl(),
@@ -42,6 +46,7 @@ export const SITE = {
     home: 'https://github.com/Copyodds/copyodds-web/tree/main/docs',
     api: 'https://github.com/Copyodds/copyodds-services/tree/main/docs',
     partners: '/partners',
+    cooperation: '/cooperation',
     roadmap: 'https://github.com/Copyodds/copyodds-web/issues',
     blog: '/blog',
     releases: 'https://github.com/Copyodds/copyodds-web/releases',

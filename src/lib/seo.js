@@ -176,7 +176,7 @@ export function buildJsonLd({ title, description, canonical, locale, page, faqIt
 
   const graph = [organization, website, software, webpage]
 
-  if ((page === 'home' || page === 'copyTrade') && Array.isArray(faqItems) && faqItems.length > 0) {
+  if ((page === 'home' || page === 'copyTrade' || page === 'cooperation') && Array.isArray(faqItems) && faqItems.length > 0) {
     graph.push({
       '@type': 'FAQPage',
       '@id': `${canonical}#faq`,
@@ -192,7 +192,7 @@ export function buildJsonLd({ title, description, canonical, locale, page, faqIt
     })
   }
 
-  if (page === 'partners' || page === 'privacy' || page === 'blog' || page === 'backtest') {
+  if (page === 'partners' || page === 'cooperation' || page === 'privacy' || page === 'blog' || page === 'backtest') {
     graph.push({
       '@type': 'BreadcrumbList',
       itemListElement: [
@@ -268,8 +268,8 @@ export function applyDocumentSeo({
   upsertMeta('property', 'og:url', canonical)
   upsertMeta('property', 'og:image', ogImageUrl())
   upsertMeta('property', 'og:image:alt', title)
-  if (SITE.bannerWidth) upsertMeta('property', 'og:image:width', String(SITE.bannerWidth))
-  if (SITE.bannerHeight) upsertMeta('property', 'og:image:height', String(SITE.bannerHeight))
+  if (SITE.ogImageWidth) upsertMeta('property', 'og:image:width', String(SITE.ogImageWidth))
+  if (SITE.ogImageHeight) upsertMeta('property', 'og:image:height', String(SITE.ogImageHeight))
   upsertMeta('property', 'og:site_name', SITE.name)
   upsertMeta('property', 'og:locale', SEO_LOCALES[locale]?.og ?? 'en_US')
 

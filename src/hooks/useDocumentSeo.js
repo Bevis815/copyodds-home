@@ -10,7 +10,7 @@ function readFaqItems(t, key) {
 }
 
 /**
- * @param {{ page: 'home' | 'partners' | 'privacy' | 'backtest' | 'blog' | 'copyTrade', enabled?: boolean, name?: string, wallet?: string }} options
+ * @param {{ page: 'home' | 'partners' | 'cooperation' | 'privacy' | 'backtest' | 'blog' | 'copyTrade', enabled?: boolean, name?: string, wallet?: string }} options
  */
 export function useDocumentSeo({ page, enabled = true, name, wallet } = { page: 'home' }) {
   const { t, i18n } = useTranslation()
@@ -35,7 +35,9 @@ export function useDocumentSeo({ page, enabled = true, name, wallet } = { page: 
         ? readFaqItems(t, 'landing.faq.items')
         : page === 'copyTrade'
           ? readFaqItems(t, 'blog.copyTrade.faq.items')
-          : []
+          : page === 'cooperation'
+            ? readFaqItems(t, 'cooperation.faq.items')
+            : []
 
     applyDocumentSeo({
       title,

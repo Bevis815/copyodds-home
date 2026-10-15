@@ -5,6 +5,7 @@ import { parsePathLocale } from './i18n/path'
 import { HomePage } from './pages/HomePage'
 import { BacktestPage } from './pages/BacktestPage'
 import { BlogIndexPage } from './pages/BlogIndexPage'
+import { CooperationPage } from './pages/CooperationPage'
 import { CopyTradeGuidePage } from './pages/CopyTradeGuidePage'
 import { PartnerGuidePage } from './pages/PartnerGuidePage'
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage'
@@ -42,6 +43,7 @@ function App() {
     if (
       pathnameWithoutLocale.startsWith('/backtest/') ||
       pathnameWithoutLocale === '/partners' ||
+      pathnameWithoutLocale === '/cooperation' ||
       pathnameWithoutLocale === '/privacy' ||
       pathnameWithoutLocale === '/blog' ||
       pathnameWithoutLocale.startsWith('/blog/')
@@ -75,6 +77,10 @@ function App() {
         <Route path="/partners" element={<PartnerGuidePage />} />
         {nonDefaultLocales.map((locale) => (
           <Route key={`${locale}-partners`} path={`/${locale}/partners`} element={<PartnerGuidePage />} />
+        ))}
+        <Route path="/cooperation" element={<CooperationPage />} />
+        {nonDefaultLocales.map((locale) => (
+          <Route key={`${locale}-cooperation`} path={`/${locale}/cooperation`} element={<CooperationPage />} />
         ))}
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
         {nonDefaultLocales.map((locale) => (

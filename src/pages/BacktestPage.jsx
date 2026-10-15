@@ -981,7 +981,7 @@ function BacktestChart({
               x2={CHART_WIDTH - CHART_PADDING}
               y1={geometry.benchmarkY}
               y2={geometry.benchmarkY}
-              stroke="rgba(147,197,253,0.45)"
+              stroke="rgba(246,217,126,0.45)"
               strokeDasharray="5 7"
               strokeWidth="1.5"
             />
@@ -990,7 +990,7 @@ function BacktestChart({
           <path
             d={geometry.linePath}
             fill="none"
-            stroke="#DDF247"
+            stroke="#F5C542"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="3.5"
@@ -1033,12 +1033,12 @@ function BacktestChart({
               <circle
                 cx={coordinates[hoverIndex].x}
                 cy={coordinates[hoverIndex].y}
-                fill="rgba(221,242,71,0.18)"
+                fill="rgba(245,197,66,0.18)"
                 r="12"
                 stroke="rgba(248,217,120,0.55)"
                 strokeWidth="1.5"
               />
-              <circle cx={coordinates[hoverIndex].x} cy={coordinates[hoverIndex].y} fill="#DDF247" r="5" />
+              <circle cx={coordinates[hoverIndex].x} cy={coordinates[hoverIndex].y} fill="#F5C542" r="5" />
               <circle cx={coordinates[hoverIndex].x} cy={coordinates[hoverIndex].y} fill="#0b0f14" r="2" />
             </g>
           ) : null}
@@ -1052,7 +1052,7 @@ function BacktestChart({
                 stroke="rgba(255,255,255,0.12)"
                 strokeDasharray="6 8"
               />
-              <circle cx={geometry.marker.x} cy={geometry.marker.y} fill="#DDF247" r="7" />
+              <circle cx={geometry.marker.x} cy={geometry.marker.y} fill="#F5C542" r="7" />
               <circle cx={geometry.marker.x} cy={geometry.marker.y} fill="#0b0f14" r="3" />
             </g>
           ) : null}
@@ -1569,8 +1569,8 @@ export function BacktestPage() {
 
   return (
     <div className="relative min-h-screen">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.16),transparent_62%)]" />
-      <div className="pointer-events-none absolute right-[-10rem] top-24 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.12),transparent_68%)] blur-3xl" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_top,rgba(245,197,66,0.16),transparent_62%)]" />
+      <div className="pointer-events-none absolute right-[-10rem] top-24 h-80 w-80 rounded-full bg-[radial-gradient(circle,rgba(245,197,66,0.12),transparent_68%)] blur-3xl" />
       <div className="pointer-events-none absolute left-[-8rem] top-[28rem] h-72 w-72 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.06),transparent_70%)] blur-3xl" />
 
       <Header logoHref={localizePath('/')} compact />

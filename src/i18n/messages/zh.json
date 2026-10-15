@@ -189,6 +189,7 @@
       "menu": "打开菜单"
     },
     "nav": {
+      "cooperation": "商务合作",
       "product": "产品",
       "features": "功能",
       "docs": "文档",
@@ -219,7 +220,14 @@
       "analyzePlaceholder": "粘贴 0x 钱包地址",
       "analyzeCta": "分析",
       "analyzeHint": "查看任意地址的盈亏曲线、回撤与跟单适配度。",
-      "analyzeAddressOnly": "只能分析钱包地址，不支持交易者名称。"
+      "analyzeAddressOnly": "只能分析钱包地址，不支持交易者名称。",
+      "recruit": {
+        "title": "全球招募合作伙伴",
+        "body": "只要你有团队，告诉我们，一起合作共赢。",
+        "cta": "联系我们",
+        "learnMore": "了解合作方案",
+        "bannerAlt": "CopyOdds 全球招募合作伙伴：只要你有团队，联系我们，合作共赢"
+      }
     },
     "heroBoard": {
       "aria": "顶尖交易者排行榜",
@@ -1219,11 +1227,112 @@
       }
     }
   },
+  "cooperation": {
+    "breadcrumb": "商务合作",
+    "breadcrumbAria": "面包屑导航",
+    "hero": {
+      "badge": "全球招募 · Global Partners",
+      "titleLine1": "有团队，就来谈合作",
+      "titleHighlight": "CopyOdds 与你共赢",
+      "subtitle": "无论你是团队长、社群主、KOL、渠道代理还是交易工作室，只要你有团队和用户，告诉我们，我们提供高佣金、实时数据、营销物料与技术支持，一起把 Polymarket 跟单市场做大。",
+      "primaryCta": "立即联系商务",
+      "secondaryCta": "查看合作方式"
+    },
+    "stats": {
+      "commission": { "value": "70%", "label": "最高佣金比例" },
+      "languages": { "value": "6 种", "label": "语言覆盖全球市场" },
+      "data": { "value": "实时", "label": "业绩与结算数据" },
+      "manager": { "value": "1 对 1", "label": "专属商务对接" }
+    },
+    "audience": {
+      "eyebrow": "我们在找谁",
+      "title": "只要你有团队，就有合作空间",
+      "body": "不限地区、不限规模。只要你能触达对预测市场、加密交易或体育赛事感兴趣的用户，我们都欢迎。",
+      "items": {
+        "team": { "title": "团队长 / 交易团队", "body": "带着自己的成员和客户而来，按团队整体业绩获得分成，团队越大收益越高。" },
+        "kol": { "title": "KOL / 内容创作者", "body": "在 X、YouTube、Telegram、TikTok 等平台有影响力？用专属链接把流量变成长期收益。" },
+        "agency": { "title": "渠道代理 / 推广公司", "body": "拥有投放与地推资源，可申请区域代理，获得更高阶梯佣金与独立后台。" },
+        "community": { "title": "社群主 / 社区运营", "body": "运营 Telegram、Discord、微信等社群，为成员提供跟单工具，同时获得持续回报。" },
+        "studio": { "title": "交易工作室 / 量化团队", "body": "需要聪明钱数据、钱包分析与自动执行能力？可以深度合作或接入我们的开源服务。" },
+        "developer": { "title": "开发者 / 技术伙伴", "body": "基于开源代码和 Telegram Mini App 搭建自己的品牌入口，我们提供部署与技术支持。" }
+      }
+    },
+    "benefits": {
+      "eyebrow": "合作权益",
+      "title": "你负责带团队，其余交给我们",
+      "body": "从产品、数据到结算和物料，CopyOdds 提供完整的合作支持体系。",
+      "items": {
+        "commission": { "title": "高额佣金，最高 70%", "body": "按团队规模与推广质量设置阶梯比例，业绩越好分成越高。" },
+        "dashboard": { "title": "实时数据后台", "body": "邀请人数、交易量与佣金实时可查，每一笔收益都清清楚楚。" },
+        "materials": { "title": "营销物料支持", "body": "提供多语言 Banner、海报、文案与活动方案，开箱即用。" },
+        "whiteLabel": { "title": "品牌化 Telegram 入口", "body": "可配置你自己的 Telegram 机器人与 Mini App，打造团队专属品牌。" },
+        "settlement": { "title": "透明结算", "body": "结算规则事先约定、数据公开可核对，长期合作更安心。" },
+        "global": { "title": "全球市场覆盖", "body": "产品支持中、英、法、俄、西、印尼 6 种语言，方便你开拓海外用户。" }
+      }
+    },
+    "models": {
+      "eyebrow": "合作方式",
+      "title": "三种合作模式，按需选择",
+      "body": "以下为常见方案，具体条款可根据你的团队情况一对一商定。",
+      "featured": "团队首选",
+      "guideLink": "查看机器人配置指南",
+      "items": {
+        "referral": {
+          "title": "推广分佣",
+          "fit": "适合：KOL、内容创作者、个人推广者",
+          "points": ["专属邀请链接，零门槛开通", "用户交易即产生佣金", "实时查看推广数据"]
+        },
+        "agent": {
+          "title": "团队代理",
+          "fit": "适合：团队长、社群主、渠道代理",
+          "points": ["按团队整体业绩阶梯分成，最高 70%", "支持多级团队管理", "专属商务经理全程对接"]
+        },
+        "whiteLabel": {
+          "title": "品牌联合 / 白标",
+          "fit": "适合：交易工作室、技术团队、大型社区",
+          "points": ["自有品牌的 Telegram 机器人与 Mini App", "基于开源代码灵活定制", "技术部署与运维支持"]
+        }
+      }
+    },
+    "steps": {
+      "eyebrow": "合作流程",
+      "title": "四步开启合作",
+      "body": "从联系到上线，最快当天即可开始推广。",
+      "items": {
+        "contact": { "title": "联系我们", "body": "通过 Telegram 或 WhatsApp 联系商务，简单介绍你的团队与资源。" },
+        "plan": { "title": "沟通方案", "body": "根据团队规模与推广渠道，确定合作模式与佣金比例。" },
+        "setup": { "title": "开通账户", "body": "开通合作伙伴账户，获取专属链接、数据后台与推广物料。" },
+        "grow": { "title": "推广共赢", "body": "开始推广，实时查看业绩，按约定周期结算佣金。" }
+      }
+    },
+    "faq": {
+      "eyebrow": "常见问题",
+      "title": "合作常见问题",
+      "body": "没有找到答案？直接联系商务即可。",
+      "items": [
+        { "q": "需要多大规模的团队才能合作？", "a": "没有硬性门槛。个人推广者可以从推广分佣开始，有一定规模的团队可以直接申请团队代理，获得更高比例。" },
+        { "q": "佣金比例是多少？", "a": "佣金比例根据合作模式、团队规模与推广质量设置阶梯，最高可达 70%。具体比例会在沟通方案时一对一确认。" },
+        { "q": "佣金如何结算？", "a": "结算周期与方式在合作开始前约定，你可以在数据后台实时查看邀请、交易与佣金明细，方便核对。" },
+        { "q": "不在中国 / 不会中文可以合作吗？", "a": "可以。我们面向全球招募合作伙伴，产品支持 6 种语言，商务可以使用中文或英文沟通。" },
+        { "q": "可以用自己的品牌吗？", "a": "可以。通过品牌联合 / 白标方案，你可以配置自己的 Telegram 机器人与 Mini App，我们提供部署指南与技术支持。" }
+      ]
+    },
+    "cta": {
+      "title": "有团队？现在就聊聊",
+      "body": "告诉我们你的团队规模、所在地区和推广渠道，商务会尽快与你联系，量身定制合作方案。",
+      "hint": "工作时间内通常会很快回复，请注明「商务合作」。"
+    }
+  },
   "seo": {
     "home": {
       "title": "CopyOdds | Polymarket 开源交易平台 — 聪明钱发现与地址分析",
       "description": "CopyOdds 是面向 Polymarket 的开源 AI 交易平台。发现聪明钱、分析钱包地址、回测跟单表现，并自动执行交易。",
       "keywords": "Polymarket, CopyOdds, 开源, 交易, 聪明钱, 地址分析, 钱包分析, 跟单, 预测市场, 排行榜, copy trading, smart money"
+    },
+    "cooperation": {
+      "title": "全球招募合作伙伴 · 商务合作 | CopyOdds",
+      "description": "CopyOdds 全球招募团队长、KOL、社群主与渠道代理：最高 70% 佣金、实时数据后台、营销物料与品牌化 Telegram 入口。有团队，就来合作共赢。",
+      "keywords": "CopyOdds, 商务合作, 合作伙伴, 代理, 团队招募, 推广分佣, 白标, Polymarket, 跟单"
     },
     "partners": {
       "title": "合作伙伴 Telegram 指南 | CopyOdds",

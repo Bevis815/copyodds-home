@@ -15,6 +15,7 @@ export function Footer({ fullWidth = false, links = [] }) {
     { href: SITE.github.web.url, label: 'GitHub', external: true },
     { href: SITE.social.x, label: 'X', external: true },
     { href: SITE.social.telegram, label: t('landing.community.telegramTitle'), external: true },
+    { href: localizePath(SITE.docs.cooperation), label: t('cooperation.breadcrumb') },
     { href: localizePath(SITE.docs.partners), label: t('partnerGuide.breadcrumb') },
     { href: localizePath(SITE.docs.blog), label: t('landing.community.blogTitle') },
     { href: `${localizePath('/')}#faq`, label: t('landing.nav.faq') },

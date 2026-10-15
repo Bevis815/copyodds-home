@@ -189,6 +189,7 @@
       "menu": "Open menu"
     },
     "nav": {
+      "cooperation": "Partnership",
       "product": "Product",
       "features": "Features",
       "docs": "Docs",
@@ -219,7 +220,14 @@
       "analyzePlaceholder": "Paste a 0x wallet address",
       "analyzeCta": "Analyze",
       "analyzeHint": "Open PnL curves, drawdowns, and copy-fit for any wallet.",
-      "analyzeAddressOnly": "Only a wallet address can be analyzed — names are not supported."
+      "analyzeAddressOnly": "Only a wallet address can be analyzed — names are not supported.",
+      "recruit": {
+        "title": "Global Partner Recruitment",
+        "body": "Have a team? Tell us — let's grow and win together.",
+        "cta": "Contact Us",
+        "learnMore": "See partnership plans",
+        "bannerAlt": "CopyOdds global partner recruitment — have a team? Contact us and win together"
+      }
     },
     "heroBoard": {
       "aria": "Top traders leaderboard",
@@ -1214,11 +1222,112 @@
       }
     }
   },
+  "cooperation": {
+    "breadcrumb": "Partnership",
+    "breadcrumbAria": "Breadcrumb",
+    "hero": {
+      "badge": "Global Partner Recruitment",
+      "titleLine1": "Have a team? Let's talk.",
+      "titleHighlight": "Grow and win with CopyOdds.",
+      "subtitle": "Team leaders, community owners, KOLs, agencies, and trading studios — if you have a team and an audience, tell us. We provide high commission, real-time data, marketing materials, and technical support so we can grow the Polymarket copy-trading market together.",
+      "primaryCta": "Contact Partnerships",
+      "secondaryCta": "See partnership models"
+    },
+    "stats": {
+      "commission": { "value": "70%", "label": "Max commission rate" },
+      "languages": { "value": "6", "label": "Languages for global markets" },
+      "data": { "value": "Real-time", "label": "Performance & settlement data" },
+      "manager": { "value": "1-on-1", "label": "Dedicated partner manager" }
+    },
+    "audience": {
+      "eyebrow": "Who we're looking for",
+      "title": "If you have a team, there's room to partner",
+      "body": "Any region, any size. If you can reach people interested in prediction markets, crypto trading, or sports, we want to hear from you.",
+      "items": {
+        "team": { "title": "Team leaders / trading teams", "body": "Bring your members and clients, earn on your team's total volume — the bigger the team, the bigger the share." },
+        "kol": { "title": "KOLs / content creators", "body": "Have reach on X, YouTube, Telegram, or TikTok? Turn your audience into long-term income with your own link." },
+        "agency": { "title": "Agencies / growth partners", "body": "Run paid or offline acquisition? Apply as a regional agent for higher tiers and a dedicated dashboard." },
+        "community": { "title": "Community owners", "body": "Run Telegram, Discord, or other groups? Give members copy-trading tools and earn ongoing rewards." },
+        "studio": { "title": "Trading studios / quant teams", "body": "Need smart-money data, wallet analysis, and automated execution? Partner deeply or build on our open-source services." },
+        "developer": { "title": "Developers / tech partners", "body": "Launch your own branded entry on our open-source code and Telegram Mini App — we help with deployment." }
+      }
+    },
+    "benefits": {
+      "eyebrow": "Partner benefits",
+      "title": "You bring the team, we handle the rest",
+      "body": "Product, data, settlement, and marketing — CopyOdds gives partners a complete support system.",
+      "items": {
+        "commission": { "title": "Up to 70% commission", "body": "Tiered rates based on team size and traffic quality — better performance, bigger share." },
+        "dashboard": { "title": "Real-time dashboard", "body": "Track invites, volume, and commission live, so every payout is easy to verify." },
+        "materials": { "title": "Marketing materials", "body": "Multilingual banners, posters, copy, and campaign ideas ready to use." },
+        "whiteLabel": { "title": "Branded Telegram entry", "body": "Set up your own Telegram bot and Mini App to build a brand for your team." },
+        "settlement": { "title": "Transparent settlement", "body": "Rules agreed up front and data you can check, built for long-term partnerships." },
+        "global": { "title": "Global coverage", "body": "Available in English, Chinese, French, Russian, Spanish, and Indonesian to help you reach users worldwide." }
+      }
+    },
+    "models": {
+      "eyebrow": "Partnership models",
+      "title": "Three ways to partner",
+      "body": "Typical setups below — final terms are agreed one-on-one based on your team.",
+      "featured": "Best for teams",
+      "guideLink": "Read the bot setup guide",
+      "items": {
+        "referral": {
+          "title": "Referral",
+          "fit": "For KOLs, creators, and individual promoters",
+          "points": ["Personal invite link, no minimum", "Earn when your users trade", "Live referral stats"]
+        },
+        "agent": {
+          "title": "Team agent",
+          "fit": "For team leaders, community owners, and agencies",
+          "points": ["Tiered share on total team volume, up to 70%", "Multi-level team management", "Dedicated partner manager"]
+        },
+        "whiteLabel": {
+          "title": "Co-brand / white label",
+          "fit": "For trading studios, tech teams, and large communities",
+          "points": ["Your own branded Telegram bot and Mini App", "Customizable open-source code", "Deployment and ops support"]
+        }
+      }
+    },
+    "steps": {
+      "eyebrow": "How it works",
+      "title": "Start in four steps",
+      "body": "From first message to launch — you can start promoting as soon as the same day.",
+      "items": {
+        "contact": { "title": "Contact us", "body": "Message our partnerships team on Telegram or WhatsApp and tell us about your team." },
+        "plan": { "title": "Agree on a plan", "body": "We pick the right model and commission rate for your team size and channels." },
+        "setup": { "title": "Get set up", "body": "Receive your partner account, invite links, dashboard, and marketing kit." },
+        "grow": { "title": "Grow together", "body": "Promote, track results in real time, and get paid on the agreed schedule." }
+      }
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Partnership FAQ",
+      "body": "Can't find your answer? Just message our partnerships team.",
+      "items": [
+        { "q": "How big does my team need to be?", "a": "There's no minimum. Individuals can start with referral; established teams can apply directly as team agents for higher rates." },
+        { "q": "What is the commission rate?", "a": "Rates are tiered by model, team size, and traffic quality, up to 70%. Your exact rate is confirmed one-on-one when we agree on a plan." },
+        { "q": "How is commission paid?", "a": "The settlement schedule and method are agreed before we start, and you can check invites, volume, and commission in your dashboard at any time." },
+        { "q": "Can I partner from outside China or without speaking Chinese?", "a": "Yes. We recruit partners worldwide, the product supports 6 languages, and our team works in English and Chinese." },
+        { "q": "Can I use my own brand?", "a": "Yes. With the co-brand / white-label model you can run your own Telegram bot and Mini App, with our setup guide and technical support." }
+      ]
+    },
+    "cta": {
+      "title": "Have a team? Let's talk now",
+      "body": "Tell us your team size, region, and channels — our partnerships team will get back to you with a plan tailored to you.",
+      "hint": "We usually reply quickly during business hours. Mention \"Partnership\" in your message."
+    }
+  },
   "seo": {
     "home": {
       "title": "CopyOdds | Open Source Polymarket Trading — Smart Money & Wallet Analysis",
       "description": "CopyOdds is an open-source AI trading platform for Polymarket. Discover smart money, analyze wallet addresses, backtest copy trading, and automate execution.",
       "keywords": "Polymarket, CopyOdds, open source, trading, smart money, wallet analysis, copy trading, prediction market, leaderboard, 开源, 交易, 聪明钱, 地址分析"
+    },
+    "cooperation": {
+      "title": "Global Partner Recruitment | CopyOdds Partnerships",
+      "description": "CopyOdds is recruiting team leaders, KOLs, community owners, and agencies worldwide: up to 70% commission, real-time dashboard, marketing kit, and branded Telegram entry. Have a team? Let's win together.",
+      "keywords": "CopyOdds, partnership, affiliate, agent, team recruitment, referral commission, white label, Polymarket, copy trading"
     },
     "partners": {
       "title": "Partner Telegram Guide | CopyOdds",

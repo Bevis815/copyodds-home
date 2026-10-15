@@ -1,13 +1,14 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useLocale } from '../hooks/useLocale'
 import { SITE } from '../lib/site'
+import { getTelegramSupportHref } from '../lib/support'
 import { resolveAnalyzeIdentifier } from '../services/smartMoney'
 import { LiveLeaderboard } from './landing/LiveLeaderboard'
 import { OpenSourceStatsBar } from './landing/OpenSourceStatsBar'
-import { IconSearch, IconSpinner } from './ui/Icons'
+import { IconArrowRight, IconSearch, IconSpinner, IconTelegram } from './ui/Icons'
 
 const ease = [0.22, 1, 0.36, 1]
 const MotionDiv = motion.div
@@ -20,6 +21,8 @@ export function Hero() {
   const [analyzing, setAnalyzing] = useState(false)
   const analyzeWallet = resolveAnalyzeIdentifier(analyzeQuery)
   const analyzeInvalid = Boolean(analyzeQuery.trim()) && !analyzeWallet
+  const recruitHref = getTelegramSupportHref()
+  const cooperationHref = localizePath(SITE.docs.cooperation)
 
   function handleAnalyze(event) {
     event.preventDefault()
@@ -34,16 +37,35 @@ export function Hero() {
     <section className="hero" id="top">
       <div className="landing-shell hero__inner">
         <div className="hero-stage">
-          <img
-            className="hero-stage__img"
-            src={SITE.bannerImage}
-            alt={t('landing.hero.title')}
-            width={SITE.bannerWidth}
-            height={SITE.bannerHeight}
-            decoding="async"
-            fetchPriority="high"
-          />
+          <Link to={cooperationHref}>
+            <img
+              className="hero-stage__img"
+              src={SITE.bannerImage}
+              alt={t('landing.hero.recruit.bannerAlt')}
+              width={SITE.bannerWidth}
+              height={SITE.bannerHeight}
+              decoding="async"
+              fetchPriority="high"
+            />
+          </Link>
           <div className="hero-stage__wash" aria-hidden />
+        </div>
+
+        <div className="hero-recruit">
+          <p className="hero-recruit__text">
+            <strong>{t('landing.hero.recruit.title')}</strong>
+            <span>{t('landing.hero.recruit.body')}</span>
+          </p>
+          <div className="hero-recruit__actions">
+            <Link className="btn-secondary hero-recruit__cta" to={cooperationHref}>
+              {t('landing.hero.recruit.learnMore')}
+              <IconArrowRight className="size-3.5" />
+            </Link>
+            <a className="btn-primary hero-recruit__cta" href={recruitHref} target="_blank" rel="noreferrer">
+              <IconTelegram className="size-4" />
+              {t('landing.hero.recruit.cta')}
+            </a>
+          </div>
         </div>
 
         <MotionDiv
