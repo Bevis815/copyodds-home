@@ -90,7 +90,7 @@ function TraderIdentity({ item, t, locale }) {
       )}
       <div className="min-w-0 grid gap-0 sm:gap-1">
         <a
-          className="block max-w-[min(100%,11rem)] truncate text-[12px] font-semibold leading-tight text-white transition hover:text-[#F8D978] sm:max-w-[160px] sm:text-[15px]"
+          className="block max-w-[min(100%,11rem)] truncate text-[13px] font-semibold leading-tight text-white transition hover:text-[#F8D978] sm:max-w-[160px] sm:text-[16px]"
           href={profileUrl}
           target="_blank"
           rel="noreferrer"
@@ -98,7 +98,7 @@ function TraderIdentity({ item, t, locale }) {
         >
           <strong className="block truncate font-semibold">{displayName}</strong>
         </a>
-        <span className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[10px] text-slate-500 sm:text-xs">
+        <span className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[12px] text-slate-500 sm:text-xs">
           {xUrl ? (
             <a
               className="inline-flex shrink-0 rounded  border-white/10 bg-white/[0.03] p-1 transition hover:border-[#F8D978]/35 hover:bg-white/[0.06]"
@@ -133,7 +133,7 @@ const statShell =
 
 function CompactStat({ label, value, numericValue, variant = 'plain' }) {
   const valueBase =
-    'mt-0.5 whitespace-nowrap text-[0.72rem] font-semibold leading-tight tabular-nums sm:mt-1 sm:text-[0.8rem] md:mt-1.5 md:text-[0.95rem]'
+    'mt-0.5 whitespace-nowrap text-[0.8rem] font-semibold leading-tight tabular-nums sm:mt-1 sm:text-[0.875rem] md:mt-1.5 md:text-[1.02rem]'
 
   let valueClass = `${valueBase} text-slate-200`
 
@@ -151,8 +151,8 @@ function CompactStat({ label, value, numericValue, variant = 'plain' }) {
 
   const labelClass =
     variant === 'currency'
-      ? 'text-[6px] font-semibold uppercase leading-tight tracking-[0.08em] text-emerald-500/55 sm:text-[7px] sm:tracking-[0.12em] md:text-[9px] md:tracking-[0.14em]'
-      : 'text-[6px] font-semibold uppercase leading-tight tracking-[0.08em] text-slate-500 sm:text-[7px] sm:tracking-[0.12em] md:text-[9px] md:tracking-[0.14em]'
+      ? 'text-[6px] font-semibold uppercase leading-tight tracking-[0.08em] text-emerald-500/55 sm:text-[7px] sm:tracking-[0.12em] md:text-[11px] md:tracking-[0.14em]'
+      : 'text-[6px] font-semibold uppercase leading-tight tracking-[0.08em] text-slate-500 sm:text-[7px] sm:tracking-[0.12em] md:text-[11px] md:tracking-[0.14em]'
 
   return (
     <div className={statShell}>
@@ -191,7 +191,7 @@ export function LeaderboardTable({ items, rankBy = 'ALL', listOffset = 0 }) {
               <div className="flex min-w-0 items-start justify-between gap-2 lg:items-center lg:justify-start">
                 <div className="flex min-w-0 flex-1 items-center gap-1.5 sm:gap-3">
                   <span
-                    className={`inline-flex min-h-7 min-w-7 shrink-0 items-center justify-center rounded-full border px-1.5 text-[11px] font-bold sm:min-h-10 sm:min-w-10 sm:px-3 sm:text-sm ${getRankChipClass(listPosition)}`}
+                    className={`inline-flex min-h-7 min-w-7 shrink-0 items-center justify-center rounded-full border px-1.5 text-[13px] font-bold sm:min-h-10 sm:min-w-10 sm:px-3 sm:text-sm ${getRankChipClass(listPosition)}`}
                     title={t('leaderboardTable.rankTitle')}
                   >
                     {listPosition}
@@ -201,7 +201,7 @@ export function LeaderboardTable({ items, rankBy = 'ALL', listOffset = 0 }) {
                   </div>
                 </div>
                 <Link
-                  className="interactive-focus relative shrink-0 rounded-full border border-[#F5C542]/45 bg-[linear-gradient(165deg,rgba(248,217,120,0.22),rgba(184,137,30,0.12))] px-3 py-1.5 text-[11px] font-semibold text-[#FFF1BF] shadow-[0_0_16px_rgba(245,197,66,0.12)] backdrop-blur-[2px] transition active:scale-[0.97] lg:hidden"
+                  className="interactive-focus relative shrink-0 rounded-full border border-[#F5C542]/45 bg-[linear-gradient(165deg,rgba(248,217,120,0.22),rgba(184,137,30,0.12))] px-3 py-1.5 text-[13px] font-semibold text-[#FFF1BF] shadow-[0_0_16px_rgba(245,197,66,0.12)] backdrop-blur-[2px] transition active:scale-[0.97] lg:hidden"
                   to={detailPath}
                   onClick={() => rememberListPreview(item, listPosition, rankBy)}
                 >

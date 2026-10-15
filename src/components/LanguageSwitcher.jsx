@@ -43,7 +43,7 @@ export function LanguageSwitcher({ className = '' }) {
         aria-controls={listId}
         aria-haspopup="listbox"
         onClick={() => setOpen((v) => !v)}
-        className="interactive-focus flex min-w-[7.5rem] items-center justify-between gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[11px] font-medium text-zinc-100 sm:min-w-[9.5rem] sm:px-3.5 sm:py-2 sm:text-xs"
+        className="interactive-focus flex min-w-[7.5rem] items-center justify-between gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[13px] font-medium text-zinc-100 sm:min-w-[9.5rem] sm:px-3.5 sm:py-2 sm:text-xs"
       >
         <span className="truncate">{localeNativeLabels[locale]}</span>
         <svg
@@ -75,7 +75,7 @@ export function LanguageSwitcher({ className = '' }) {
                 type="button"
                 role="option"
                 aria-selected={active}
-                className={`flex w-full items-center justify-between gap-2 px-3 py-2 text-left text-[12px] font-medium transition sm:px-3.5 sm:py-2.5 sm:text-sm ${
+                className={`flex w-full items-center justify-between gap-2 px-3 py-2 text-left text-[13px] font-medium transition sm:px-3.5 sm:py-2.5 sm:text-sm ${
                   active
                     ? 'bg-[#F5C542]/12 text-[#F6D97E]'
                     : 'text-zinc-200 hover:bg-white/[0.06] hover:text-white'

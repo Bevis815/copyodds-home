@@ -56,7 +56,7 @@ export function BacktestShowcase() {
       <div className="landing-backtest-bento">
         <div className="landing-backtest-stage surface-card">
           <div className="landing-backtest-stage__top">
-            <span className="badge-metal rounded-full px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] sm:text-xs">
+            <span className="badge-metal rounded-full px-3 py-1.5 text-[12px] font-semibold uppercase tracking-[0.14em] sm:text-xs">
               {t('landing.backtest.periodBadge')}
             </span>
             <div className="landing-backtest-hero-stat">

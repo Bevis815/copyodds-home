@@ -34,7 +34,7 @@ function RiskFeature({ title, body, icon }) {
         {icon}
       </div>
       <h3 className="mt-3 text-sm font-semibold text-white sm:text-base">{title}</h3>
-      <p className="mt-1.5 text-[13px] leading-6 text-slate-400">{body}</p>
+      <p className="mt-1.5 text-[14px] leading-6 text-slate-400">{body}</p>
     </article>
   )
 }
@@ -54,7 +54,7 @@ export function CopyTradingShowcase() {
         <div className="landing-copy-preview">
           <div className="landing-copy-preview__header">
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#F8D978]">
+              <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#F8D978]">
                 {t('landing.copy.panelKicker')}
               </p>
               <h3 className="mt-1 font-display text-lg font-semibold text-white">AlphaWhale</h3>

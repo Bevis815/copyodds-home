@@ -14,7 +14,7 @@ export function WhyCopyOddsSection() {
           <h2 className="font-display text-[clamp(1.65rem,4vw,2.5rem)] font-semibold leading-[1.12] tracking-[-0.04em] text-white">
             {t('landing.why.title')}
           </h2>
-          <p className="landing-feature__body mt-4 text-[15px] leading-7 text-slate-300 sm:text-base sm:leading-8">
+          <p className="landing-feature__body mt-4 text-[16px] leading-7 text-slate-300 sm:text-base sm:leading-8">
             {t('landing.why.body')}
           </p>
         </div>
@@ -25,7 +25,7 @@ export function WhyCopyOddsSection() {
               <span className="landing-why__bullet" aria-hidden />
               <div>
                 <strong className="block text-sm font-semibold text-white sm:text-base">{point.title}</strong>
-                <p className="mt-1.5 text-[13px] leading-6 text-slate-400 sm:text-sm">{point.body}</p>
+                <p className="mt-1.5 text-[14px] leading-6 text-slate-400 sm:text-sm">{point.body}</p>
               </div>
             </li>
           ))}

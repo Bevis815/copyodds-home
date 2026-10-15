@@ -23,7 +23,7 @@ export function HowItWorksSection() {
             </span>
             <div>
               <h3 className="font-display text-base font-semibold text-white sm:text-lg">{step.title}</h3>
-              <p className="mt-2 text-[13px] leading-6 text-slate-400 sm:text-sm sm:leading-7">{step.body}</p>
+              <p className="mt-2 text-[14px] leading-6 text-slate-400 sm:text-sm sm:leading-7">{step.body}</p>
             </div>
             {index < steps.length - 1 ? (
               <span className="landing-step__connector hidden lg:block" aria-hidden />

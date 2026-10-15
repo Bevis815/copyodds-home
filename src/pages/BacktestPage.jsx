@@ -646,9 +646,9 @@ function formatChartDelta(mode, delta) {
 function InsightCard({ label, value, hint, toneClass = 'text-white' }) {
   return (
     <div className="rounded-xl border border-white/10 bg-black/20 p-2.5 sm:p-3">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">{label}</p>
+      <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">{label}</p>
       <p className={`mt-1 font-display text-base font-semibold sm:text-lg ${toneClass}`}>{value}</p>
-      <p className="mt-1 text-[11px] leading-snug text-slate-500">{hint}</p>
+      <p className="mt-1 text-[13px] leading-snug text-slate-500">{hint}</p>
     </div>
   )
 }
@@ -834,7 +834,7 @@ function BacktestChart({
             <p className="mx-auto mt-3 max-w-[40ch] text-xs leading-relaxed text-slate-300">{emptyCurveFootnote}</p>
           ) : null}
           {availablePeriods.length > 0 ? (
-            <p className="mx-auto mt-2 max-w-[40ch] text-[11px] leading-relaxed text-slate-500">
+            <p className="mx-auto mt-2 max-w-[40ch] text-[13px] leading-relaxed text-slate-500">
               {t('common.apiDataFor', { periods: formatAvailablePeriods(availablePeriods) })}
             </p>
           ) : null}
@@ -849,7 +849,7 @@ function BacktestChart({
       <div className="flex flex-col gap-2.5">
         {chartModeOptions.length > 1 ? (
           <div className="flex flex-wrap items-center gap-1.5">
-            <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+            <span className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
               {t('common.view')}
             </span>
             <div className="flex flex-wrap gap-1.5">
@@ -870,7 +870,7 @@ function BacktestChart({
 
         <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between sm:gap-3">
           <div className="min-w-0 w-full sm:w-auto sm:min-w-0 sm:flex-1">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#F8D978]">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-[#F8D978]">
               {chartMode === 'drawdown'
                 ? t('common.worstDrawdown')
                 : chartMode === 'pnl'
@@ -883,7 +883,7 @@ function BacktestChart({
                 <span className="ml-1.5 text-base font-medium text-slate-500 sm:text-lg">{t('common.idx')}</span>
               ) : null}
             </p>
-            <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+            <p className="mt-2 text-[12px] font-semibold uppercase tracking-[0.16em] text-slate-500">
               {curveSubtitle}
             </p>
           </div>
@@ -910,7 +910,7 @@ function BacktestChart({
             {chartMode === 'drawdown' && drawdownStats ? (
               <div className="w-full min-w-0 max-w-full space-y-2 sm:min-w-[180px] sm:max-w-sm">
                 <div className="rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2 text-left sm:text-right">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('common.currentDrawdown')}
                   </p>
                   <p
@@ -922,7 +922,7 @@ function BacktestChart({
                   </p>
                 </div>
                 <div className="rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2 text-left sm:text-right">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('common.recoveryFromTrough')}
                   </p>
                   <p
@@ -936,12 +936,12 @@ function BacktestChart({
                   >
                     {formatSignedPercent(drawdownStats.recoveryFromTrough)}
                   </p>
-                  <p className="mt-1 text-[10px] leading-snug text-slate-500">{t('common.recoveryHint')}</p>
+                  <p className="mt-1 text-[12px] leading-snug text-slate-500">{t('common.recoveryHint')}</p>
                 </div>
               </div>
             ) : (
               <div className="rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2 text-left sm:text-right">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                   {t('common.windowChange')}
                 </p>
                 <p
@@ -1068,8 +1068,8 @@ function BacktestChart({
                 : 'translate(-50%, calc(-100% - 10px))',
             }}
           >
-            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">{t('common.atPoint')}</p>
-            <p className="mt-1 font-mono text-[11px] text-slate-300">
+            <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">{t('common.atPoint')}</p>
+            <p className="mt-1 font-mono text-[13px] text-slate-300">
               {formatDateTime(coordinates[hoverIndex].ts)}
             </p>
             <p className="mt-1 font-display text-sm font-semibold text-white">
@@ -1084,7 +1084,7 @@ function BacktestChart({
 
       <div className="mt-2.5 flex flex-col gap-1 text-xs text-slate-400 sm:text-sm">
         <div className="flex flex-wrap items-center gap-1.5">
-          <span className="badge-neutral rounded-full px-2.5 py-1 text-[11px] sm:px-3 sm:text-xs">
+          <span className="badge-neutral rounded-full px-2.5 py-1 text-[13px] sm:px-3 sm:text-xs">
             {t('common.periodColon', { period })}
             {curveMeta?.activePeriod &&
             curveMeta?.period &&
@@ -1092,22 +1092,22 @@ function BacktestChart({
               ? t('common.curveActive', { period: curveMeta.activePeriod })
               : ''}
           </span>
-          <span className="badge-neutral rounded-full px-2.5 py-1 text-[11px] sm:px-3 sm:text-xs">
+          <span className="badge-neutral rounded-full px-2.5 py-1 text-[13px] sm:px-3 sm:text-xs">
             {t('common.coverageColon', { coverage })}
           </span>
           <span
-            className={`${coverageState.chip} rounded-full px-2.5 py-1 text-[11px] sm:px-3 sm:text-xs`}
+            className={`${coverageState.chip} rounded-full px-2.5 py-1 text-[13px] sm:px-3 sm:text-xs`}
           >
             {coverageState.label}
           </span>
-          <span className="badge-neutral rounded-full px-2.5 py-1 text-[11px] sm:px-3 sm:text-xs">
+          <span className="badge-neutral rounded-full px-2.5 py-1 text-[13px] sm:px-3 sm:text-xs">
             {t('common.pointsCount', { count: formatNumber(displayPoints.length) })}
           </span>
         </div>
-        <p className="text-[11px] leading-snug text-slate-500 sm:text-xs">
+        <p className="text-[13px] leading-snug text-slate-500 sm:text-xs">
           {t('common.windowColon', { range: formatWindowRange(curveMeta?.startTs, curveMeta?.endTs) })}
         </p>
-        <p className="text-[11px] leading-snug text-slate-500 sm:text-xs">{benchmarkCaption}</p>
+        <p className="text-[13px] leading-snug text-slate-500 sm:text-xs">{benchmarkCaption}</p>
       </div>
     </div>
   )
@@ -1607,7 +1607,7 @@ export function BacktestPage() {
                     </div>
                   )}
                   <div className="min-w-0 flex-1">
-                    <span className="eyebrow text-[10px] sm:text-xs">{t('backtest.heroEyebrow')}</span>
+                    <span className="eyebrow text-[12px] sm:text-xs">{t('backtest.heroEyebrow')}</span>
                     <div className="mt-2 flex flex-wrap items-center gap-2">
                       <h1
                         id="backtest-hero-title"
@@ -1617,26 +1617,26 @@ export function BacktestPage() {
                         {titleText}
                       </h1>
                       {displayLeaderboardRank != null ? (
-                        <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-300 sm:text-xs">
+                        <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[12px] font-semibold uppercase tracking-[0.12em] text-slate-300 sm:text-xs">
                           #{displayLeaderboardRank}
                         </span>
                       ) : null}
                     </div>
                     <div className="mt-2 flex flex-wrap items-center gap-1.5 text-xs text-slate-400 sm:gap-2 sm:text-sm">
-                      <span className="max-w-full break-all rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 font-mono text-[10px] text-slate-300 sm:px-3 sm:text-[11px]">
+                      <span className="max-w-full break-all rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 font-mono text-[12px] text-slate-300 sm:px-3 sm:text-[13px]">
                         {abbreviateWallet(resolvedWallet)}
                       </span>
                       {identity?.joinedAtText ? (
-                        <span className="badge-neutral rounded-full px-2.5 py-1 text-[11px] sm:px-3 sm:py-1.5">
+                        <span className="badge-neutral rounded-full px-2.5 py-1 text-[13px] sm:px-3 sm:py-1.5">
                           {identity.joinedAtText}
                         </span>
                       ) : null}
                       {risk?.source ? (
-                        <span className="badge-metal rounded-full px-2.5 py-1 text-[11px] sm:px-3 sm:py-1.5">
+                        <span className="badge-metal rounded-full px-2.5 py-1 text-[13px] sm:px-3 sm:py-1.5">
                           {risk.source}
                         </span>
                       ) : null}
-                      <span className={`${coverageState.chip} rounded-full px-2.5 py-1 text-[11px] sm:px-3 sm:py-1.5`}>
+                      <span className={`${coverageState.chip} rounded-full px-2.5 py-1 text-[13px] sm:px-3 sm:py-1.5`}>
                         {coverageState.label}
                       </span>
                     </div>
@@ -1694,7 +1694,7 @@ export function BacktestPage() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500 sm:text-xs sm:tracking-[0.2em]">
+                    <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-slate-500 sm:text-xs sm:tracking-[0.2em]">
                       {t('common.smartScore')}
                     </p>
                     <p className="mt-1 font-display text-2xl font-semibold tracking-[-0.03em] text-[#F8D978] sm:text-3xl">
@@ -1702,14 +1702,14 @@ export function BacktestPage() {
                     </p>
                   </div>
                   <div
-                    className={`inline-flex w-fit shrink-0 rounded-full border border-white/10 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] sm:px-2.5 sm:py-1.5 sm:text-xs sm:tracking-[0.12em] ${getRiskTone(riskLevel)}`}
+                    className={`inline-flex w-fit shrink-0 rounded-full border border-white/10 px-2 py-1 text-[12px] font-semibold uppercase tracking-[0.08em] sm:px-2.5 sm:py-1.5 sm:text-xs sm:tracking-[0.12em] ${getRiskTone(riskLevel)}`}
                   >
                     {t('common.riskDot', { level: riskLevel })}
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   <div className="rounded-xl border border-white/10 bg-black/25 px-2.5 py-2 sm:px-3 sm:py-2.5">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                    <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                       {t('common.periodReturn', { period })}
                     </p>
                     <p className={`mt-0.5 text-base font-semibold sm:text-lg ${getValueToneClass(risk?.returnRatio)}`}>
@@ -1719,7 +1719,7 @@ export function BacktestPage() {
                     </p>
                   </div>
                   <div className="rounded-xl border border-white/10 bg-black/25 px-2.5 py-2 sm:px-3 sm:py-2.5">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                    <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                       {t('common.maxDrawdown')}
                     </p>
                     <p className="mt-0.5 text-base font-semibold text-rose-200 sm:text-lg">
@@ -1727,22 +1727,22 @@ export function BacktestPage() {
                     </p>
                   </div>
                 </div>
-                <div className="grid gap-1.5 text-[11px] text-slate-400">
+                <div className="grid gap-1.5 text-[13px] text-slate-400">
                   <div className="flex items-center justify-between gap-2 rounded-lg border border-white/8 bg-black/20 px-2 py-1.5 sm:gap-3 sm:px-2.5">
                     <span className="shrink-0">{t('common.snapshot')}</span>
-                    <strong className="min-w-0 break-words text-right text-[10px] text-slate-200 sm:text-xs">
+                    <strong className="min-w-0 break-words text-right text-[12px] text-slate-200 sm:text-xs">
                       {formatDateTime(meta?.snapshotAt)}
                     </strong>
                   </div>
                   <div className="flex items-center justify-between gap-2 rounded-lg border border-white/8 bg-black/20 px-2 py-1.5 sm:gap-3 sm:px-2.5">
                     <span className="shrink-0">{t('common.scored')}</span>
-                    <strong className="min-w-0 break-words text-right text-[10px] text-slate-200 sm:text-xs">
+                    <strong className="min-w-0 break-words text-right text-[12px] text-slate-200 sm:text-xs">
                       {formatDateTime(meta?.lastScoredAt)}
                     </strong>
                   </div>
                   <div className="flex items-center justify-between gap-2 rounded-lg border border-white/8 bg-black/20 px-2 py-1.5 sm:gap-3 sm:px-2.5">
                     <span className="shrink-0">{t('common.synced')}</span>
-                    <strong className="min-w-0 break-words text-right text-[10px] text-slate-200 sm:text-xs">
+                    <strong className="min-w-0 break-words text-right text-[12px] text-slate-200 sm:text-xs">
                       {formatRelativeTime(meta?.syncedAt)}
                     </strong>
                   </div>
@@ -1874,7 +1874,7 @@ export function BacktestPage() {
                   </div>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-black/20 p-3 sm:p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500 sm:text-xs sm:tracking-[0.18em]">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-slate-500 sm:text-xs sm:tracking-[0.18em]">
                     {t('common.analystSummary')}
                   </p>
                   <div className="mt-2 space-y-2">
@@ -1942,13 +1942,13 @@ export function BacktestPage() {
               </div>
               <div className="mt-3 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-2 xl:grid-cols-4">
                 <div className="rounded-xl border border-white/10 bg-black/20 p-2.5 sm:p-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('common.worstDay')}
                   </p>
                   <p className="mt-1 font-display text-base font-semibold text-rose-200 sm:text-lg">
                     {formatSignedCurrency(profile.backtest?.worstDay?.changeValue)}
                   </p>
-                  <p className="mt-1 text-[11px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
+                  <p className="mt-1 text-[13px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
                     {profile.backtest?.worstDay?.date
                       ? t('backtest.worstDayFoot', {
                           range: formatBacktestRangeLabel(
@@ -1961,13 +1961,13 @@ export function BacktestPage() {
                   </p>
                 </div>
                 <div className="rounded-xl border border-white/10 bg-black/20 p-2.5 sm:p-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('common.bestDay')}
                   </p>
                   <p className="mt-1 font-display text-base font-semibold text-emerald-200 sm:text-lg">
                     {formatSignedCurrency(profile.backtest?.bestDay?.changeValue)}
                   </p>
-                  <p className="mt-1 text-[11px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
+                  <p className="mt-1 text-[13px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
                     {profile.backtest?.bestDay?.date
                       ? t('backtest.bestDayFoot', {
                           range: formatBacktestRangeLabel(
@@ -1980,13 +1980,13 @@ export function BacktestPage() {
                   </p>
                 </div>
                 <div className="rounded-xl border border-white/10 bg-black/20 p-2.5 sm:p-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('common.windowMaxDrawdown')}
                   </p>
                   <p className="mt-1 font-display text-base font-semibold text-rose-200 sm:text-lg">
                     {formatSignedCurrency(peakDrawdownDisplay.value)}
                   </p>
-                  <p className="mt-1 text-[11px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
+                  <p className="mt-1 text-[13px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
                     {peakDrawdownDisplay.rangeLabel
                       ? t(peakDrawdownDisplay.footKey, {
                           range: peakDrawdownDisplay.rangeLabel,
@@ -1996,7 +1996,7 @@ export function BacktestPage() {
                   </p>
                 </div>
                 <div className="rounded-xl border border-white/10 bg-black/20 p-2.5 sm:p-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('common.longestLosingStreak')}
                   </p>
                   <p className="mt-1 font-display text-base font-semibold text-white sm:text-lg">
@@ -2004,7 +2004,7 @@ export function BacktestPage() {
                       ? `${formatNumber(profile.backtest.losingStreaks.longestLosingStreakDays)}d`
                       : '0d'}
                   </p>
-                  <p className="mt-1 text-[11px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
+                  <p className="mt-1 text-[13px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
                     {profile.backtest?.losingStreaks?.longestLosingStreakStartDate
                       ? t('backtest.losingStreakFoot', {
                           range: formatBacktestRangeLabel(
@@ -2020,13 +2020,13 @@ export function BacktestPage() {
 
               <div className="mt-3 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-2 xl:grid-cols-4">
                 <div className="rounded-xl border border-white/10 bg-black/20 p-2.5 sm:p-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('common.rollingWorst7d')}
                   </p>
                   <p className="mt-1 font-display text-base font-semibold text-rose-200 sm:text-lg">
                     {formatSignedCurrency(profile.backtest?.rollingWorst7D?.changeValue)}
                   </p>
-                  <p className="mt-1 text-[11px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
+                  <p className="mt-1 text-[13px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
                     {profile.backtest?.rollingWorst7D?.startDate
                       ? t('backtest.rollingFoot', {
                           range: formatBacktestRangeLabel(
@@ -2039,13 +2039,13 @@ export function BacktestPage() {
                   </p>
                 </div>
                 <div className="rounded-xl border border-white/10 bg-black/20 p-2.5 sm:p-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('common.rollingWorst30d')}
                   </p>
                   <p className="mt-1 font-display text-base font-semibold text-rose-200 sm:text-lg">
                     {formatSignedCurrency(profile.backtest?.rollingWorst30D?.changeValue)}
                   </p>
-                  <p className="mt-1 text-[11px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
+                  <p className="mt-1 text-[13px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
                     {profile.backtest?.rollingWorst30D?.startDate
                       ? t('backtest.rollingFoot', {
                           range: formatBacktestRangeLabel(
@@ -2058,13 +2058,13 @@ export function BacktestPage() {
                   </p>
                 </div>
                 <div className="rounded-xl border border-white/10 bg-black/20 p-2.5 sm:p-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('common.positiveDays')}
                   </p>
                   <p className="mt-1 font-display text-base font-semibold text-white sm:text-lg">
                     {formatPercent(profile.backtest?.positiveDayRatio)}
                   </p>
-                  <p className="mt-1 text-[11px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
+                  <p className="mt-1 text-[13px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
                     {profile.backtest?.sampledDayCount
                       ? t('backtest.positiveDaysFoot', {
                           days: formatNumber(profile.backtest.sampledDayCount),
@@ -2074,13 +2074,13 @@ export function BacktestPage() {
                   </p>
                 </div>
                 <div className="rounded-xl border border-white/10 bg-black/20 p-2.5 sm:p-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('common.worstStep')}
                   </p>
                   <p className="mt-1 font-display text-base font-semibold text-rose-200 sm:text-lg">
                     {formatSignedCurrency(profile.backtest?.maxStepLossValue)}
                   </p>
-                  <p className="mt-1 text-[11px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
+                  <p className="mt-1 text-[13px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
                     {t('backtest.largestDropHint')}
                   </p>
                 </div>
@@ -2090,7 +2090,7 @@ export function BacktestPage() {
                 <div className="rounded-xl border border-white/10 bg-black/20 p-2.5 sm:p-3">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div className="min-w-0">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500 sm:text-[11px] sm:tracking-[0.18em]">
+                      <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500 sm:text-[13px] sm:tracking-[0.18em]">
                         {t('common.dailyReturnDistribution')}
                       </p>
                       <p className="mt-1 text-xs text-slate-400 sm:text-sm">
@@ -2100,7 +2100,7 @@ export function BacktestPage() {
                         })}
                       </p>
                     </div>
-                    <p className="shrink-0 text-[10px] text-slate-500 sm:text-xs">
+                    <p className="shrink-0 text-[12px] text-slate-500 sm:text-xs">
                       {profile.backtest?.dailyReturnDistribution?.sampledDayCount
                         ? t('common.sampledDaysCount', {
                             count: formatNumber(profile.backtest.dailyReturnDistribution.sampledDayCount),
@@ -2114,19 +2114,19 @@ export function BacktestPage() {
                         key={bucket.id ?? bucket.label}
                         className="rounded-lg border border-white/8 bg-white/[0.03] p-2 sm:p-2.5"
                       >
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-slate-500">
+                        <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-slate-500">
                           {bucket.label}
                         </p>
                         <p className="mt-0.5 font-display text-base font-semibold text-white">
                           {formatNumber(bucket.count)}
                         </p>
-                        <p className="mt-0.5 text-[11px] text-slate-500">{formatPercent(bucket.ratio)}</p>
+                        <p className="mt-0.5 text-[13px] text-slate-500">{formatPercent(bucket.ratio)}</p>
                       </div>
                     ))}
                   </div>
                 </div>
                 <div className="rounded-xl border border-white/10 bg-black/20 p-2.5 sm:p-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500 sm:text-[11px] sm:tracking-[0.18em]">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500 sm:text-[13px] sm:tracking-[0.18em]">
                     {t('common.windowDiagnostics')}
                   </p>
                   <div className="mt-2 grid gap-2">
@@ -2189,14 +2189,14 @@ export function BacktestPage() {
               </p>
               <div className="mt-3 grid gap-2 sm:grid-cols-3 sm:gap-3">
                 <div className="rounded-xl border border-white/10 bg-black/25 px-3 py-2.5">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('common.roi')}
                   </p>
                   <p className="mt-0.5 font-display text-base font-semibold text-white sm:text-lg">{followRoi}</p>
-                  <p className="mt-0.5 text-[11px] text-slate-500">{t('common.externalOrCurve')}</p>
+                  <p className="mt-0.5 text-[13px] text-slate-500">{t('common.externalOrCurve')}</p>
                 </div>
                 <div className="rounded-xl border border-white/10 bg-black/25 px-3 py-2.5">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('backtest.maxDdLabel')}
                   </p>
                   <p className="mt-0.5 font-display text-base font-semibold text-rose-200 sm:text-lg">
@@ -2204,7 +2204,7 @@ export function BacktestPage() {
                   </p>
                 </div>
                 <div className="rounded-xl border border-white/10 bg-black/25 px-3 py-2.5 sm:col-span-1">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('common.copyResult')}
                   </p>
                   <p className="mt-0.5 text-xs leading-snug text-slate-200 sm:text-sm sm:leading-6">
@@ -2254,14 +2254,14 @@ export function BacktestPage() {
                   />
                 </div>
                 <div className="rounded-xl border border-white/10 bg-white/[0.03] p-3 sm:p-4">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500 sm:text-xs sm:tracking-[0.18em]">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-slate-500 sm:text-xs sm:tracking-[0.18em]">
                     {t('common.estimatedRiskScore')}
                   </p>
                   <p className="mt-1 font-display text-2xl font-semibold text-white sm:text-3xl">
                     {formatScore(riskScore)}
                   </p>
                   <div className="mt-2">
-                    <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                    <div className="flex items-center justify-between text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                       <span>{t('common.low')}</span>
                       <span>{t('common.high')}</span>
                     </div>
@@ -2269,7 +2269,7 @@ export function BacktestPage() {
                       <span className="backtest-risk-bar__fill" style={{ width: riskBarWidth }} />
                     </div>
                   </div>
-                  <div className="mt-3 grid gap-1.5 text-[11px] text-slate-400 sm:text-xs">
+                  <div className="mt-3 grid gap-1.5 text-[13px] text-slate-400 sm:text-xs">
                     <div className="flex items-center justify-between gap-3">
                       <span>{t('common.riskSource')}</span>
                       <strong className="text-slate-200">{risk?.source ?? t('common.dash')}</strong>
@@ -2284,7 +2284,7 @@ export function BacktestPage() {
                     </div>
                   </div>
                   {isRefreshing ? (
-                    <p className="mt-2 text-[11px] text-slate-500">{t('common.refreshingPeriod')}</p>
+                    <p className="mt-2 text-[13px] text-slate-500">{t('common.refreshingPeriod')}</p>
                   ) : null}
                 </div>
               </div>
@@ -2299,7 +2299,7 @@ export function BacktestPage() {
               </h2>
               <div className="mt-3 grid gap-2 md:grid-cols-3 md:gap-3">
                 <div className="rounded-xl border border-white/10 bg-black/20 p-2.5 sm:p-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('common.frequency')}
                   </p>
                   <p className="mt-1 font-display text-base font-semibold text-white sm:text-lg">
@@ -2307,7 +2307,7 @@ export function BacktestPage() {
                       ? `${formatNumber(snapshot.predictionCount)} ${t('common.predictions')}`
                       : t('common.dash')}
                   </p>
-                  <p className="mt-1 text-[11px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
+                  <p className="mt-1 text-[13px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
                     {curve?.coverageDays != null
                       ? t('backtest.frequencyFootCurve', {
                           days: formatNumber(Math.round(curve.coverageDays * 10) / 10),
@@ -2316,24 +2316,24 @@ export function BacktestPage() {
                   </p>
                 </div>
                 <div className="rounded-xl border border-white/10 bg-black/20 p-2.5 sm:p-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('common.candidatePeriods')}
                   </p>
                   <p className="mt-1 font-display text-base font-semibold text-white sm:text-lg">
                     {formatAvailablePeriods(summary?.candidatePeriods)}
                   </p>
-                  <p className="mt-1 text-[11px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
+                  <p className="mt-1 text-[13px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
                     {t('backtest.candidateBody')}
                   </p>
                 </div>
                 <div className="rounded-xl border border-white/10 bg-black/20 p-2.5 sm:p-3">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.14em] text-slate-500">
                     {t('common.metricsSource')}
                   </p>
                   <p className="mt-1 font-display text-base font-semibold text-white sm:text-lg">
                     {summary?.externalMetricsPeriod ?? t('common.dash')}
                   </p>
-                  <p className="mt-1 text-[11px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
+                  <p className="mt-1 text-[13px] leading-snug text-slate-500 sm:text-xs sm:leading-5">
                     {meta?.externalMetricsSource
                       ? t('backtest.metricsCadence', { source: meta.externalMetricsSource })
                       : t('backtest.metricsNoTopic')}
@@ -2370,7 +2370,7 @@ export function BacktestPage() {
               </h2>
               <div className="mt-3 grid gap-3 lg:grid-cols-[minmax(0,1fr)_280px] xl:grid-cols-[minmax(0,1fr)_300px]">
                 <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500 sm:text-xs sm:tracking-[0.18em]">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-slate-500 sm:text-xs sm:tracking-[0.18em]">
                     {t('common.composite')}
                   </p>
                   <p className="mt-0.5 font-display text-3xl font-semibold text-[#F8D978] sm:text-4xl">
@@ -2390,7 +2390,7 @@ export function BacktestPage() {
                 </div>
                 <div className="flex flex-col gap-2.5 rounded-xl border border-white/10 bg-black/20 p-3 sm:gap-3 sm:p-4">
                   <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500 sm:text-xs">
+                    <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-slate-500 sm:text-xs">
                       {t('common.flags')}
                     </p>
                     {flagList.length > 0 ? (
@@ -2404,7 +2404,7 @@ export function BacktestPage() {
                     )}
                   </div>
                   <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500 sm:text-xs">
+                    <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-slate-500 sm:text-xs">
                       {t('common.dataConfidence')}
                     </p>
                     <p className="mt-1 text-xs leading-snug text-slate-300 sm:text-sm sm:leading-6">

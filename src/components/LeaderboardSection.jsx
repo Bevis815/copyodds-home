@@ -36,7 +36,7 @@ export function LeaderboardSection({
           <h2 className="font-display text-2xl font-semibold tracking-[-0.04em] text-white sm:text-4xl">
             {t('leaderboard.title')}
           </h2>
-          <p className="mt-3 max-w-[60ch] text-[13px] leading-6 text-slate-300 sm:mt-4 sm:text-base sm:leading-7">
+          <p className="mt-3 max-w-[60ch] text-[14px] leading-6 text-slate-300 sm:mt-4 sm:text-base sm:leading-7">
             {t('leaderboard.subtitle')}
           </p>
         </div>
@@ -69,7 +69,7 @@ export function LeaderboardSection({
               aria-pressed={isActive}
               title={title}
               onClick={() => onRankByChange(period)}
-              className={`interactive-focus rounded-full px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.1em] sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.14em] disabled:cursor-not-allowed disabled:opacity-50 ${
+              className={`interactive-focus rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.1em] sm:px-4 sm:py-2 sm:text-xs sm:tracking-[0.14em] disabled:cursor-not-allowed disabled:opacity-50 ${
                 isActive ? 'badge-metal' : 'badge-neutral'
               }`}
             >

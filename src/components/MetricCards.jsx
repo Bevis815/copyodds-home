@@ -20,13 +20,13 @@ export function MetricCards({ metrics }) {
                     : 'bg-amber-700'
             }`}
           />
-          <span className="block text-[9px] font-semibold uppercase leading-tight tracking-[0.14em] text-[#F8D978] sm:text-xs sm:tracking-[0.22em]">
+          <span className="block text-[11px] font-semibold uppercase leading-tight tracking-[0.14em] text-[#F8D978] sm:text-xs sm:tracking-[0.22em]">
             {metric.label}
           </span>
           <strong className="mt-2 block font-display text-xl font-semibold tracking-[-0.04em] text-white sm:mt-4 sm:text-3xl md:text-4xl md:tracking-[-0.05em]">
             {metric.value}
           </strong>
-          <p className="mt-1.5 line-clamp-2 text-[10px] leading-snug text-slate-400 sm:mt-3 sm:line-clamp-none sm:text-sm sm:leading-7">
+          <p className="mt-1.5 line-clamp-2 text-[12px] leading-snug text-slate-400 sm:mt-3 sm:line-clamp-none sm:text-sm sm:leading-7">
             {metric.hint}
           </p>
         </article>

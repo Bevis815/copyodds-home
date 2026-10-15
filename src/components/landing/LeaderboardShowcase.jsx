@@ -58,11 +58,11 @@ function CompactTraderCard({ trader, sparkVariant }) {
         <div className="landing-mock-avatar" aria-hidden />
         <div className="min-w-0 flex-1">
           <strong className="block truncate text-sm font-semibold text-white">{trader.name}</strong>
-          <span className="text-[11px] text-slate-400">{trader.trades}</span>
+          <span className="text-[13px] text-slate-400">{trader.trades}</span>
         </div>
         <div className="landing-bento-compact__figures">
           <strong className="score-positive text-sm">{trader.pnl}</strong>
-          <span className="text-[10px] text-slate-500">{trader.winRate}</span>
+          <span className="text-[12px] text-slate-500">{trader.winRate}</span>
         </div>
         <span className={`landing-mock-risk landing-mock-risk--${trader.riskTone}`}>{trader.risk}</span>
       </div>
