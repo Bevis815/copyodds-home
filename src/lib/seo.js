@@ -176,7 +176,11 @@ export function buildJsonLd({ title, description, canonical, locale, page, faqIt
 
   const graph = [organization, website, software, webpage]
 
-  if ((page === 'home' || page === 'copyTrade' || page === 'cooperation') && Array.isArray(faqItems) && faqItems.length > 0) {
+  if (
+    (page === 'home' || page === 'copyTrade' || page === 'cooperation' || page === 'trust') &&
+    Array.isArray(faqItems) &&
+    faqItems.length > 0
+  ) {
     graph.push({
       '@type': 'FAQPage',
       '@id': `${canonical}#faq`,
@@ -192,7 +196,14 @@ export function buildJsonLd({ title, description, canonical, locale, page, faqIt
     })
   }
 
-  if (page === 'partners' || page === 'cooperation' || page === 'privacy' || page === 'blog' || page === 'backtest') {
+  if (
+    page === 'partners' ||
+    page === 'cooperation' ||
+    page === 'privacy' ||
+    page === 'trust' ||
+    page === 'blog' ||
+    page === 'backtest'
+  ) {
     graph.push({
       '@type': 'BreadcrumbList',
       itemListElement: [

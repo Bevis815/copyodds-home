@@ -9,6 +9,7 @@ import { OpenSourceSection } from '../components/landing/OpenSourceSection'
 import { ProductFeaturesSection } from '../components/landing/ProductFeaturesSection'
 import { RoadmapSection } from '../components/landing/RoadmapSection'
 import { SeoFaqSection } from '../components/landing/SeoFaqSection'
+import { TrustStrip } from '../components/landing/TrustStrip'
 import { useDocumentSeo } from '../hooks/useDocumentSeo'
 
 /**
@@ -53,6 +54,7 @@ export function HomePage({ visible = true }) {
 
         <div className="landing-shell flex flex-col gap-24 pb-20 pt-8 sm:gap-28 sm:pb-24 lg:gap-32">
           <ProductFeaturesSection />
+          <TrustStrip />
           <OpenSourceSection />
           <RoadmapSection />
           <SeoFaqSection />

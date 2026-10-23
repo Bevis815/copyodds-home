@@ -14,6 +14,7 @@ const LOGO_SRC = '/home-logo.jpg'
 
 const NAV = [
   { href: 'cooperation', key: 'cooperation', internal: true },
+  { href: 'trust', key: 'trust', internal: true },
   { href: '#product', key: 'product' },
   { href: '#features', key: 'features' },
   { href: 'docs', key: 'docs', external: true },
@@ -25,6 +26,7 @@ const NAV = [
 
 function resolveNavHref(item, localizePath) {
   if (item.href === 'cooperation') return localizePath(SITE.docs.cooperation)
+  if (item.href === 'trust') return localizePath(SITE.docs.trust)
   if (item.href === 'docs') return SITE.docs.home
   if (item.href === 'api') return SITE.docs.api
   return item.href

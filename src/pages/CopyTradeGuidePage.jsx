@@ -20,7 +20,7 @@ const TOC = [
 
 const HOW_KEYS = ['discovery', 'analysis', 'execution', 'opensource']
 const SETUP_KEYS = ['open', 'account', 'pick', 'backtest', 'activate']
-const SETUP_STEPS_WITH_LINKS = new Set(['open', 'pick'])
+const SETUP_STEPS_WITH_LINKS = new Set(['open', 'account', 'pick'])
 const PICK_KEYS = ['consistency', 'history', 'trend', 'diversity']
 const RISK_KEYS = ['judgment', 'limits', 'diversify']
 
@@ -172,6 +172,7 @@ export function CopyTradeGuidePage() {
                                 app: <InlineLink href={SITE.appUrl} />,
                                 telegram: <InlineLink href={SITE.social.telegram} />,
                                 leaderboard: <InlineLink href={SITE.leaderboardUrl} />,
+                                trust: <InlineLink href={localizePath(SITE.docs.trust)} external={false} />,
                                 strong: <strong />,
                               }}
                             />
@@ -206,6 +207,14 @@ export function CopyTradeGuidePage() {
           <GuideSection id="risks" kicker={t('blog.copyTrade.risks.kicker')} title={t('blog.copyTrade.risks.title')}>
             <div className="blog-guide__prose">
               <p>{t('blog.copyTrade.risks.intro')}</p>
+              <p>
+                <Trans
+                  i18nKey="blog.copyTrade.risks.trustLink"
+                  components={{
+                    trust: <InlineLink href={localizePath(SITE.docs.trust)} external={false} />,
+                  }}
+                />
+              </p>
             </div>
             <ul className="partner-guide__tips">
               {RISK_KEYS.map((key) => (

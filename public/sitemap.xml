@@ -314,6 +314,84 @@
     <lastmod>2026-08-20</lastmod>
   </url>
   <url>
+    <loc>https://copyodds.io/trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/trust" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/trust" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/trust" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/trust" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/trust" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/trust" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/trust" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/zh/trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/trust" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/trust" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/trust" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/trust" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/trust" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/trust" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/trust" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/id/trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/trust" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/trust" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/trust" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/trust" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/trust" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/trust" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/trust" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/fr/trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/trust" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/trust" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/trust" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/trust" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/trust" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/trust" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/trust" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/ru/trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/trust" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/trust" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/trust" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/trust" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/trust" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/trust" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/trust" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
+    <loc>https://copyodds.io/es/trust</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/trust" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/trust" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://copyodds.io/id/trust" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://copyodds.io/fr/trust" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://copyodds.io/ru/trust" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://copyodds.io/es/trust" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://copyodds.io/trust" />
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2026-10-23</lastmod>
+  </url>
+  <url>
     <loc>https://copyodds.io/blog</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://copyodds.io/blog" />
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://copyodds.io/zh/blog" />

@@ -52,6 +52,7 @@ export const SITE = {
     releases: 'https://github.com/Copyodds/copyodds-web/releases',
     license: 'https://github.com/Copyodds/copyodds-web/blob/main/LICENSE',
     privacy: '/privacy',
+    trust: '/trust',
     terms: '#terms',
   },
 }

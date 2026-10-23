@@ -9,6 +9,7 @@ import { CooperationPage } from './pages/CooperationPage'
 import { CopyTradeGuidePage } from './pages/CopyTradeGuidePage'
 import { PartnerGuidePage } from './pages/PartnerGuidePage'
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage'
+import { TrustPage } from './pages/TrustPage'
 function isHomeRoutePath(pathname) {
   const { pathnameWithoutLocale } = parsePathLocale(pathname)
   return pathnameWithoutLocale === '/' || pathnameWithoutLocale === ''
@@ -45,6 +46,7 @@ function App() {
       pathnameWithoutLocale === '/partners' ||
       pathnameWithoutLocale === '/cooperation' ||
       pathnameWithoutLocale === '/privacy' ||
+      pathnameWithoutLocale === '/trust' ||
       pathnameWithoutLocale === '/blog' ||
       pathnameWithoutLocale.startsWith('/blog/')
     ) {
@@ -85,6 +87,10 @@ function App() {
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
         {nonDefaultLocales.map((locale) => (
           <Route key={`${locale}-privacy`} path={`/${locale}/privacy`} element={<PrivacyPolicyPage />} />
+        ))}
+        <Route path="/trust" element={<TrustPage />} />
+        {nonDefaultLocales.map((locale) => (
+          <Route key={`${locale}-trust`} path={`/${locale}/trust`} element={<TrustPage />} />
         ))}
         <Route path="/blog" element={<BlogIndexPage />} />
         {nonDefaultLocales.map((locale) => (

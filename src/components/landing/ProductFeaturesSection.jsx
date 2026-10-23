@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useLocale } from '../../hooks/useLocale'
 import { SITE } from '../../lib/site'
 import { SectionReveal, Stagger, StaggerItem } from '../ui/Motion'
 
@@ -6,6 +8,7 @@ const FEATURE_KEYS = ['discovery', 'ai', 'execution', 'backtest', 'api', 'openso
 
 export function ProductFeaturesSection() {
   const { t } = useTranslation()
+  const { localizePath } = useLocale()
 
   return (
     <section className="site-section" id="product">
@@ -35,6 +38,9 @@ export function ProductFeaturesSection() {
         <a className="btn-primary" href={SITE.appUrl}>
           {t('landing.hero.launchApp')}
         </a>
+        <Link className="btn-secondary" to={localizePath(SITE.docs.trust)}>
+          {t('footer.trust')}
+        </Link>
         <a className="btn-secondary" href={SITE.docs.home} target="_blank" rel="noreferrer">
           {t('landing.hero.docs')}
         </a>
