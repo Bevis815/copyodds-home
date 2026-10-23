@@ -3436,12 +3436,7 @@
   .trust-support-grid {
     display: grid;
     gap: 1rem;
-  }
-
-  @media (min-width: 900px) {
-    .trust-support-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+    max-width: 40rem;
   }
 
   .trust-support-card {

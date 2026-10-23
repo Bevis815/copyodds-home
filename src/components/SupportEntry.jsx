@@ -87,20 +87,18 @@ export function SupportContactPanel({ className = '' }) {
   const whatsAppEnabled = isWhatsAppSupportEnabled()
 
   return (
-    <div className={`mt-6 grid gap-3 sm:grid-cols-2 ${className}`.trim()}>
+    <div className={`mt-6 flex flex-col gap-3 ${className}`.trim()}>
       <ExternalSupportLink
         href={telegramHref}
         ariaLabel={t('support.floatingAria')}
-        className="interactive-focus surface-card flex items-center justify-between gap-3 rounded-2xl border border-[#F5C542]/16 px-4 py-4 transition hover:border-[#F5C542]/28 hover:bg-[#F5C542]/[0.04] sm:px-5 sm:py-5"
+        className="interactive-focus surface-card flex items-center gap-3 rounded-2xl border border-[#F5C542]/16 px-4 py-4 transition hover:border-[#F5C542]/28 hover:bg-[#F5C542]/[0.04] sm:px-5 sm:py-5"
       >
-        <span className="inline-flex min-w-0 items-center gap-3">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#F5C542]/20 bg-[#F5C542]/10 text-[#F6D97E]">
-            <MessageCircleIcon className="h-5 w-5" />
-          </span>
-          <span className="min-w-0">
-            <span className="block text-sm font-semibold text-white">{t('support.telegram')}</span>
-            <span className="mt-0.5 block truncate text-xs text-slate-500">{t('support.panelHint')}</span>
-          </span>
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#F5C542]/20 bg-[#F5C542]/10 text-[#F6D97E]">
+          <MessageCircleIcon className="h-5 w-5" />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-sm font-semibold text-white">{t('support.telegram')}</span>
+          <span className="mt-0.5 block truncate text-xs text-slate-500">{t('support.panelHint')}</span>
         </span>
         <span className="btn-gold shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold sm:px-4 sm:py-2 sm:text-sm">
           {t('support.telegramCta')}
@@ -111,17 +109,15 @@ export function SupportContactPanel({ className = '' }) {
         <ExternalSupportLink
           href={whatsAppHref}
           ariaLabel={t('support.whatsappFloatingAria')}
-          className="interactive-focus surface-card flex items-center justify-between gap-3 rounded-2xl border border-white/8 px-4 py-4 transition hover:border-white/14 hover:bg-white/[0.03] sm:px-5 sm:py-5"
+          className="interactive-focus surface-card flex items-center gap-3 rounded-2xl border border-white/8 px-4 py-4 transition hover:border-white/14 hover:bg-white/[0.03] sm:px-5 sm:py-5"
         >
-          <span className="inline-flex min-w-0 items-center gap-3">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-[#25D366]">
-              <WhatsAppIcon className="h-5 w-5" />
-            </span>
-            <span className="min-w-0">
-              <span className="block text-sm font-semibold text-white">{t('support.whatsapp')}</span>
-              <span className="mt-0.5 block truncate text-xs text-slate-500">
-                {whatsAppHandle ?? t('support.panelHint')}
-              </span>
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-[#25D366]">
+            <WhatsAppIcon className="h-5 w-5" />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-sm font-semibold text-white">{t('support.whatsapp')}</span>
+            <span className="mt-0.5 block truncate text-xs text-slate-500">
+              {whatsAppHandle ?? t('support.panelHint')}
             </span>
           </span>
           <span className="btn-ghost shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold sm:px-4 sm:py-2 sm:text-sm">
