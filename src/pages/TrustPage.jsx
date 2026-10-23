@@ -19,15 +19,6 @@ import { useLocale } from '../hooks/useLocale'
 import { SITE } from '../lib/site'
 import { getTelegramSupportHref } from '../lib/support'
 
-const TOC = [
-  { id: 'funds', key: 'funds' },
-  { id: 'transparency', key: 'transparency' },
-  { id: 'fees', key: 'fees' },
-  { id: 'security', key: 'security' },
-  { id: 'support', key: 'support' },
-  { id: 'faq', key: 'faq' },
-]
-
 const FUND_FLOW = ['deposit', 'allocate', 'execute', 'withdraw']
 
 const TRANSPARENCY_POINTS = ['discovery', 'signal', 'sizing', 'risks', 'backtest']
@@ -73,9 +64,10 @@ export function TrustPage() {
       <Header logoHref={localizePath('/')} fullWidth compact />
 
       <main className="relative z-[1] flex w-full flex-col pb-16 pt-6 sm:pb-20 sm:pt-10">
-        <div className="landing-shell flex flex-col gap-20 sm:gap-24">
+        <div className="landing-shell">
+          <div className="trust-layout flex flex-col gap-20 sm:gap-24">
           <section className="trust-hero" aria-labelledby="trust-title">
-            <nav className="legal-doc__crumb" aria-label={t('trust.breadcrumbAria')}>
+            <nav className="legal-doc__crumb trust-hero__crumb" aria-label={t('trust.breadcrumbAria')}>
               <Link to={localizePath('/')}>{t('common.home')}</Link>
               <span aria-hidden="true">/</span>
               <span>{t('trust.breadcrumb')}</span>
@@ -97,14 +89,6 @@ export function TrustPage() {
                 </a>
               </div>
             </SectionReveal>
-
-            <nav className="trust-toc" aria-label={t('trust.tocAria')}>
-              {TOC.map((item) => (
-                <a key={item.id} href={`#${item.id}`}>
-                  {t(`trust.toc.${item.key}`)}
-                </a>
-              ))}
-            </nav>
           </section>
 
           <section className="site-section trust-section" id="funds" aria-labelledby="trust-funds">
@@ -264,9 +248,7 @@ export function TrustPage() {
                     <span>{t('trust.support.docs.privacyHint')}</span>
                   </li>
                   <li>
-                    <span className="trust-docs__unavailable" title={t('footer.termsUnavailable')}>
-                      {t('footer.terms')}
-                    </span>
+                    <Link to={localizePath(SITE.docs.terms)}>{t('footer.terms')}</Link>
                     <span>{t('trust.support.docs.termsHint')}</span>
                   </li>
                   <li>
@@ -311,6 +293,7 @@ export function TrustPage() {
               </a>
             </div>
           </SectionReveal>
+          </div>
         </div>
       </main>
 

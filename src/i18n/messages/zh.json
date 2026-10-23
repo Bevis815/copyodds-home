@@ -1457,6 +1457,11 @@
       "description": "CopyOdds 隐私政策：说明我们如何在使用网站、移动应用及相关服务时收集、使用、存储、共享和保护您的信息。",
       "keywords": "CopyOdds, 隐私政策, 数据保护, 个人信息, 区块链, 跟单"
     },
+    "terms": {
+      "title": "服务条款（草稿）| CopyOdds",
+      "description": "CopyOdds《服务条款》草稿。待运营与法务确认的事项已明确标注——不是已定稿的正式法律文件。",
+      "keywords": "CopyOdds, 服务条款, 草稿, 托管钱包, Gas 点数, 跟单, 风险披露"
+    },
     "backtest": {
       "title": "{{name}} | Polymarket 地址分析 | CopyOdds",
       "description": "分析 {{name}} 的 Polymarket 表现：聪明钱指标、盈亏曲线、回撤与跟单适配度，来自钱包地址研究。",
@@ -1499,8 +1504,8 @@
     },
     "funds": {
       "eyebrow": "资金与钱包",
-      "title": "独立托管钱包——不是平台共用热钱包",
-      "body": "CopyOdds 采用托管交易钱包，以便自动签名跟单。你无需连接 MetaMask，也无需导入私钥。每位用户有独立的执行地址与 Polymarket Deposit；交易保证金存放在 Polygon 上的 Deposit / pUSD。",
+      "title": "每位用户拥有独立的托管交易钱包",
+      "body": "独立地址不代表非托管。CopyOdds 仍通过后台签名服务执行跟单交易，提现按照实际的授权、地址验证和二次验证规则处理。你无需连接 MetaMask 或导入私钥；每位用户有独立的执行地址与 Polymarket Deposit，交易保证金存放在 Polygon 上的 Deposit / pUSD。",
       "bullets": [
         "一人一托管执行地址、一人一 Polymarket Deposit——跟单走你自己的账户，不是混进平台大热钱包再代下单。",
         "你无需保管或导出交易私钥。签名由独立钱包服务完成，用于 Polymarket Relayer 所需的 message / typed-data，不开放任意原始交易直签。",
@@ -1563,7 +1568,7 @@
     "fees": {
       "eyebrow": "费用与提现",
       "title": "平台 Gas 点数、市场费与提现",
-      "body": "请区分两类费用：平台 Gas 点数是 CopyOdds 站内跟单服务费单位；区块链网络费与 Polymarket 市场费是外部费用。产品中无业绩分成费或提现手续费代码。",
+      "body": "请区分两类费用：平台 Gas 点数是 CopyOdds 站内跟单服务费的计费单位，与区块链网络 Gas（如 MATIC / BNB）不是同一概念；Polymarket 市场费也属于外部费用。",
       "points": {
         "platform": {
           "title": "平台 Gas 点数（跟单服务费）",
@@ -1571,15 +1576,15 @@
         },
         "gas": {
           "title": "区块链网络费与市场费",
-          "body": "区块链网络费（如 Polygon 上的 MATIC、BSC 上的 BNB）与平台 Gas 点数不是同一概念。Polygon 充值归集与 Relayer 步骤通常由产品侧处理，无需自备 MATIC；从 BSC 经桥入金仍需你在来源钱包支付源链网络费。部分 Polymarket 市场另收 taker 市场费，与平台 Gas 点数分开。"
+          "body": "区块链网络费（如 Polygon 上的 MATIC、BSC 上的 BNB）由对应网络收取，不是平台 Gas 点数。Polygon 充值归集与 Relayer 步骤通常由产品侧处理，无需自备 MATIC；从 BSC 经桥入金仍需你在来源钱包支付源链网络费。部分 Polymarket 市场另收 taker 市场费，与平台 Gas 点数分开。"
         },
         "timing": {
           "title": "何时扣除平台 Gas 点数",
-          "body": "买入与卖出均在订单实际成交后按已成交名义扣除；部分成交按已成交部分计费，限价单后续补成交不会重复扣费。未成交、下单失败或取消的订单不扣平台 Gas 点数（代码中亦无对应退款路径）。手动赎回在链上赎回成功后按赎回名义扣除。Gas 套餐履约后入账；不是按月订阅——订阅计费尚未实现。"
+          "body": "买入与卖出均在订单实际成交后按已成交名义扣除；部分成交按已成交部分计费，限价单后续补成交不会重复扣费。未成交、下单失败或取消的订单不扣除平台 Gas 点数。手动赎回在链上赎回成功后按赎回名义扣除。Gas 套餐履约后入账；当前不是按月订阅计费。"
         },
         "withdraw": {
           "title": "提现",
-          "body": "无单独提现手续费代码。资金经 Relayer / Bridge 在 TOTP 授权后提到你的 Polygon 原生 USDC 地址。若提现延迟或被拦截，请携带应用内参考联系官方客服——本站不发布处理 SLA。"
+          "body": "当前产品不对提现单独收取平台手续费，也不收取业绩分成费。资金经 Relayer / Bridge 在 TOTP 授权后提到你的 Polygon 原生 USDC 地址。若提现延迟或被拦截，请携带应用内参考联系官方客服——本站不承诺固定处理时效。"
         }
       },
       "links": {
@@ -1626,7 +1631,7 @@
       "docs": {
         "title": "政策与项目身份",
         "privacyHint": "我们如何收集、使用与保护信息。",
-        "termsHint": "独立《服务条款》尚未发布；页脚「条款」为不可点击占位，不会伪装成正式页面。正式发布前请以客服说明与应用内披露为准。",
+        "termsHint": "已提供《服务条款》草稿页，明确标注待运营/法务确认；不是已定稿的正式法律文件。请同时阅读隐私政策与跟单风险说明。",
         "riskLabel": "跟单风险说明",
         "riskHint": "指南中关于继承领袖错误、硬上限与分散跟单的章节。",
         "githubLabel": "GitHub 组织",
@@ -1656,7 +1661,7 @@
         },
         {
           "q": "我需要支付哪些费用？",
-          "a": "购买平台 Gas 套餐后，符合收费规则的实盘成交按已成交名义金额 × 0.5% 扣除平台 Gas 点数（1 USDC = 100 Gas 点数；例如名义 100 USDC → 50 Gas 点数 ≈ 0.5 USDC）。未成交、失败或取消不扣点。部分市场另有 Polymarket taker 费与网络费。合作页伙伴佣金不是你的交易费。无业绩分成费或提现手续费代码。"
+          "a": "购买平台 Gas 套餐后，符合收费规则的实盘成交按已成交名义金额 × 0.5% 扣除平台 Gas 点数（1 USDC = 100 Gas 点数；例如名义 100 USDC → 50 Gas 点数 ≈ 0.5 USDC）。平台 Gas 点数是站内计费单位，不是区块链网络 Gas。未成交、失败或取消不扣点。部分市场另有 Polymarket taker 费与网络费。合作页伙伴佣金不是你的交易费。当前产品不收取业绩分成费，也不对提现单独收取平台手续费。"
         },
         {
           "q": "如何核验一笔交易？",
@@ -1672,6 +1677,12 @@
       "title": "规则清楚后再开始。",
       "body": "打开应用完成托管钱包充值、购买 Gas 与跟单风控配置；若资金或提现异常，请联系官方客服。"
     }
+  },
+  "termsOfService": {
+    "breadcrumbAria": "面包屑",
+    "statusLabel": "状态",
+    "statusDraft": "草稿 — 待确认",
+    "lastUpdatedLabel": "最近更新"
   },
   "errors": {
     "generic": "出错了。"

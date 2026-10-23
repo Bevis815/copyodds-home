@@ -150,6 +150,11 @@
       "title": "Pusat Kepercayaan | CopyOdds — Dana, biaya, keamanan & verifikasi",
       "description": "Wallet kustodial CopyOdds, pendanaan Deposit/pUSD, poin Gas platform (0,5% notional), penarikan TOTP, dan kontrol risiko copy — baca sebelum deposit.",
       "keywords": "CopyOdds, pusat kepercayaan, wallet kustodial, poin Gas, Polymarket Deposit, copy trading, penarikan TOTP, keamanan"
+    },
+    "terms": {
+      "title": "Syarat Layanan (Draf) | CopyOdds",
+      "description": "Draf Syarat Layanan CopyOdds. Item yang menunggu konfirmasi operasi / legal ditandai jelas — bukan perjanjian final.",
+      "keywords": "CopyOdds, Syarat Layanan, draf, wallet kustodial, poin Gas, copy trading, risiko"
     }
   },
   "trust": {
@@ -173,8 +178,8 @@
     },
     "funds": {
       "eyebrow": "Dana & wallet",
-      "title": "Wallet kustodial independen — bukan hot wallet bersama",
-      "body": "CopyOdds memakai wallet trading kustodial agar order copy dapat ditandatangani otomatis. Anda tidak perlu MetaMask atau mengimpor private key. Setiap pengguna punya alamat eksekusi khusus dan Polymarket Deposit; jaminan trading berada di Deposit / pUSD di Polygon.",
+      "title": "Setiap pengguna mendapat wallet trading kustodial yang independen",
+      "body": "Alamat independen tidak berarti non-kustodial. CopyOdds tetap mengeksekusi copy lewat layanan penandatanganan backend, dan penarikan mengikuti aturan otorisasi, verifikasi alamat, serta step-up yang berlaku. Anda tidak perlu MetaMask atau mengimpor private key. Setiap pengguna punya alamat eksekusi khusus dan Polymarket Deposit; jaminan trading berada di Deposit / pUSD di Polygon.",
       "bullets": [
         "Satu pengguna, satu alamat eksekusi kustodial dan satu Polymarket Deposit — copy memakai akun Anda, bukan hot wallet bersama platform.",
         "Anda tidak menyimpan atau mengekspor private key trading. Penandatanganan dilakukan layanan wallet terpisah untuk operasi Relayer terstruktur (message / typed-data), bukan transaksi mentah sembarang.",
@@ -237,7 +242,7 @@
     "fees": {
       "eyebrow": "Biaya & penarikan",
       "title": "Poin Gas platform, biaya pasar, dan penarikan",
-      "body": "Dua biaya berbeda: poin Gas platform adalah unit biaya layanan copy di app CopyOdds; biaya jaringan blockchain dan biaya pasar Polymarket bersifat eksternal. Tidak ada biaya kinerja atau biaya penarikan yang dikodekan.",
+      "body": "Dua biaya berbeda: poin Gas platform adalah unit penagihan in-app untuk biaya layanan copy — bukan gas jaringan blockchain (MATIC / BNB). Biaya pasar Polymarket juga eksternal.",
       "points": {
         "platform": {
           "title": "Poin Gas platform (biaya layanan copy)",
@@ -249,11 +254,11 @@
         },
         "timing": {
           "title": "Kapan poin Gas platform dipotong",
-          "body": "Beli dan jual dikenakan setelah fill aktual pada notional terisi; partial fill dikenakan pada bagian terisi, dan fill lanjutan limit yang sama tidak dikenakan ulang. Order tidak terisi, gagal, atau dibatalkan tidak memotong poin Gas platform (dan tidak ada jalur refund yang dikodekan). Redeem manual dikenakan setelah redeem on-chain berhasil. Paket Gas dikredit setelah fulfillment; ini bukan langganan bulanan."
+          "body": "Beli dan jual dikenakan setelah fill aktual pada notional terisi; partial fill dikenakan pada bagian terisi, dan fill lanjutan limit yang sama tidak dikenakan ulang. Order tidak terisi, gagal, atau dibatalkan tidak memotong poin Gas platform. Redeem manual dikenakan setelah redeem on-chain berhasil. Paket Gas dikredit setelah fulfillment; ini bukan penagihan langganan bulanan."
         },
         "withdraw": {
           "title": "Penarikan",
-          "body": "Tidak ada biaya penarikan terpisah yang dikodekan. Dana keluar dari Deposit lewat Relayer / Bridge ke alamat Polygon USDC native Anda setelah otorisasi TOTP. Jika penarikan tertunda atau diblokir, hubungi dukungan resmi dengan referensi app — situs ini tidak memublikasikan SLA pemrosesan."
+          "body": "Produk saat ini tidak memungut biaya penarikan platform terpisah dan tidak memungut biaya kinerja / bagi hasil. Dana keluar dari Deposit lewat Relayer / Bridge ke alamat Polygon USDC native Anda setelah otorisasi TOTP. Jika penarikan tertunda atau diblokir, hubungi dukungan resmi dengan referensi app — situs ini tidak menjanjikan jendela pemrosesan tetap."
         }
       },
       "links": {
@@ -300,7 +305,7 @@
       "docs": {
         "title": "Kebijakan dan identitas",
         "privacyHint": "Bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi.",
-        "termsHint": "Syarat Layanan mandiri belum dipublikasikan. Label Terms di footer adalah placeholder non-klik dan tidak disajikan sebagai halaman kebijakan aktif.",
+        "termsHint": "Halaman draf Syarat Layanan tersedia dan ditandai jelas menunggu konfirmasi operasi / legal — bukan perjanjian hukum final. Baca juga Kebijakan Privasi dan catatan risiko copy trading.",
         "riskLabel": "Catatan risiko copy trading",
         "riskHint": "Bagian panduan tentang pewarisan kesalahan leader, batas keras, dan diversifikasi.",
         "githubLabel": "Organisasi GitHub",
@@ -330,7 +335,7 @@
         },
         {
           "q": "Biaya apa yang saya bayar?",
-          "a": "Setelah membeli paket Gas platform, fill live yang memenuhi syarat memotong poin Gas platform sebesar 0,5% dari notional terisi (100 poin Gas per USDC; mis. 100 USDC → 50 poin ≈ 0,5 USDC). Order tidak terisi, gagal, atau dibatalkan tidak dikenakan. Beberapa pasar juga punya taker fee Polymarket dan biaya jaringan. Komisi partner bukan biaya trading Anda. Tidak ada biaya kinerja atau penarikan yang dikodekan."
+          "a": "Setelah membeli paket Gas platform, fill live yang memenuhi syarat memotong poin Gas platform sebesar 0,5% dari notional terisi (100 poin Gas per USDC; mis. 100 USDC → 50 poin ≈ 0,5 USDC). Poin Gas platform adalah unit penagihan in-app, bukan gas jaringan. Order tidak terisi, gagal, atau dibatalkan tidak dikenakan. Beberapa pasar juga punya taker fee Polymarket dan biaya jaringan. Komisi partner bukan biaya trading Anda. Produk saat ini tidak memungut biaya kinerja atau biaya penarikan platform terpisah."
         },
         {
           "q": "Bagaimana memverifikasi transaksi?",
@@ -357,5 +362,11 @@
     "nav": {
       "trust": "Keamanan & Kepercayaan"
     }
+  },
+  "termsOfService": {
+    "breadcrumbAria": "Breadcrumb",
+    "statusLabel": "Status",
+    "statusDraft": "Draf — menunggu konfirmasi",
+    "lastUpdatedLabel": "Terakhir diperbarui"
   }
 }

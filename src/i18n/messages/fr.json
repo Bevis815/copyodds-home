@@ -150,6 +150,11 @@
       "title": "Centre de confiance | CopyOdds — Fonds, frais, sécurité et vérification",
       "description": "Portefeuilles dépositaires CopyOdds, financement Deposit/pUSD, points Gas plateforme (0,5 % du notionnel), retraits TOTP et contrôles de risque copy — à lire avant de déposer.",
       "keywords": "CopyOdds, centre de confiance, portefeuille dépositaire, points Gas, Polymarket Deposit, copy trading, retrait TOTP, sécurité"
+    },
+    "terms": {
+      "title": "Conditions d’utilisation (brouillon) | CopyOdds",
+      "description": "Brouillon des Conditions d’utilisation CopyOdds. Les points en attente de confirmation opérations / juridique sont clairement marqués — ce n’est pas un accord finalisé.",
+      "keywords": "CopyOdds, Conditions d’utilisation, brouillon, portefeuille dépositaire, points Gas, copy trading, risque"
     }
   },
   "trust": {
@@ -173,8 +178,8 @@
     },
     "funds": {
       "eyebrow": "Fonds et portefeuilles",
-      "title": "Portefeuilles dépositaires indépendants — pas un hot wallet partagé",
-      "body": "CopyOdds utilise un portefeuille de trading dépositaire pour signer automatiquement les ordres de copy. Vous n’avez pas besoin de MetaMask ni d’importer une clé privée. Chaque utilisateur a une adresse d’exécution dédiée et un Deposit Polymarket ; la marge de trading est dans Deposit / pUSD sur Polygon.",
+      "title": "Chaque utilisateur dispose d’un portefeuille de trading dépositaire indépendant",
+      "body": "Une adresse indépendante ne signifie pas non dépositaire. CopyOdds exécute toujours les copies via un service de signature backend, et les retraits suivent les règles live d’autorisation, de vérification d’adresse et de step-up. Vous n’avez pas besoin de MetaMask ni d’importer une clé privée. Chaque utilisateur a une adresse d’exécution dédiée et un Deposit Polymarket ; la marge est dans Deposit / pUSD sur Polygon.",
       "bullets": [
         "Un utilisateur, une adresse d’exécution dépositaire et un Deposit Polymarket — les copies utilisent votre compte, pas un hot wallet partagé de la plateforme.",
         "Vous n’avez pas à conserver ni exporter la clé privée de trading. La signature est faite par un service de portefeuille séparé pour les opérations Relayer structurées (message / typed-data), pas pour des transactions brutes arbitraires.",
@@ -237,7 +242,7 @@
     "fees": {
       "eyebrow": "Frais et retraits",
       "title": "Points Gas de plateforme, frais de marché et retraits",
-      "body": "Deux coûts distincts : les points Gas de plateforme sont l’unité de frais de service copy dans l’app CopyOdds ; les frais réseau blockchain et les frais de marché Polymarket sont externes. Aucun frais de performance ni frais de retrait n’est codé.",
+      "body": "Deux coûts distincts : les points Gas de plateforme sont l’unité de facturation in-app des frais de service copy — pas le gas réseau blockchain (MATIC / BNB). Les frais de marché Polymarket sont aussi externes.",
       "points": {
         "platform": {
           "title": "Points Gas de plateforme (frais de service copy)",
@@ -249,11 +254,11 @@
         },
         "timing": {
           "title": "Quand les points Gas de plateforme sont déduits",
-          "body": "Achats et ventes sont facturés après une exécution réelle sur le notionnel rempli ; les exécutions partielles facturent la partie remplie, et les fills ultérieurs d’une même limite en attente ne sont pas refacturés. Les ordres non exécutés, échoués ou annulés ne consomment pas de points Gas de plateforme (et il n’y a pas de chemin de remboursement codé). Le redeem manuel facture après un redeem on-chain réussi. Les packs Gas créditent après fulfillment ; ce n’est pas un abonnement mensuel."
+          "body": "Achats et ventes sont facturés après une exécution réelle sur le notionnel rempli ; les exécutions partielles facturent la partie remplie, et les fills ultérieurs d’une même limite en attente ne sont pas refacturés. Les ordres non exécutés, échoués ou annulés ne consomment pas de points Gas de plateforme. Le redeem manuel facture après un redeem on-chain réussi. Les packs Gas créditent après fulfillment ; ce n’est pas une facturation d’abonnement mensuel."
         },
         "withdraw": {
           "title": "Retraits",
-          "body": "Aucun frais de retrait séparé n’est codé. Les fonds quittent le Deposit via Relayer / Bridge vers votre adresse Polygon en USDC natif après autorisation TOTP. Si un retrait est retardé ou bloqué, contactez le support officiel avec les références de l’app — ce site ne publie pas de SLA de traitement."
+          "body": "Le produit actuel ne facture pas de frais de retrait plateforme séparés ni de frais de performance / partage de profits. Les fonds quittent le Deposit via Relayer / Bridge vers votre adresse Polygon en USDC natif après autorisation TOTP. Si un retrait est retardé ou bloqué, contactez le support officiel avec les références de l’app — ce site ne promet pas de délai de traitement fixe."
         }
       },
       "links": {
@@ -300,7 +305,7 @@
       "docs": {
         "title": "Politiques et identité",
         "privacyHint": "Comment nous collectons, utilisons et protégeons les informations.",
-        "termsHint": "Des Conditions d’utilisation autonomes ne sont pas encore publiées. Le libellé Conditions du footer est un placeholder non cliquable et n’est pas présenté comme une page de politique active.",
+        "termsHint": "Une page brouillon des Conditions d’utilisation est disponible et clairement marquée en attente de confirmation opérations / juridique — ce n’est pas un accord juridique finalisé. Lisez aussi la Politique de confidentialité et les notes de risque du copy trading.",
         "riskLabel": "Notes de risque du copy trading",
         "riskHint": "Section du guide sur l’héritage des erreurs du leader, plafonds durs et diversification.",
         "githubLabel": "Organisation GitHub",
@@ -330,7 +335,7 @@
         },
         {
           "q": "Quels frais vais-je payer ?",
-          "a": "Après l’achat de packs Gas de plateforme, les fills live éligibles consomment des points Gas de plateforme à 0,5 % du notionnel rempli (100 points Gas par USDC ; ex. 100 USDC → 50 points ≈ 0,5 USDC). Les ordres non exécutés, échoués ou annulés ne sont pas facturés. Certains marchés ont aussi des frais taker Polymarket et des frais réseau. Les commissions partenaires ne sont pas vos frais de trading. Aucun frais de performance ni de retrait n’est codé."
+          "a": "Après l’achat de packs Gas de plateforme, les fills live éligibles consomment des points Gas de plateforme à 0,5 % du notionnel rempli (100 points Gas par USDC ; ex. 100 USDC → 50 points ≈ 0,5 USDC). Les points Gas de plateforme sont une unité de facturation in-app, pas le gas réseau. Les ordres non exécutés, échoués ou annulés ne sont pas facturés. Certains marchés ont aussi des frais taker Polymarket et des frais réseau. Les commissions partenaires ne sont pas vos frais de trading. Le produit actuel ne facture pas de frais de performance ni de frais de retrait plateforme séparés."
         },
         {
           "q": "Comment vérifier une transaction ?",
@@ -357,5 +362,11 @@
     "nav": {
       "trust": "Sécurité et confiance"
     }
+  },
+  "termsOfService": {
+    "breadcrumbAria": "Fil d’Ariane",
+    "statusLabel": "Statut",
+    "statusDraft": "Brouillon — en attente de confirmation",
+    "lastUpdatedLabel": "Dernière mise à jour"
   }
 }

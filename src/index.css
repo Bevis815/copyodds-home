@@ -1826,6 +1826,81 @@
     color: #71717a;
   }
 
+  /* Floating action stack: back-to-top (above) + support (below). Icon-only; no caption text. */
+  .site-fabs {
+    position: fixed;
+    right: max(1rem, env(safe-area-inset-right));
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    z-index: 40;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 0.65rem;
+    pointer-events: none;
+  }
+
+  @media (min-width: 640px) {
+    .site-fabs {
+      right: max(1.5rem, env(safe-area-inset-right));
+      bottom: max(1.5rem, env(safe-area-inset-bottom));
+      gap: 0.75rem;
+    }
+  }
+
+  .site-fabs > * {
+    pointer-events: auto;
+  }
+
+  .back-to-top,
+  .support-fab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(245, 197, 66, 0.28);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    transition: transform 0.18s ease, filter 0.18s ease, border-color 0.18s ease;
+  }
+
+  @media (min-width: 640px) {
+    .back-to-top,
+    .support-fab {
+      width: 3rem;
+      height: 3rem;
+      min-width: 3rem;
+      min-height: 3rem;
+    }
+  }
+
+  .back-to-top {
+    color: #f6d97e;
+    background: rgba(17, 19, 24, 0.92);
+    backdrop-filter: blur(10px);
+  }
+
+  .back-to-top:hover {
+    transform: translateY(-2px);
+    border-color: rgba(245, 197, 66, 0.45);
+    color: #fafafa;
+  }
+
+  .support-fab {
+    color: #111318;
+    background: linear-gradient(135deg, #f8d978 0%, #f5c542 42%, #b8891e 100%);
+    box-shadow:
+      0 16px 40px rgba(245, 197, 66, 0.28),
+      0 0 24px rgba(245, 197, 66, 0.12);
+  }
+
+  .support-fab:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+  }
+
   .partner-guide {
     max-width: 56rem;
   }
@@ -2492,6 +2567,25 @@
     color: #a1a1aa;
   }
 
+  .legal-doc__draft-banner {
+    margin-top: 1rem;
+    padding: 0.95rem 1rem;
+    border: 1px solid rgba(245, 197, 66, 0.32);
+    border-radius: 12px;
+    background: rgba(245, 197, 66, 0.08);
+  }
+
+  .legal-doc__draft-banner .legal-doc__p {
+    margin: 0 0 0.55rem;
+    color: #f6d97e;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .legal-doc__draft-banner .legal-doc__p:last-child {
+    margin-bottom: 0;
+  }
+
   .legal-doc__panel {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 18px;
@@ -3097,14 +3191,24 @@
   }
 
   /* —— Trust Center —— */
+  .trust-layout {
+    width: 100%;
+    max-width: 56rem;
+    margin-inline: auto;
+  }
+
+  .trust-hero__crumb {
+    margin-bottom: 1.25rem;
+  }
+
   .trust-hero__title {
     margin-top: 0.85rem;
-    max-width: 22rem;
+    max-width: 28rem;
     font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-size: clamp(2rem, 4.6vw, 3.15rem);
     font-weight: 700;
     letter-spacing: -0.035em;
-    line-height: 1.08;
+    line-height: 1.12;
     color: #fafafa;
   }
 
@@ -3123,26 +3227,12 @@
     margin-top: 1.5rem;
   }
 
-  .trust-toc {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 0.75rem;
-    margin-top: 2rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  .trust-section .site-section__intro {
+    max-width: 40rem;
   }
 
-  .trust-toc a {
-    font-size: 0.86rem;
-    color: #a1a1aa;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: color 160ms ease, border-color 160ms ease;
-  }
-
-  .trust-toc a:hover {
-    color: #fafafa;
-    border-color: rgba(245, 197, 66, 0.45);
+  .trust-section .site-section__body {
+    max-width: 40rem;
   }
 
   .trust-pending {

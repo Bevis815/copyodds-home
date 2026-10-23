@@ -31,7 +31,7 @@ function WhatsAppIcon({ className }) {
   )
 }
 
-function ExternalSupportLink({ href, className, children, ariaLabel }) {
+function ExternalSupportLink({ href, className, children, ariaLabel, title }) {
   return (
     <a
       href={href}
@@ -39,6 +39,7 @@ function ExternalSupportLink({ href, className, children, ariaLabel }) {
       rel="noopener noreferrer"
       className={className}
       aria-label={ariaLabel}
+      title={title}
     >
       {children}
     </a>
@@ -135,15 +136,17 @@ export function SupportContactPanel({ className = '' }) {
 export function SupportFloatingButton() {
   const { t } = useTranslation()
   const href = getTelegramSupportHref()
+  const label = t('support.floatingAria')
 
   return (
     <ExternalSupportLink
       href={href}
-      ariaLabel={t('support.floatingAria')}
-      className="interactive-focus fixed bottom-4 right-4 z-40 inline-flex items-center gap-2 rounded-full border border-[#F5C542]/24 bg-[linear-gradient(135deg,#f8d978_0%,#f5c542_42%,#b8891e_100%)] px-4 py-3 text-sm font-semibold text-[#111318] shadow-[0_16px_40px_rgba(245,197,66,0.28),0_0_24px_rgba(245,197,66,0.12)] transition hover:-translate-y-0.5 hover:brightness-[1.04] sm:bottom-6 sm:right-6 sm:px-5 sm:py-3.5"
+      ariaLabel={label}
+      className="support-fab interactive-focus"
+      title={t('support.telegram')}
     >
-      <MessageCircleIcon className="h-4 w-4 sm:h-[18px] sm:w-[18px]" />
-      <span>{t('support.telegram')}</span>
+      <MessageCircleIcon className="h-[18px] w-[18px]" />
+      <span className="sr-only">{t('support.telegram')}</span>
     </ExternalSupportLink>
   )
 }

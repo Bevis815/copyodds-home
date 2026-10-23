@@ -150,6 +150,11 @@
       "title": "Centro de confianza | CopyOdds — Fondos, comisiones, seguridad y verificación",
       "description": "Wallets custodiales CopyOdds, fondeo Deposit/pUSD, puntos Gas de plataforma (0,5 % del nocional), retiros TOTP y controles de riesgo de copy — léelo antes de depositar.",
       "keywords": "CopyOdds, centro de confianza, wallet custodial, puntos Gas, Polymarket Deposit, copy trading, retiro TOTP, seguridad"
+    },
+    "terms": {
+      "title": "Términos de servicio (borrador) | CopyOdds",
+      "description": "Borrador de Términos de servicio de CopyOdds. Los puntos pendientes de confirmación de operaciones / legal están marcados con claridad — no es un acuerdo finalizado.",
+      "keywords": "CopyOdds, Términos de servicio, borrador, wallet custodial, puntos Gas, copy trading, riesgo"
     }
   },
   "trust": {
@@ -173,8 +178,8 @@
     },
     "funds": {
       "eyebrow": "Fondos y wallets",
-      "title": "Wallets custodiales independientes — no un hot wallet compartido",
-      "body": "CopyOdds usa una wallet de trading custodial para firmar automáticamente las órdenes de copy. No necesitas MetaMask ni importar una clave privada. Cada usuario tiene una dirección de ejecución dedicada y un Deposit de Polymarket; el colateral está en Deposit / pUSD en Polygon.",
+      "title": "Cada usuario tiene una wallet de trading custodial independiente",
+      "body": "Una dirección independiente no significa no custodial. CopyOdds sigue ejecutando copias mediante un servicio de firma backend, y los retiros siguen las reglas live de autorización, verificación de dirección y step-up. No necesitas MetaMask ni importar una clave privada. Cada usuario tiene una dirección de ejecución dedicada y un Deposit de Polymarket; el colateral está en Deposit / pUSD en Polygon.",
       "bullets": [
         "Un usuario, una dirección de ejecución custodial y un Deposit de Polymarket: las copias usan tu cuenta, no un hot wallet compartido de la plataforma.",
         "No custodiás ni exportás la clave privada de trading. La firma la realiza un servicio de wallet separado para operaciones Relayer estructuradas (message / typed-data), no transacciones crudas arbitrarias.",
@@ -237,7 +242,7 @@
     "fees": {
       "eyebrow": "Comisiones y retiros",
       "title": "Puntos Gas de plataforma, comisiones de mercado y retiros",
-      "body": "Dos costos distintos: los puntos Gas de plataforma son la unidad de comisión de servicio de copy en la app; las comisiones de red blockchain y de mercado de Polymarket son externas. No hay comisión de rendimiento ni de retiro codificada.",
+      "body": "Dos costos distintos: los puntos Gas de plataforma son la unidad de facturación in-app de la comisión de servicio de copy — no el gas de red blockchain (MATIC / BNB). Las comisiones de mercado de Polymarket también son externas.",
       "points": {
         "platform": {
           "title": "Puntos Gas de plataforma (comisión de servicio de copy)",
@@ -249,11 +254,11 @@
         },
         "timing": {
           "title": "Cuándo se descuentan los puntos Gas de plataforma",
-          "body": "Compras y ventas se cobran tras un fill real sobre el nocional llenado; los fills parciales cobran la parte ejecutada, y fills posteriores de la misma orden límite en espera no se cobran de nuevo. Órdenes sin fill, fallidas o canceladas no gastan puntos Gas de plataforma (y no hay ruta de reembolso codificada). El redeem manual cobra tras un redeem on-chain exitoso. Los paquetes Gas acreditan tras el fulfillment; no es una suscripción mensual."
+          "body": "Compras y ventas se cobran tras un fill real sobre el nocional llenado; los fills parciales cobran la parte ejecutada, y fills posteriores de la misma orden límite en espera no se cobran de nuevo. Órdenes sin fill, fallidas o canceladas no gastan puntos Gas de plataforma. El redeem manual cobra tras un redeem on-chain exitoso. Los paquetes Gas acreditan tras el fulfillment; no es facturación de suscripción mensual."
         },
         "withdraw": {
           "title": "Retiros",
-          "body": "No hay comisión de retiro separada codificada. Los fondos salen del Deposit vía Relayer / Bridge a tu dirección Polygon en USDC nativo tras autorización TOTP. Si un retiro se retrasa o bloquea, contacta al soporte oficial con las referencias de la app: este sitio no publica un SLA de procesamiento."
+          "body": "El producto actual no cobra una comisión de retiro de plataforma separada ni una comisión de rendimiento / participación en beneficios. Los fondos salen del Deposit vía Relayer / Bridge a tu dirección Polygon en USDC nativo tras autorización TOTP. Si un retiro se retrasa o bloquea, contacta al soporte oficial con las referencias de la app: este sitio no promete una ventana de procesamiento fija."
         }
       },
       "links": {
@@ -300,7 +305,7 @@
       "docs": {
         "title": "Políticas e identidad",
         "privacyHint": "Cómo recopilamos, usamos y protegemos la información.",
-        "termsHint": "Aún no hay Términos de servicio independientes publicados. La etiqueta Términos del footer es un placeholder no clicable y no se presenta como una página de política activa.",
+        "termsHint": "Hay una página borrador de Términos de servicio, claramente marcada como pendiente de confirmación de operaciones / legal — no es un acuerdo legal finalizado. Lee también la Política de privacidad y las notas de riesgo del copy trading.",
         "riskLabel": "Notas de riesgo del copy trading",
         "riskHint": "Sección de la guía sobre herencia de errores del líder, techos duros y diversificación.",
         "githubLabel": "Organización de GitHub",
@@ -330,7 +335,7 @@
         },
         {
           "q": "¿Qué comisiones pagaré?",
-          "a": "Tras comprar paquetes Gas de plataforma, los fills live elegibles gastan puntos Gas de plataforma al 0,5 % del nocional llenado (100 puntos Gas por USDC; p. ej. 100 USDC → 50 puntos ≈ 0,5 USDC). Órdenes sin fill, fallidas o canceladas no se cobran. Algunos mercados también tienen taker fees de Polymarket y comisiones de red. Las comisiones de partners no son tus comisiones de trading. No hay comisión de rendimiento ni de retiro codificada."
+          "a": "Tras comprar paquetes Gas de plataforma, los fills live elegibles gastan puntos Gas de plataforma al 0,5 % del nocional llenado (100 puntos Gas por USDC; p. ej. 100 USDC → 50 puntos ≈ 0,5 USDC). Los puntos Gas de plataforma son una unidad de facturación in-app, no gas de red. Órdenes sin fill, fallidas o canceladas no se cobran. Algunos mercados también tienen taker fees de Polymarket y comisiones de red. Las comisiones de partners no son tus comisiones de trading. El producto actual no cobra comisión de rendimiento ni comisión de retiro de plataforma separada."
         },
         {
           "q": "¿Cómo verifico una transacción?",
@@ -357,5 +362,11 @@
     "nav": {
       "trust": "Seguridad y confianza"
     }
+  },
+  "termsOfService": {
+    "breadcrumbAria": "Ruta de navegación",
+    "statusLabel": "Estado",
+    "statusDraft": "Borrador — pendiente de confirmación",
+    "lastUpdatedLabel": "Última actualización"
   }
 }

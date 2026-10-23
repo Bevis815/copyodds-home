@@ -200,6 +200,7 @@ export function buildJsonLd({ title, description, canonical, locale, page, faqIt
     page === 'partners' ||
     page === 'cooperation' ||
     page === 'privacy' ||
+    page === 'terms' ||
     page === 'trust' ||
     page === 'blog' ||
     page === 'backtest'

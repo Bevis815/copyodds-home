@@ -23,9 +23,7 @@ export function Footer({ fullWidth = false, links = [] }) {
     { href: SITE.docs.api, label: t('landing.nav.api'), external: true },
     { href: localizePath(SITE.docs.trust), label: t('footer.trust') },
     { href: localizePath(SITE.docs.privacy), label: t('footer.privacy') },
-    SITE.docs.terms
-      ? { href: SITE.docs.terms, label: t('footer.terms') }
-      : { href: null, label: t('footer.terms'), unavailable: true },
+    { href: localizePath(SITE.docs.terms), label: t('footer.terms') },
     { href: SITE.docs.license, label: t('footer.license'), external: true },
   ]
 

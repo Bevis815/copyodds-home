@@ -1349,6 +1349,11 @@
       "description": "CopyOdds Privacy Policy: how we collect, use, store, share, and protect your information when you use our website, mobile app, and related services.",
       "keywords": "CopyOdds, privacy policy, data protection, personal information, blockchain, copy trading"
     },
+    "terms": {
+      "title": "Terms of Service (Draft) | CopyOdds",
+      "description": "Draft Terms of Service for CopyOdds. Pending items for operations and legal confirmation are marked clearly — this is not a finalized legal agreement.",
+      "keywords": "CopyOdds, Terms of Service, draft, custodial wallet, Gas points, copy trading, risk disclosure"
+    },
     "backtest": {
       "title": "{{name}} | Polymarket Wallet Analysis | CopyOdds",
       "description": "Analyze {{name}} on Polymarket: smart-money metrics, PnL curves, drawdowns, and copy-trading fit from wallet address research.",
@@ -1391,8 +1396,8 @@
     },
     "funds": {
       "eyebrow": "Funds & Wallets",
-      "title": "Independent custodial wallets — not a shared hot wallet",
-      "body": "CopyOdds runs a custodial trading wallet so copy orders can be signed automatically. You do not connect MetaMask or import a private key. Each user gets a dedicated execution address and Polymarket Deposit; trading collateral sits in Deposit / pUSD on Polygon.",
+      "title": "Each user gets an independent custodial trading wallet",
+      "body": "An independent address does not mean non-custodial. CopyOdds still executes copy trades through a backend signing service, and withdrawals follow the live authorization, address checks, and step-up verification rules. You do not connect MetaMask or import a private key. Each user gets a dedicated execution address and Polymarket Deposit; trading collateral sits in Deposit / pUSD on Polygon.",
       "bullets": [
         "One user, one custodial execution address and one Polymarket Deposit — mirrored trades use your account, not a shared platform hot wallet.",
         "You do not custody or export the trading private key. Signing is performed by a separate wallet service for Relayer message / typed-data flows — not arbitrary raw transaction signing.",
@@ -1455,7 +1460,7 @@
     "fees": {
       "eyebrow": "Fees & Withdrawals",
       "title": "Platform Gas points, market fees, and withdrawals",
-      "body": "Two different costs: platform Gas points are CopyOdds’ in-app copy-service fee unit; blockchain network fees and Polymarket market fees are external. There is no coded performance fee or withdrawal fee.",
+      "body": "Two different costs: platform Gas points are CopyOdds’ in-app billing unit for copy-service fees — not blockchain network gas (such as MATIC / BNB). Polymarket market fees are also external.",
       "points": {
         "platform": {
           "title": "Platform Gas points (copy service fee)",
@@ -1463,15 +1468,15 @@
         },
         "gas": {
           "title": "Blockchain network fees and market fees",
-          "body": "Network fees (e.g. MATIC on Polygon, BNB on BSC) are not platform Gas points. Polygon deposit forwards and Relayer steps are usually handled in-product; BSC bridge deposits still need source-chain network fees from your external wallet. Some Polymarket markets also charge taker fees, separate from platform Gas points."
+          "body": "Network fees (e.g. MATIC on Polygon, BNB on BSC) are charged by the chain, not as platform Gas points. Polygon deposit forwards and Relayer steps are usually handled in-product; BSC bridge deposits still need source-chain network fees from your external wallet. Some Polymarket markets also charge taker fees, separate from platform Gas points."
         },
         "timing": {
           "title": "When platform Gas points are deducted",
-          "body": "Buys and sells are charged after an actual fill on filled notional; partial fills charge the filled portion, and later fills of the same resting limit are not charged again. Unfilled, failed, or cancelled orders do not spend platform Gas points (and there is no coded refund path). Manual redeem charges after a successful on-chain redeem. Gas packages credit after fulfillment; this is not a monthly subscription."
+          "body": "Buys and sells are charged after an actual fill on filled notional; partial fills charge the filled portion, and later fills of the same resting limit are not charged again. Unfilled, failed, or cancelled orders do not spend platform Gas points. Manual redeem charges after a successful on-chain redeem. Gas packages credit after fulfillment; this is not monthly subscription billing."
         },
         "withdraw": {
           "title": "Withdrawals",
-          "body": "No separate withdrawal fee is coded. Funds leave Deposit via Relayer / Bridge to your Polygon native USDC destination after TOTP authorization. If a withdrawal is delayed or blocked, contact official support with the app references — this site does not publish a processing SLA."
+          "body": "The current product does not charge a separate platform withdrawal fee and does not charge a performance / profit-share fee. Funds leave Deposit via Relayer / Bridge to your Polygon native USDC destination after TOTP authorization. If a withdrawal is delayed or blocked, contact official support with the app references — this site does not promise a fixed processing window."
         }
       },
       "links": {
@@ -1518,7 +1523,7 @@
       "docs": {
         "title": "Policies and identity",
         "privacyHint": "How we collect, use, and protect information.",
-        "termsHint": "A standalone Terms of Service is not published yet. The footer Terms label is a non-clickable placeholder and is not presented as a live policy page.",
+        "termsHint": "A Terms of Service draft page is available and clearly marked pending operations / legal confirmation — not a finalized legal agreement. Also read the Privacy Policy and copy-trading risk notes.",
         "riskLabel": "Copy trading risk notes",
         "riskHint": "Guide section on inheritance of leader mistakes, hard caps, and diversification.",
         "githubLabel": "GitHub organization",
@@ -1548,7 +1553,7 @@
         },
         {
           "q": "What fees will I pay?",
-          "a": "After you buy platform Gas packages, qualifying live fills spend platform Gas points at 0.5% of filled notional (100 Gas points per USDC; e.g. 100 USDC → 50 Gas points ≈ 0.5 USDC). Unfilled, failed, or cancelled orders are not charged. Some markets also have Polymarket taker fees and network fees. Partner commissions are not your trading fees. There is no coded performance fee or withdrawal fee."
+          "a": "After you buy platform Gas packages, qualifying live fills spend platform Gas points at 0.5% of filled notional (100 Gas points per USDC; e.g. 100 USDC → 50 Gas points ≈ 0.5 USDC). Platform Gas points are an in-app billing unit, not blockchain network gas. Unfilled, failed, or cancelled orders are not charged. Some markets also have Polymarket taker fees and network fees. Partner commissions are not your trading fees. The current product does not charge a performance fee or a separate platform withdrawal fee."
         },
         {
           "q": "How can I verify a transaction?",
@@ -1564,6 +1569,12 @@
       "title": "Ready when the rules are clear.",
       "body": "Open the app to fund your custodial wallet, buy Gas, and configure copy controls — or talk to official support if something about funds or withdrawals looks wrong."
     }
+  },
+  "termsOfService": {
+    "breadcrumbAria": "Breadcrumb",
+    "statusLabel": "Status",
+    "statusDraft": "Draft — pending confirmation",
+    "lastUpdatedLabel": "Last Updated"
   },
   "errors": {
     "generic": "Something went wrong."

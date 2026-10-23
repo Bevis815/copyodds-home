@@ -10,7 +10,7 @@ function readFaqItems(t, key) {
 }
 
 /**
- * @param {{ page: 'home' | 'partners' | 'cooperation' | 'privacy' | 'trust' | 'backtest' | 'blog' | 'copyTrade', enabled?: boolean, name?: string, wallet?: string }} options
+ * @param {{ page: 'home' | 'partners' | 'cooperation' | 'privacy' | 'terms' | 'trust' | 'backtest' | 'blog' | 'copyTrade', enabled?: boolean, name?: string, wallet?: string }} options
  */
 export function useDocumentSeo({ page, enabled = true, name, wallet } = { page: 'home' }) {
   const { t, i18n } = useTranslation()

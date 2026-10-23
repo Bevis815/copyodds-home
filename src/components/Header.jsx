@@ -6,6 +6,7 @@ import { useGitHubStats } from '../hooks/useGitHubStats'
 import { useLocale } from '../hooks/useLocale'
 import { formatNumber } from '../utils/format'
 import { LanguageSwitcher } from './LanguageSwitcher'
+import { BackToTopButton } from './BackToTopButton'
 import { SupportFloatingButton } from './SupportEntry'
 import { AnimatedNumber } from './ui/AnimatedNumber'
 import { IconGitHub, IconStar, IconTelegram, IconX } from './ui/Icons'
@@ -218,7 +219,10 @@ export function Header({ logoHref = '#top', fullWidth = false, compact = false }
           </div>
         ) : null}
       </div>
-      <SupportFloatingButton />
+      <div className="site-fabs" aria-hidden={false}>
+        <BackToTopButton />
+        <SupportFloatingButton />
+      </div>
     </>
   )
 }
