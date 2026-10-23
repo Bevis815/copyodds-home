@@ -15,19 +15,21 @@
     "backToTop": "Retour en haut",
     "leaderboard": "Classement",
     "methodology": "Méthodologie",
-    "docs": "Guide utilisateur"
+    "docs": "Guide utilisateur",
+    "terms": "Conditions",
+    "termsUnavailable": "Les Conditions d’utilisation autonomes ne sont pas encore publiées",
+    "trust": "Centre de confiance",
+    "privacy": "Confidentialité"
   },
   "support": {
     "title": "Support",
     "telegram": "Support Telegram",
     "telegramCta": "Discuter",
     "whatsapp": "Support WhatsApp",
-    "whatsappCta": "Copier",
+    "whatsappCta": "Discuter",
     "panelHint": "Nous répondons généralement pendant les heures ouvrables.",
     "floatingAria": "Contacter le support sur Telegram",
-    "whatsappFloatingAria": "Copier le nom d’utilisateur WhatsApp",
-    "whatsappCopied": "Copié",
-    "whatsappHint": "Recherchez ce nom d’utilisateur dans WhatsApp"
+    "whatsappFloatingAria": "Contacter le support sur WhatsApp"
   },
   "hero": {
     "titleLine1": "Des signaux plus clairs,",
@@ -143,6 +145,217 @@
       "title": "Copy Trade Polymarket : copier automatiquement les meilleurs wallets | CopyOdds",
       "description": "Polymarket n’a pas de copy trading natif. Découvrez comment CopyOdds classe les wallets smart money, backteste et recopie les trades avec des plafonds que vous contrôlez.",
       "keywords": "copy trade Polymarket, copy trading Polymarket, CopyOdds, smart money"
+    },
+    "trust": {
+      "title": "Centre de confiance | CopyOdds — Fonds, frais, sécurité et vérification",
+      "description": "Portefeuilles dépositaires CopyOdds, financement Deposit/pUSD, points Gas plateforme (0,5 % du notionnel), retraits TOTP et contrôles de risque copy — à lire avant de déposer.",
+      "keywords": "CopyOdds, centre de confiance, portefeuille dépositaire, points Gas, Polymarket Deposit, copy trading, retrait TOTP, sécurité"
+    }
+  },
+  "trust": {
+    "breadcrumb": "Centre de confiance",
+    "breadcrumbAria": "Fil d’Ariane",
+    "tocAria": "Sur cette page",
+    "hero": {
+      "eyebrow": "Centre de confiance CopyOdds",
+      "title": "Comprenez le fonctionnement avant de copier.",
+      "subtitle": "CopyOdds utilise des portefeuilles de trading dépositaires par utilisateur, des points Gas de plateforme pour le copy, et des retraits liés au TOTP. Lisez fonds, frais et contrôles de risque avant de déposer.",
+      "ctaFunds": "Comment fonctionnent les fonds",
+      "ctaTransparency": "Transparence du trading"
+    },
+    "toc": {
+      "funds": "Fonds et portefeuilles",
+      "transparency": "Transparence du copy",
+      "fees": "Frais et retraits",
+      "security": "Sécurité",
+      "support": "Support",
+      "faq": "FAQ"
+    },
+    "funds": {
+      "eyebrow": "Fonds et portefeuilles",
+      "title": "Portefeuilles dépositaires indépendants — pas un hot wallet partagé",
+      "body": "CopyOdds utilise un portefeuille de trading dépositaire pour signer automatiquement les ordres de copy. Vous n’avez pas besoin de MetaMask ni d’importer une clé privée. Chaque utilisateur a une adresse d’exécution dédiée et un Deposit Polymarket ; la marge de trading est dans Deposit / pUSD sur Polygon.",
+      "bullets": [
+        "Un utilisateur, une adresse d’exécution dépositaire et un Deposit Polymarket — les copies utilisent votre compte, pas un hot wallet partagé de la plateforme.",
+        "Vous n’avez pas à conserver ni exporter la clé privée de trading. La signature est faite par un service de portefeuille séparé pour les opérations Relayer structurées (message / typed-data), pas pour des transactions brutes arbitraires.",
+        "Sur Polygon, l’USDC.e envoyé à votre adresse dépositaire est automatiquement transféré vers Deposit et wrappé en pUSD ; l’USDC natif / USDT0 / USDT Wormhole passent par le Bridge Polymarket vers pUSD. Les dépôts BSC doivent utiliser l’adresse Bridge EVM affichée pour ce réseau — n’envoyez pas d’actifs BSC à l’EOA dépositaire.",
+        "Le support CopyOdds ne vous demandera jamais une clé privée, une phrase de récupération ou des codes d’authenticator.",
+        "Le produit reste dépositaire : la plateforme peut signer des copies pour vous. Ce n’est pas un portefeuille non dépositaire où les clés restent uniquement sur votre appareil."
+      ],
+      "flow": {
+        "deposit": {
+          "title": "Déposez sur votre adresse dépositaire",
+          "body": "Ouvrez un portefeuille dépositaire dans l’app, puis financez l’adresse Polygon affichée (ou l’adresse Bridge depuis BSC). La marge arrive dans votre Deposit Polymarket en pUSD."
+        },
+        "allocate": {
+          "title": "Définissez ratio ou montant fixe et plafonds de risque",
+          "body": "Choisissez RATIO ou FIXED_AMOUNT, puis configurez notionnel max, plafonds par marché, plafonds journaliers, slippage et autres gardes avant activation."
+        },
+        "execute": {
+          "title": "Les copies utilisent votre Deposit",
+          "body": "Quand un wallet suivi s’exécute sur Polygon, CopyOdds peut mirorer l’action via votre client CLOB personnel dans ces règles. Exécutions, slippage et manques peuvent différer du leader."
+        },
+        "withdraw": {
+          "title": "Retirez avec TOTP vers votre adresse",
+          "body": "Les retraits envoient les fonds du Deposit vers une adresse Polygon que vous indiquez. Vous devez activer un authenticator (TOTP) et confirmer la destination et le montant de ce retrait. Ordres ouverts, positions ouvertes ou un retrait en cours peuvent bloquer la demande."
+        }
+      },
+      "privacyLink": "Lisez aussi la sécurité des portefeuilles et clés privées dans la <privacy>Politique de confidentialité</privacy> pour le libellé formel sur les identifiants et les transactions irréversibles."
+    },
+    "transparency": {
+      "eyebrow": "Transparence du copy trading",
+      "title": "Comment découverte, mirroring et recherche diffèrent des résultats live",
+      "body": "Les signaux viennent des événements on-chain OrderFilled des wallets suivis. Le sizing live est ratio ou montant fixe sur votre solde Deposit, avec contrôles de risque — sans garantie d’égaler le PnL du leader.",
+      "points": {
+        "discovery": {
+          "title": "Sélection smart money",
+          "body": "Le classement classe les wallets Polymarket au-delà du PnL affiché — cohérence, activité, drawdowns et contexte de risque — pour shortlister des adresses à étudier."
+        },
+        "signal": {
+          "title": "Du signal à l’exécution",
+          "body": "Un listener de blocs suit les fills Polygon CTF Exchange des leaders abonnés, puis le worker de copy calcule et soumet les ordres via vos credentials CLOB après un éventuel délai."
+        },
+        "sizing": {
+          "title": "RATIO et FIXED_AMOUNT",
+          "body": "RATIO utilise une fraction de votre Deposit USDC/pUSD disponible ; FIXED_AMOUNT vise un notionnel en dollars au prix du leader. Fixez toujours des plafonds durs — suivre un wallet hérite aussi des entrées tardives et des tailles trop grandes."
+        },
+        "risks": {
+          "title": "Délai, slippage, manques et pertes",
+          "body": "Le slippage de copy par défaut est de 5 %. Les ordres peuvent être relevés au notionnel minimum, sautés par le risk check, partiellement exécutés, échouer ou perdre de l’argent même si le leader paraît profitable. Le copy déplace la recherche — il n’élimine pas le risque de marché."
+        },
+        "backtest": {
+          "title": "Backtest vs copy live",
+          "body": "Les analyses et courbes de recherche sur ce site sont des aides de sélection. Le PnL de copy live est suivi via vos lots mirorés et peut diverger du leader et de toute courbe historique. Les performances passées ne garantissent pas les résultats futurs."
+        }
+      },
+      "links": {
+        "leaderboard": "Ouvrir le classement smart money",
+        "guide": "Lire le guide de copy trading",
+        "explorer": "Inspecter les adresses sur Polygonscan"
+      }
+    },
+    "fees": {
+      "eyebrow": "Frais et retraits",
+      "title": "Points Gas de plateforme, frais de marché et retraits",
+      "body": "Deux coûts distincts : les points Gas de plateforme sont l’unité de frais de service copy dans l’app CopyOdds ; les frais réseau blockchain et les frais de marché Polymarket sont externes. Aucun frais de performance ni frais de retrait n’est codé.",
+      "points": {
+        "platform": {
+          "title": "Points Gas de plateforme (frais de service copy)",
+          "body": "Les frais de service copy CopyOdds sont calculés sur le notionnel live effectivement exécuté éligible et déduits en points Gas de plateforme. Selon les règles actuelles (0,5 % du notionnel à 100 points Gas par USDC), un notionnel exécuté de 100 USDC coûte 50 points Gas ≈ 0,5 USDC. Achetez des packs Gas dans l’app ; le copy réel exige gasBalance > 0. Les frais de marché Polymarket et les frais réseau applicables sont séparés."
+        },
+        "gas": {
+          "title": "Frais réseau blockchain et frais de marché",
+          "body": "Les frais réseau (ex. MATIC sur Polygon, BNB sur BSC) ne sont pas des points Gas de plateforme. Les transferts de dépôt Polygon et les étapes Relayer sont généralement gérés côté produit ; les dépôts via bridge BSC nécessitent encore des frais réseau sur la chaîne source depuis votre wallet externe. Certains marchés Polymarket facturent aussi des frais taker, séparés des points Gas de plateforme."
+        },
+        "timing": {
+          "title": "Quand les points Gas de plateforme sont déduits",
+          "body": "Achats et ventes sont facturés après une exécution réelle sur le notionnel rempli ; les exécutions partielles facturent la partie remplie, et les fills ultérieurs d’une même limite en attente ne sont pas refacturés. Les ordres non exécutés, échoués ou annulés ne consomment pas de points Gas de plateforme (et il n’y a pas de chemin de remboursement codé). Le redeem manuel facture après un redeem on-chain réussi. Les packs Gas créditent après fulfillment ; ce n’est pas un abonnement mensuel."
+        },
+        "withdraw": {
+          "title": "Retraits",
+          "body": "Aucun frais de retrait séparé n’est codé. Les fonds quittent le Deposit via Relayer / Bridge vers votre adresse Polygon en USDC natif après autorisation TOTP. Si un retrait est retardé ou bloqué, contactez le support officiel avec les références de l’app — ce site ne publie pas de SLA de traitement."
+        }
+      },
+      "links": {
+        "app": "Voir les packs Gas dans l’app",
+        "support": "Contacter le support officiel"
+      }
+    },
+    "security": {
+      "eyebrow": "Sécurité et vérification",
+      "title": "Signature dépositaire avec step-up de retrait — pas un badge d’audit",
+      "body": "Les contrôles portent sur les portefeuilles par utilisateur, les limites de signature distante, les listes blanches de transfert et les retraits liés au TOTP. L’open source améliore l’inspectabilité ; ce n’est pas un audit de sécurité tiers ni une assurance.",
+      "points": {
+        "keys": {
+          "title": "Pas de clés dans le navigateur ; signature distante structurée",
+          "body": "Les clés privées n’apparaissent pas dans le navigateur et ne sont pas renvoyées par l’API métier. La signature utilise un service de portefeuille séparé pour les flux message / typed-data du Relayer Polymarket — pas la signature de transactions brutes arbitraires."
+        },
+        "access": {
+          "title": "Contrôles de connexion et de retrait",
+          "body": "Connexion par OTP e-mail ; Passkey optionnel pour l’accès au compte. Les retraits exigent un authenticator (TOTP) et une autorisation unique liée à l’adresse et au montant. Sans autorisation de retrait, les sorties quotidiennes sont limitées aux destinataires en liste blanche."
+        },
+        "records": {
+          "title": "Registres et contrôles on-chain",
+          "body": "CopyOdds traite adresses de portefeuille, hashes de transaction et historiques de trading pour la custodie et le copy. Les pages de recherche lient les wallets Polymarket à Polygonscan et aux profils Polymarket. Utilisez adresses et hashes de l’app pour vérifier l’activité on-chain."
+        },
+        "audit": {
+          "title": "Open source vs audit de sécurité",
+          "body": "Le frontend (copyodds-web) et le backend (copyodds-services) sont publiés sous Apache-2.0 pour permettre l’examen du ranking et des workflows de copy. Nous ne publions pas de rapport d’audit tiers, de badge de certification ni de claim d’assurance."
+        }
+      },
+      "links": {
+        "web": "copyodds-web sur GitHub",
+        "services": "copyodds-services sur GitHub",
+        "privacy": "Politique de confidentialité"
+      }
+    },
+    "support": {
+      "eyebrow": "Support et responsabilité",
+      "title": "Canaux et documents officiels",
+      "body": "Utilisez uniquement les contacts et documents listés ici. Ne faites pas confiance aux DM non sollicités demandant clés, seeds, codes d’authenticator ou un contrôle à distance de votre compte.",
+      "channels": {
+        "title": "Support client",
+        "body": "Telegram et WhatsApp sont les entrées de support publiées pour les questions produit et retrait. Les demandes de confidentialité peuvent aussi utiliser l’e-mail privacy de la Politique de confidentialité."
+      },
+      "docs": {
+        "title": "Politiques et identité",
+        "privacyHint": "Comment nous collectons, utilisons et protégeons les informations.",
+        "termsHint": "Des Conditions d’utilisation autonomes ne sont pas encore publiées. Le libellé Conditions du footer est un placeholder non cliquable et n’est pas présenté comme une page de politique active.",
+        "riskLabel": "Notes de risque du copy trading",
+        "riskHint": "Section du guide sur l’héritage des erreurs du leader, plafonds durs et diversification.",
+        "githubLabel": "Organisation GitHub",
+        "githubHint": "Identité open source officielle des dépôts web et services."
+      }
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Questions à clarifier avant de financer ou copier",
+      "body": "Les réponses suivent le modèle produit live dépositaire + Gas des services de trading.",
+      "items": [
+        {
+          "q": "CopyOdds est-il dépositaire ou non dépositaire ?",
+          "a": "Dépositaire. CopyOdds provisionne un portefeuille de trading par utilisateur et signe les ordres de copy via un service de portefeuille distant pour automatiser sans MetaMask. Ce n’est pas un produit non dépositaire où les clés privées restent uniquement sur votre appareil."
+        },
+        {
+          "q": "Qui contrôle les permissions de signature du portefeuille ?",
+          "a": "Les signatures de trading sont produites par le service de portefeuille de la plateforme pour les flux Relayer typed-data / message liés à votre compte dépositaire. La liaison de wallet externe, l’import de clé et le retrait EOA direct sont désactivés. Sans autorisation de retrait, les transferts sortants sont limités aux destinataires en liste blanche."
+        },
+        {
+          "q": "Le copy trading peut-il faire perdre de l’argent ?",
+          "a": "Oui. Le copy trading n’élimine pas le risque de marché. Les leaders peuvent se tromper, arriver tard ou surdimensionner ; votre abonnement peut perdre. Les performances passées et de forts win rates incluent encore beaucoup de trades perdants."
+        },
+        {
+          "q": "Pourquoi mon résultat peut-il différer de celui du leader ?",
+          "a": "Latence, slippage par défaut, sizing ratio vs fixe, relevés de notionnel minimum, skips de risque, exécutions partielles et pauses Gas peuvent diverger du leader. Les courbes de recherche sur ce site ne sont pas des garanties d’exécution de copy."
+        },
+        {
+          "q": "Quels frais vais-je payer ?",
+          "a": "Après l’achat de packs Gas de plateforme, les fills live éligibles consomment des points Gas de plateforme à 0,5 % du notionnel rempli (100 points Gas par USDC ; ex. 100 USDC → 50 points ≈ 0,5 USDC). Les ordres non exécutés, échoués ou annulés ne sont pas facturés. Certains marchés ont aussi des frais taker Polymarket et des frais réseau. Les commissions partenaires ne sont pas vos frais de trading. Aucun frais de performance ni de retrait n’est codé."
+        },
+        {
+          "q": "Comment vérifier une transaction ?",
+          "a": "Utilisez l’adresse dépositaire, l’adresse Deposit et les hashes de transaction affichés dans l’app sur Polygonscan (et les profils Polymarket pour les wallets de recherche). Les données blockchain de ces adresses publiques sont inspectables indépendamment."
+        },
+        {
+          "q": "Que faire si un retrait est retardé ?",
+          "a": "Vérifiez que le TOTP est activé, qu’aucun ordre/position ne bloque le retrait, et qu’aucun retrait n’est en cours. Puis contactez le support Telegram officiel (t.me/oddsFine) ou WhatsApp avec vos identifiants et références d’app. Ce site ne publie pas de SLA de traitement garanti."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Prêt quand les règles sont claires.",
+      "body": "Ouvrez l’app pour financer votre portefeuille dépositaire, acheter du Gas et configurer les contrôles de copy — ou contactez le support officiel si quelque chose sur les fonds ou les retraits semble incorrect."
+    }
+  },
+  "landing": {
+    "trustStrip": {
+      "eyebrow": "Centre de confiance",
+      "title": "Comprenez fonds, frais et exécution du copy.",
+      "body": "Portefeuilles dépositaires, points Gas, sizing, retraits et contrôles de risque — tels que le produit live fonctionne aujourd’hui.",
+      "cta": "Ouvrir le Centre de confiance"
+    },
+    "nav": {
+      "trust": "Sécurité et confiance"
     }
   }
 }

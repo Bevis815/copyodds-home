@@ -169,6 +169,7 @@
     "docs": "Docs",
     "privacy": "Privacy",
     "terms": "Terms",
+    "termsUnavailable": "Standalone Terms of Service are not published yet",
     "trust": "Trust Center",
     "license": "License",
     "navAria": "Footer"
@@ -1394,15 +1395,15 @@
       "body": "CopyOdds runs a custodial trading wallet so copy orders can be signed automatically. You do not connect MetaMask or import a private key. Each user gets a dedicated execution address and Polymarket Deposit; trading collateral sits in Deposit / pUSD on Polygon.",
       "bullets": [
         "One user, one custodial execution address and one Polymarket Deposit — mirrored trades use your account, not a shared platform hot wallet.",
-        "You do not custody or export the trading private key. Signing is performed by a separate wallet service for structured Relayer operations.",
-        "Primary Polygon deposit path: send USDC.e / USDC / USDT0 / Wormhole USDT to the custodial address shown in the app; funds auto-forward into Deposit and wrap to pUSD. BSC deposits use the Bridge EVM address shown for that network — not the custodial EOA.",
+        "You do not custody or export the trading private key. Signing is performed by a separate wallet service for Relayer message / typed-data flows — not arbitrary raw transaction signing.",
+        "On Polygon, USDC.e sent to your custodial address auto-forwards to Deposit and wraps to pUSD; native USDC / USDT0 / Wormhole USDT auto-route via Polymarket Bridge to pUSD. BSC deposits must use the Bridge EVM address shown for that network (same address used by verified-deposit messaging) — do not send BSC assets to the custodial EOA.",
         "CopyOdds support will not ask you to disclose a private key, recovery phrase, or authenticator codes.",
         "This is still custodial: the platform can sign copy trades on your behalf. That is different from a non-custodial wallet where keys stay only on your device."
       ],
       "flow": {
         "deposit": {
           "title": "Deposit to your custodial address",
-          "body": "Open a custodial wallet in the app, then fund the Polygon address shown there (or the Bridge address when depositing from BSC). Collateral lands in your Polymarket Deposit as pUSD."
+          "body": "Open a custodial wallet in the app, then fund the Polygon custodial address shown there; for BSC deposits use the Bridge EVM address. Trading collateral lands in your Polymarket Deposit as pUSD."
         },
         "allocate": {
           "title": "Set ratio or fixed size and risk caps",
@@ -1453,24 +1454,24 @@
     },
     "fees": {
       "eyebrow": "Fees & Withdrawals",
-      "title": "Platform Gas, Polymarket market fees, and withdrawals",
-      "body": "CopyOdds charges platform usage through Gas packages. Polymarket may charge its own market taker fees on fills. There is no coded performance fee or withdrawal fee in the product.",
+      "title": "Platform Gas points, market fees, and withdrawals",
+      "body": "Two different costs: platform Gas points are CopyOdds’ in-app copy-service fee unit; blockchain network fees and Polymarket market fees are external. There is no coded performance fee or withdrawal fee.",
       "points": {
         "platform": {
-          "title": "Platform Gas (0.5% of notional)",
-          "body": "Buy a Gas package in the app. Each successful live trade (and manual redeem) spends Gas equal to 0.5% of order notional at 100 Gas per USDC — for example, $100 notional costs 50 Gas. Real copy requires gasBalance > 0."
+          "title": "Platform Gas points (copy service fee)",
+          "body": "CopyOdds copy-service fees are calculated on qualifying live filled notional and deducted as platform Gas points. Under the current rules (0.5% of notional at 100 Gas points per USDC), a 100 USDC filled notional costs 50 Gas points ≈ 0.5 USDC. Buy Gas packages in the app; real copy requires gasBalance > 0. Applicable Polymarket market fees and network fees are separate."
         },
         "gas": {
-          "title": "Network / chain costs",
-          "body": "Polygon deposit forwards and Relayer steps are handled in-product so you typically do not hold MATIC for those paths. BSC bridge deposits still require you to pay source-chain gas from your external wallet. Polymarket market fees (when a market charges takers) are separate from platform Gas."
+          "title": "Blockchain network fees and market fees",
+          "body": "Network fees (e.g. MATIC on Polygon, BNB on BSC) are not platform Gas points. Polygon deposit forwards and Relayer steps are usually handled in-product; BSC bridge deposits still need source-chain network fees from your external wallet. Some Polymarket markets also charge taker fees, separate from platform Gas points."
         },
         "timing": {
-          "title": "When Gas is charged",
-          "body": "Gas packages credit your balance after fulfillment. Trade Gas is deducted after a successful CLOB order (or manual redeem), not as a monthly subscription — subscription billing is not implemented."
+          "title": "When platform Gas points are deducted",
+          "body": "Buys and sells are charged after an actual fill on filled notional; partial fills charge the filled portion, and later fills of the same resting limit are not charged again. Unfilled, failed, or cancelled orders do not spend platform Gas points (and there is no coded refund path). Manual redeem charges after a successful on-chain redeem. Gas packages credit after fulfillment; this is not a monthly subscription."
         },
         "withdraw": {
           "title": "Withdrawals",
-          "body": "No separate withdrawal fee is coded. Funds leave Deposit via Relayer / Bridge to your Polygon USDC destination after TOTP authorization. If a withdrawal is delayed or blocked, contact official support with the app references — this site does not publish a processing SLA."
+          "body": "No separate withdrawal fee is coded. Funds leave Deposit via Relayer / Bridge to your Polygon native USDC destination after TOTP authorization. If a withdrawal is delayed or blocked, contact official support with the app references — this site does not publish a processing SLA."
         }
       },
       "links": {
@@ -1517,7 +1518,7 @@
       "docs": {
         "title": "Policies and identity",
         "privacyHint": "How we collect, use, and protect information.",
-        "termsHint": "A standalone Terms of Service page is not published on this site yet (footer still points to a placeholder).",
+        "termsHint": "A standalone Terms of Service is not published yet. The footer Terms label is a non-clickable placeholder and is not presented as a live policy page.",
         "riskLabel": "Copy trading risk notes",
         "riskHint": "Guide section on inheritance of leader mistakes, hard caps, and diversification.",
         "githubLabel": "GitHub organization",
@@ -1547,7 +1548,7 @@
         },
         {
           "q": "What fees will I pay?",
-          "a": "Buy platform Gas packages; live trades spend Gas at 0.5% of notional (100 Gas per USDC). Polymarket may also charge market taker fees on some markets. Partner/affiliate commissions on the partnership page are not your trading fees. There is no coded performance fee or withdrawal fee."
+          "a": "After you buy platform Gas packages, qualifying live fills spend platform Gas points at 0.5% of filled notional (100 Gas points per USDC; e.g. 100 USDC → 50 Gas points ≈ 0.5 USDC). Unfilled, failed, or cancelled orders are not charged. Some markets also have Polymarket taker fees and network fees. Partner commissions are not your trading fees. There is no coded performance fee or withdrawal fee."
         },
         {
           "q": "How can I verify a transaction?",

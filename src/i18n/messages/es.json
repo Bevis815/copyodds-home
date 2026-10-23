@@ -15,19 +15,21 @@
     "backToTop": "Volver arriba",
     "leaderboard": "Clasificación",
     "methodology": "Metodología",
-    "docs": "Guía de usuario"
+    "docs": "Guía de usuario",
+    "terms": "Términos",
+    "termsUnavailable": "Los Términos de servicio independientes aún no están publicados",
+    "trust": "Centro de confianza",
+    "privacy": "Privacidad"
   },
   "support": {
     "title": "Soporte",
     "telegram": "Soporte de Telegram",
     "telegramCta": "Chatear",
     "whatsapp": "Soporte de WhatsApp",
-    "whatsappCta": "Copiar",
+    "whatsappCta": "Chatear",
     "panelHint": "Solemos responder en horario laboral.",
     "floatingAria": "Contactar soporte por Telegram",
-    "whatsappFloatingAria": "Copiar usuario de WhatsApp",
-    "whatsappCopied": "Copiado",
-    "whatsappHint": "Busca este usuario en WhatsApp"
+    "whatsappFloatingAria": "Contactar soporte por WhatsApp"
   },
   "hero": {
     "titleLine1": "Señales más claras,",
@@ -143,6 +145,217 @@
       "title": "Copy Trade Polymarket: replica carteras top automáticamente | CopyOdds",
       "description": "Polymarket no tiene copy trading nativo. Aprende cómo CopyOdds clasifica wallets de smart money, hace backtest y replica operaciones con límites que controlas.",
       "keywords": "copy trade Polymarket, copy trading Polymarket, CopyOdds, smart money"
+    },
+    "trust": {
+      "title": "Centro de confianza | CopyOdds — Fondos, comisiones, seguridad y verificación",
+      "description": "Wallets custodiales CopyOdds, fondeo Deposit/pUSD, puntos Gas de plataforma (0,5 % del nocional), retiros TOTP y controles de riesgo de copy — léelo antes de depositar.",
+      "keywords": "CopyOdds, centro de confianza, wallet custodial, puntos Gas, Polymarket Deposit, copy trading, retiro TOTP, seguridad"
+    }
+  },
+  "trust": {
+    "breadcrumb": "Centro de confianza",
+    "breadcrumbAria": "Ruta de navegación",
+    "tocAria": "En esta página",
+    "hero": {
+      "eyebrow": "Centro de confianza de CopyOdds",
+      "title": "Entiende cómo funciona antes de copiar.",
+      "subtitle": "CopyOdds usa wallets de trading custodiales por usuario, puntos Gas de plataforma para el copy y retiros vinculados a TOTP. Lee fondos, comisiones y controles de riesgo antes de depositar.",
+      "ctaFunds": "Cómo funcionan los fondos",
+      "ctaTransparency": "Transparencia del trading"
+    },
+    "toc": {
+      "funds": "Fondos y wallets",
+      "transparency": "Transparencia del copy",
+      "fees": "Comisiones y retiros",
+      "security": "Seguridad",
+      "support": "Soporte",
+      "faq": "FAQ"
+    },
+    "funds": {
+      "eyebrow": "Fondos y wallets",
+      "title": "Wallets custodiales independientes — no un hot wallet compartido",
+      "body": "CopyOdds usa una wallet de trading custodial para firmar automáticamente las órdenes de copy. No necesitas MetaMask ni importar una clave privada. Cada usuario tiene una dirección de ejecución dedicada y un Deposit de Polymarket; el colateral está en Deposit / pUSD en Polygon.",
+      "bullets": [
+        "Un usuario, una dirección de ejecución custodial y un Deposit de Polymarket: las copias usan tu cuenta, no un hot wallet compartido de la plataforma.",
+        "No custodiás ni exportás la clave privada de trading. La firma la realiza un servicio de wallet separado para operaciones Relayer estructuradas (message / typed-data), no transacciones crudas arbitrarias.",
+        "En Polygon, el USDC.e enviado a tu dirección custodial se reenvía automáticamente a Deposit y se wrappea a pUSD; USDC nativo / USDT0 / USDT Wormhole pasan por el Bridge de Polymarket a pUSD. Los depósitos BSC deben usar la dirección Bridge EVM de esa red: no envíes activos BSC a la EOA custodial.",
+        "El soporte de CopyOdds no te pedirá una clave privada, frase de recuperación ni códigos de authenticator.",
+        "El producto sigue siendo custodial: la plataforma puede firmar copias por ti. No es una wallet no custodial donde las claves solo están en tu dispositivo."
+      ],
+      "flow": {
+        "deposit": {
+          "title": "Deposita en tu dirección custodial",
+          "body": "Abre una wallet custodial en la app y fondea la dirección Polygon mostrada (o la Bridge desde BSC). El colateral llega a tu Deposit de Polymarket como pUSD."
+        },
+        "allocate": {
+          "title": "Define ratio o monto fijo y límites de riesgo",
+          "body": "Elige RATIO o FIXED_AMOUNT y configura nocional máximo, límites por mercado, diarios, slippage y otras protecciones antes de activar."
+        },
+        "execute": {
+          "title": "Las copias usan tu Deposit",
+          "body": "Cuando una wallet seguida ejecuta en Polygon, CopyOdds puede reflejar la acción con tu cliente CLOB personal dentro de esas reglas. Fills, slippage y fallos pueden diferir del líder."
+        },
+        "withdraw": {
+          "title": "Retira con TOTP a tu dirección",
+          "body": "Los retiros mueven fondos del Deposit a una dirección Polygon que indiques. Debes activar un authenticator (TOTP) y confirmar destino y monto de ese retiro. Órdenes abiertas, posiciones abiertas o un retiro en curso pueden bloquear la solicitud."
+        }
+      },
+      "privacyLink": "También lee la seguridad de wallets y claves privadas en la <privacy>Política de privacidad</privacy> para el texto formal sobre credenciales y transacciones irreversibles."
+    },
+    "transparency": {
+      "eyebrow": "Transparencia del copy trading",
+      "title": "Cómo el descubrimiento, el mirroring y la investigación difieren de los resultados en vivo",
+      "body": "Las señales provienen de eventos on-chain OrderFilled de las wallets seguidas. El sizing en vivo es ratio o monto fijo sobre tu saldo Deposit, con controles de riesgo — sin garantía de igualar el PnL del líder.",
+      "points": {
+        "discovery": {
+          "title": "Selección smart money",
+          "body": "El ranking clasifica wallets de Polymarket más allá del PnL visible — consistencia, actividad, drawdowns y contexto de riesgo — para shortlist de direcciones a investigar."
+        },
+        "signal": {
+          "title": "De la señal a la ejecución",
+          "body": "Un listener de bloques observa fills del CTF Exchange de Polygon de líderes suscritos; luego el worker de copy dimensiona y envía órdenes con tus credenciales CLOB tras un posible delay."
+        },
+        "sizing": {
+          "title": "RATIO y FIXED_AMOUNT",
+          "body": "RATIO usa una fracción de tu Deposit USDC/pUSD disponible; FIXED_AMOUNT apunta a un nocional en dólares al precio del líder. Siempre fija techos duros: seguir una wallet también hereda entradas tardías y tamaños excesivos."
+        },
+        "risks": {
+          "title": "Retraso, slippage, fallos y pérdidas",
+          "body": "El slippage de copy por defecto es 5 %. Las órdenes pueden subir al nocional mínimo, omitirse por risk checks, llenarse parcialmente, fallar o perder dinero aunque el líder parezca rentable. El copy mueve la investigación; no elimina el riesgo de mercado."
+        },
+        "backtest": {
+          "title": "Backtest vs copy en vivo",
+          "body": "Los análisis y curvas de investigación en este sitio son ayudas de cribado. El PnL de copy en vivo se rastrea con tus lotes reflejados y puede divergir del líder y de cualquier curva histórica. El rendimiento pasado no garantiza resultados futuros."
+        }
+      },
+      "links": {
+        "leaderboard": "Abrir ranking smart money",
+        "guide": "Leer la guía de copy trading",
+        "explorer": "Inspeccionar direcciones en Polygonscan"
+      }
+    },
+    "fees": {
+      "eyebrow": "Comisiones y retiros",
+      "title": "Puntos Gas de plataforma, comisiones de mercado y retiros",
+      "body": "Dos costos distintos: los puntos Gas de plataforma son la unidad de comisión de servicio de copy en la app; las comisiones de red blockchain y de mercado de Polymarket son externas. No hay comisión de rendimiento ni de retiro codificada.",
+      "points": {
+        "platform": {
+          "title": "Puntos Gas de plataforma (comisión de servicio de copy)",
+          "body": "Las comisiones de servicio de copy de CopyOdds se calculan sobre el nocional en vivo efectivamente ejecutado elegible y se descuentan como puntos Gas de plataforma. Con las reglas actuales (0,5 % del nocional a 100 puntos Gas por USDC), un nocional ejecutado de 100 USDC cuesta 50 puntos Gas ≈ 0,5 USDC. Compra paquetes Gas en la app; el copy real requiere gasBalance > 0. Las comisiones de mercado de Polymarket y de red aplicables son aparte."
+        },
+        "gas": {
+          "title": "Comisiones de red blockchain y de mercado",
+          "body": "Las comisiones de red (p. ej. MATIC en Polygon, BNB en BSC) no son puntos Gas de plataforma. Los reenvíos de depósito en Polygon y pasos Relayer suelen gestionarse en el producto; los depósitos bridge BSC aún requieren comisiones de red de la cadena origen desde tu wallet externa. Algunos mercados de Polymarket también cobran taker fees, aparte de los puntos Gas de plataforma."
+        },
+        "timing": {
+          "title": "Cuándo se descuentan los puntos Gas de plataforma",
+          "body": "Compras y ventas se cobran tras un fill real sobre el nocional llenado; los fills parciales cobran la parte ejecutada, y fills posteriores de la misma orden límite en espera no se cobran de nuevo. Órdenes sin fill, fallidas o canceladas no gastan puntos Gas de plataforma (y no hay ruta de reembolso codificada). El redeem manual cobra tras un redeem on-chain exitoso. Los paquetes Gas acreditan tras el fulfillment; no es una suscripción mensual."
+        },
+        "withdraw": {
+          "title": "Retiros",
+          "body": "No hay comisión de retiro separada codificada. Los fondos salen del Deposit vía Relayer / Bridge a tu dirección Polygon en USDC nativo tras autorización TOTP. Si un retiro se retrasa o bloquea, contacta al soporte oficial con las referencias de la app: este sitio no publica un SLA de procesamiento."
+        }
+      },
+      "links": {
+        "app": "Ver paquetes Gas en la app",
+        "support": "Contactar soporte oficial"
+      }
+    },
+    "security": {
+      "eyebrow": "Seguridad y verificación",
+      "title": "Firma custodial con step-up de retiro — no una insignia de auditoría",
+      "body": "Los controles se centran en wallets por usuario, límites de firma remota, listas blancas de transferencia y retiros vinculados a TOTP. El open source mejora la inspectabilidad; no es una auditoría de seguridad de terceros ni un seguro.",
+      "points": {
+        "keys": {
+          "title": "Sin claves en el navegador; firma remota estructurada",
+          "body": "Las claves privadas no se muestran en el navegador ni las devuelve la API de negocio. La firma usa un servicio de wallet separado para flujos message / typed-data del Relayer de Polymarket — no firma de transacciones crudas arbitrarias."
+        },
+        "access": {
+          "title": "Controles de acceso y retiro",
+          "body": "Inicio de sesión con OTP por email; Passkey opcional para acceso a la cuenta. Los retiros requieren authenticator (TOTP) y una autorización única ligada a dirección y monto. Sin autorización de retiro, las salidas cotidianas se limitan a destinatarios en lista blanca."
+        },
+        "records": {
+          "title": "Registros y comprobaciones on-chain",
+          "body": "CopyOdds procesa direcciones de wallet, hashes de transacción e historiales de trading para custodia y copy. Las páginas de investigación enlazan wallets de Polymarket a Polygonscan y perfiles de Polymarket. Usa direcciones y hashes de la app para verificar actividad on-chain."
+        },
+        "audit": {
+          "title": "Open source vs auditoría de seguridad",
+          "body": "El frontend (copyodds-web) y el backend (copyodds-services) se publican bajo Apache-2.0 para revisar ranking y flujos de copy. No publicamos informe de auditoría de terceros, insignia de certificación ni claim de seguro."
+        }
+      },
+      "links": {
+        "web": "copyodds-web en GitHub",
+        "services": "copyodds-services en GitHub",
+        "privacy": "Política de privacidad"
+      }
+    },
+    "support": {
+      "eyebrow": "Soporte y responsabilidad",
+      "title": "Canales y documentos oficiales",
+      "body": "Usa solo los contactos y documentos listados aquí. No confíes en DMs no solicitados que pidan claves, seeds, códigos de authenticator o control remoto de tu cuenta.",
+      "channels": {
+        "title": "Soporte al cliente",
+        "body": "Telegram y WhatsApp son las entradas de soporte publicadas para producto y retiros. Las solicitudes de privacidad también pueden usar el email de privacidad de la Política de privacidad."
+      },
+      "docs": {
+        "title": "Políticas e identidad",
+        "privacyHint": "Cómo recopilamos, usamos y protegemos la información.",
+        "termsHint": "Aún no hay Términos de servicio independientes publicados. La etiqueta Términos del footer es un placeholder no clicable y no se presenta como una página de política activa.",
+        "riskLabel": "Notas de riesgo del copy trading",
+        "riskHint": "Sección de la guía sobre herencia de errores del líder, techos duros y diversificación.",
+        "githubLabel": "Organización de GitHub",
+        "githubHint": "Identidad open source oficial de los repos web y de servicios."
+      }
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Preguntas a resolver antes de fondear o copiar",
+      "body": "Las respuestas siguen el modelo de producto live custodial + Gas de los servicios de trading.",
+      "items": [
+        {
+          "q": "¿CopyOdds es custodial o no custodial?",
+          "a": "Custodial. CopyOdds provisiona una wallet de trading por usuario y firma órdenes de copy mediante un servicio de wallet remoto para automatizar sin MetaMask. No es un producto no custodial donde las claves privadas solo están en tu dispositivo."
+        },
+        {
+          "q": "¿Quién controla los permisos de firma de la wallet?",
+          "a": "Las firmas de trading las produce el servicio de wallet de la plataforma para flujos Relayer typed-data / message de tu cuenta custodial. Vincular wallet externa, importar clave y retirar EOA directo están deshabilitados. Sin autorización de retiro, las transferencias salientes se limitan a destinatarios en lista blanca."
+        },
+        {
+          "q": "¿El copy trading puede hacer perder dinero?",
+          "a": "Sí. El copy trading no elimina el riesgo de mercado. Los líderes pueden equivocarse, llegar tarde o sobredimensionar; tu suscripción puede perder. El rendimiento pasado y altos win rates aún incluyen muchas operaciones perdedoras."
+        },
+        {
+          "q": "¿Por qué mi resultado puede diferir del del líder?",
+          "a": "Latencia, slippage por defecto, sizing ratio vs fijo, subidas al nocional mínimo, skips de riesgo, fills parciales y pausas de Gas pueden divergir del líder. Las curvas de investigación de este sitio no son garantías de ejecución de copy."
+        },
+        {
+          "q": "¿Qué comisiones pagaré?",
+          "a": "Tras comprar paquetes Gas de plataforma, los fills live elegibles gastan puntos Gas de plataforma al 0,5 % del nocional llenado (100 puntos Gas por USDC; p. ej. 100 USDC → 50 puntos ≈ 0,5 USDC). Órdenes sin fill, fallidas o canceladas no se cobran. Algunos mercados también tienen taker fees de Polymarket y comisiones de red. Las comisiones de partners no son tus comisiones de trading. No hay comisión de rendimiento ni de retiro codificada."
+        },
+        {
+          "q": "¿Cómo verifico una transacción?",
+          "a": "Usa la dirección custodial, la dirección Deposit y los hashes de transacción mostrados en la app en Polygonscan (y perfiles de Polymarket para wallets de investigación). Los datos blockchain de esas direcciones públicas son inspeccionables de forma independiente."
+        },
+        {
+          "q": "¿Qué hago si un retiro se retrasa?",
+          "a": "Confirma que el TOTP está activo, que no hay órdenes/posiciones que bloqueen el retiro y que no hay un retiro en curso. Luego contacta al soporte oficial de Telegram (t.me/oddsFine) o WhatsApp con tus identificadores y referencias de la app. Este sitio no publica un SLA de procesamiento garantizado."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Listo cuando las reglas estén claras.",
+      "body": "Abre la app para fondear tu wallet custodial, comprar Gas y configurar controles de copy — o habla con el soporte oficial si algo sobre fondos o retiros parece incorrecto."
+    }
+  },
+  "landing": {
+    "trustStrip": {
+      "eyebrow": "Centro de confianza",
+      "title": "Entiende fondos, comisiones y ejecución del copy.",
+      "body": "Wallets custodiales, puntos Gas, sizing, retiros y controles de riesgo — según el producto live actual.",
+      "cta": "Abrir el Centro de confianza"
+    },
+    "nav": {
+      "trust": "Seguridad y confianza"
     }
   }
 }

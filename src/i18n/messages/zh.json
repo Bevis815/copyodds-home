@@ -169,6 +169,7 @@
     "docs": "文档",
     "privacy": "隐私",
     "terms": "条款",
+    "termsUnavailable": "独立服务条款尚未发布",
     "trust": "信任中心",
     "license": "许可证",
     "navAria": "页脚"
@@ -1502,15 +1503,15 @@
       "body": "CopyOdds 采用托管交易钱包，以便自动签名跟单。你无需连接 MetaMask，也无需导入私钥。每位用户有独立的执行地址与 Polymarket Deposit；交易保证金存放在 Polygon 上的 Deposit / pUSD。",
       "bullets": [
         "一人一托管执行地址、一人一 Polymarket Deposit——跟单走你自己的账户，不是混进平台大热钱包再代下单。",
-        "你无需保管或导出交易私钥。签名由独立钱包服务完成，用于 Polymarket Relayer 的结构化操作。",
-        "Polygon 主路径：向应用内展示的托管地址转入 USDC.e / USDC / USDT0 / Wormhole USDT，资金自动归集至 Deposit 并 wrap 为 pUSD。从 BSC 充值请使用该网络展示的 Bridge EVM 地址，不要转到托管 EOA。",
+        "你无需保管或导出交易私钥。签名由独立钱包服务完成，用于 Polymarket Relayer 所需的 message / typed-data，不开放任意原始交易直签。",
+        "Polygon：向应用内托管地址转入 USDC.e 时自动归集至 Deposit 并 wrap 为 pUSD；转入原生 USDC / USDT0 / Wormhole USDT 时自动经 Polymarket Bridge 入账为 pUSD。从 BSC 充值须使用该网络展示的 Bridge EVM 地址（与认证地址同源），不要向托管 EOA 转 BSC 资产。",
         "CopyOdds 客服不会索要私钥、助记词或验证器验证码。",
         "产品仍是托管：平台能为你代签跟单。这与「私钥只在你设备上」的非托管产品不同。"
       ],
       "flow": {
         "deposit": {
           "title": "充值到你的托管地址",
-          "body": "在应用内开通托管钱包后，向展示的 Polygon 地址充值（从 BSC 入金则用 Bridge 地址）。保证金入账为你的 Polymarket Deposit（pUSD）。"
+          "body": "在应用内开通托管钱包后，向展示的 Polygon 托管地址充值；从 BSC 入金则使用 Bridge EVM 地址。交易保证金最终进入你的 Polymarket Deposit（pUSD）。"
         },
         "allocate": {
           "title": "设置比例/固定金额与风控上限",
@@ -1561,24 +1562,24 @@
     },
     "fees": {
       "eyebrow": "费用与提现",
-      "title": "平台 Gas、Polymarket 市场费与提现",
-      "body": "CopyOdds 通过 Gas 套餐收取平台使用费。Polymarket 可能对成交另收市场 taker 费。产品中无业绩分成费或提现手续费代码。",
+      "title": "平台 Gas 点数、市场费与提现",
+      "body": "请区分两类费用：平台 Gas 点数是 CopyOdds 站内跟单服务费单位；区块链网络费与 Polymarket 市场费是外部费用。产品中无业绩分成费或提现手续费代码。",
       "points": {
         "platform": {
-          "title": "平台 Gas（名义金额的 0.5%）",
-          "body": "在应用内购买 Gas 套餐。每笔成功实盘成交（及手动赎回）按名义金额 0.5% 扣 Gas，兑换率为每 1 USDC = 100 Gas——例如名义 $100 消耗 50 Gas。开启真实跟单要求 gasBalance > 0。"
+          "title": "平台 Gas 点数（跟单服务费）",
+          "body": "CopyOdds 跟单服务费按符合收费规则的实盘成交名义金额计算，通过平台 Gas 点数扣除。按当前配置（名义金额 × 0.5%，且 1 USDC = 100 Gas 点数），名义成交金额为 100 USDC 时对应 50 Gas 点数，折算为 0.5 USDC。须先在应用内购买 Gas 套餐；开启真实跟单要求 gasBalance > 0。适用的 Polymarket 市场费用和网络费用另行计算。"
         },
         "gas": {
-          "title": "网络 / 链上费用",
-          "body": "Polygon 充值归集与 Relayer 步骤由产品侧处理，通常无需自备 MATIC。从 BSC 经桥入金仍需你在来源钱包支付源链 Gas。Polymarket 市场费（若该市场向 taker 收费）与平台 Gas 分开。"
+          "title": "区块链网络费与市场费",
+          "body": "区块链网络费（如 Polygon 上的 MATIC、BSC 上的 BNB）与平台 Gas 点数不是同一概念。Polygon 充值归集与 Relayer 步骤通常由产品侧处理，无需自备 MATIC；从 BSC 经桥入金仍需你在来源钱包支付源链网络费。部分 Polymarket 市场另收 taker 市场费，与平台 Gas 点数分开。"
         },
         "timing": {
-          "title": "Gas 何时扣除",
-          "body": "Gas 套餐履约后入账。交易 Gas 在 CLOB 下单成功（或手动赎回）后扣除，不是按月订阅——订阅计费尚未实现。"
+          "title": "何时扣除平台 Gas 点数",
+          "body": "买入与卖出均在订单实际成交后按已成交名义扣除；部分成交按已成交部分计费，限价单后续补成交不会重复扣费。未成交、下单失败或取消的订单不扣平台 Gas 点数（代码中亦无对应退款路径）。手动赎回在链上赎回成功后按赎回名义扣除。Gas 套餐履约后入账；不是按月订阅——订阅计费尚未实现。"
         },
         "withdraw": {
           "title": "提现",
-          "body": "无单独提现手续费代码。资金经 Relayer / Bridge 在 TOTP 授权后提到你的 Polygon USDC 地址。若提现延迟或被拦截，请携带应用内参考联系官方客服——本站不发布处理 SLA。"
+          "body": "无单独提现手续费代码。资金经 Relayer / Bridge 在 TOTP 授权后提到你的 Polygon 原生 USDC 地址。若提现延迟或被拦截，请携带应用内参考联系官方客服——本站不发布处理 SLA。"
         }
       },
       "links": {
@@ -1625,7 +1626,7 @@
       "docs": {
         "title": "政策与项目身份",
         "privacyHint": "我们如何收集、使用与保护信息。",
-        "termsHint": "本站尚未发布独立服务条款页面（页脚仍指向占位链接）。",
+        "termsHint": "独立《服务条款》尚未发布；页脚「条款」为不可点击占位，不会伪装成正式页面。正式发布前请以客服说明与应用内披露为准。",
         "riskLabel": "跟单风险说明",
         "riskHint": "指南中关于继承领袖错误、硬上限与分散跟单的章节。",
         "githubLabel": "GitHub 组织",
@@ -1655,7 +1656,7 @@
         },
         {
           "q": "我需要支付哪些费用？",
-          "a": "购买平台 Gas 套餐；实盘成交按名义金额 0.5% 扣 Gas（每 1 USDC = 100 Gas）。部分市场 Polymarket 可能另收 taker 费。合作页的伙伴佣金不是你的交易费。无业绩分成费或提现手续费代码。"
+          "a": "购买平台 Gas 套餐后，符合收费规则的实盘成交按已成交名义金额 × 0.5% 扣除平台 Gas 点数（1 USDC = 100 Gas 点数；例如名义 100 USDC → 50 Gas 点数 ≈ 0.5 USDC）。未成交、失败或取消不扣点。部分市场另有 Polymarket taker 费与网络费。合作页伙伴佣金不是你的交易费。无业绩分成费或提现手续费代码。"
         },
         {
           "q": "如何核验一笔交易？",

@@ -23,7 +23,9 @@ export function Footer({ fullWidth = false, links = [] }) {
     { href: SITE.docs.api, label: t('landing.nav.api'), external: true },
     { href: localizePath(SITE.docs.trust), label: t('footer.trust') },
     { href: localizePath(SITE.docs.privacy), label: t('footer.privacy') },
-    { href: SITE.docs.terms, label: t('footer.terms') },
+    SITE.docs.terms
+      ? { href: SITE.docs.terms, label: t('footer.terms') }
+      : { href: null, label: t('footer.terms'), unavailable: true },
     { href: SITE.docs.license, label: t('footer.license'), external: true },
   ]
 
@@ -53,18 +55,33 @@ export function Footer({ fullWidth = false, links = [] }) {
       </div>
 
       <nav className="site-footer__nav" aria-label={t('footer.navAria')}>
-        {resolvedLinks.map((link) =>
-          link.href.startsWith('#') || link.href.startsWith('/') ? (
-            link.href.startsWith('/') ? (
+        {resolvedLinks.map((link) => {
+          if (!link.href || link.unavailable) {
+            return (
+              <span
+                key={`unavailable-${link.label}`}
+                className="site-footer__link--unavailable"
+                title={t('footer.termsUnavailable')}
+              >
+                {link.label}
+              </span>
+            )
+          }
+          if (link.href.startsWith('/')) {
+            return (
               <Link key={`${link.href}-${link.label}`} to={link.href}>
                 {link.label}
               </Link>
-            ) : (
+            )
+          }
+          if (link.href.startsWith('#')) {
+            return (
               <a key={`${link.href}-${link.label}`} href={link.href}>
                 {link.label}
               </a>
             )
-          ) : (
+          }
+          return (
             <a
               key={`${link.href}-${link.label}`}
               href={link.href}
@@ -73,8 +90,8 @@ export function Footer({ fullWidth = false, links = [] }) {
             >
               {link.label}
             </a>
-          ),
-        )}
+          )
+        })}
       </nav>
 
       <p className="site-footer__copy">

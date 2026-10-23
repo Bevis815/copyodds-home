@@ -15,19 +15,21 @@
     "backToTop": "Kembali ke atas",
     "leaderboard": "Papan peringkat",
     "methodology": "Metodologi",
-    "docs": "Panduan pengguna"
+    "docs": "Panduan pengguna",
+    "terms": "Ketentuan",
+    "termsUnavailable": "Syarat Layanan mandiri belum dipublikasikan",
+    "trust": "Pusat Kepercayaan",
+    "privacy": "Privasi"
   },
   "support": {
     "title": "Bantuan",
     "telegram": "Dukungan Telegram",
     "telegramCta": "Chat",
     "whatsapp": "Dukungan WhatsApp",
-    "whatsappCta": "Salin",
+    "whatsappCta": "Chat",
     "panelHint": "Kami biasanya membalas pada jam kerja.",
     "floatingAria": "Hubungi dukungan via Telegram",
-    "whatsappFloatingAria": "Salin username WhatsApp",
-    "whatsappCopied": "Disalin",
-    "whatsappHint": "Cari username ini di WhatsApp"
+    "whatsappFloatingAria": "Hubungi dukungan via WhatsApp"
   },
   "hero": {
     "titleLine1": "Sinyal lebih bersih,",
@@ -143,6 +145,217 @@
       "title": "Copy Trade Polymarket: Cerminkan wallet terbaik otomatis | CopyOdds",
       "description": "Polymarket tidak punya copy trading bawaan. Pelajari cara CopyOdds merangking wallet smart money, backtest, dan mencerminkan trade dengan batas posisi yang Anda kendalikan.",
       "keywords": "copy trade Polymarket, copy trading Polymarket, CopyOdds, smart money"
+    },
+    "trust": {
+      "title": "Pusat Kepercayaan | CopyOdds — Dana, biaya, keamanan & verifikasi",
+      "description": "Wallet kustodial CopyOdds, pendanaan Deposit/pUSD, poin Gas platform (0,5% notional), penarikan TOTP, dan kontrol risiko copy — baca sebelum deposit.",
+      "keywords": "CopyOdds, pusat kepercayaan, wallet kustodial, poin Gas, Polymarket Deposit, copy trading, penarikan TOTP, keamanan"
+    }
+  },
+  "trust": {
+    "breadcrumb": "Pusat Kepercayaan",
+    "breadcrumbAria": "Breadcrumb",
+    "tocAria": "Di halaman ini",
+    "hero": {
+      "eyebrow": "Pusat Kepercayaan CopyOdds",
+      "title": "Pahami cara kerjanya sebelum copy.",
+      "subtitle": "CopyOdds memakai wallet trading kustodial per pengguna, poin Gas platform untuk copy, dan penarikan yang terikat TOTP. Baca dana, biaya, dan kontrol risiko sebelum deposit.",
+      "ctaFunds": "Cara dana bekerja",
+      "ctaTransparency": "Transparansi trading"
+    },
+    "toc": {
+      "funds": "Dana & wallet",
+      "transparency": "Transparansi copy",
+      "fees": "Biaya & penarikan",
+      "security": "Keamanan",
+      "support": "Dukungan",
+      "faq": "FAQ"
+    },
+    "funds": {
+      "eyebrow": "Dana & wallet",
+      "title": "Wallet kustodial independen — bukan hot wallet bersama",
+      "body": "CopyOdds memakai wallet trading kustodial agar order copy dapat ditandatangani otomatis. Anda tidak perlu MetaMask atau mengimpor private key. Setiap pengguna punya alamat eksekusi khusus dan Polymarket Deposit; jaminan trading berada di Deposit / pUSD di Polygon.",
+      "bullets": [
+        "Satu pengguna, satu alamat eksekusi kustodial dan satu Polymarket Deposit — copy memakai akun Anda, bukan hot wallet bersama platform.",
+        "Anda tidak menyimpan atau mengekspor private key trading. Penandatanganan dilakukan layanan wallet terpisah untuk operasi Relayer terstruktur (message / typed-data), bukan transaksi mentah sembarang.",
+        "Di Polygon, USDC.e ke alamat kustodial Anda otomatis diteruskan ke Deposit dan di-wrap menjadi pUSD; USDC native / USDT0 / Wormhole USDT lewat Polymarket Bridge ke pUSD. Deposit BSC harus memakai alamat Bridge EVM jaringan itu — jangan kirim aset BSC ke EOA kustodial.",
+        "Dukungan CopyOdds tidak akan meminta private key, recovery phrase, atau kode authenticator.",
+        "Produk tetap kustodial: platform dapat menandatangani copy untuk Anda. Ini berbeda dari wallet non-kustodial yang kuncinya hanya di perangkat Anda."
+      ],
+      "flow": {
+        "deposit": {
+          "title": "Deposit ke alamat kustodial Anda",
+          "body": "Buka wallet kustodial di app, lalu danai alamat Polygon yang ditampilkan (atau alamat Bridge dari BSC). Jaminan masuk ke Polymarket Deposit Anda sebagai pUSD."
+        },
+        "allocate": {
+          "title": "Atur rasio atau jumlah tetap dan batas risiko",
+          "body": "Pilih RATIO atau FIXED_AMOUNT, lalu atur notional maks, batas per pasar, batas harian, slippage, dan proteksi lain sebelum aktivasi."
+        },
+        "execute": {
+          "title": "Trade mirror memakai Deposit Anda",
+          "body": "Saat wallet yang diikuti fill di Polygon, CopyOdds dapat mencerminkan aksi lewat klien CLOB per-pengguna dalam aturan tersebut. Fill, slippage, dan miss tetap bisa berbeda dari leader."
+        },
+        "withdraw": {
+          "title": "Tarik dengan TOTP ke alamat Anda",
+          "body": "Penarikan memindahkan dana Deposit ke alamat Polygon yang Anda tentukan. Anda harus mengaktifkan authenticator (TOTP) dan mengonfirmasi tujuan serta jumlah penarikan ini. Order terbuka, posisi terbuka, atau penarikan yang sedang berjalan dapat memblokir permintaan."
+        }
+      },
+      "privacyLink": "Baca juga keamanan wallet dan private key di <privacy>Kebijakan Privasi</privacy> untuk teks formal tentang kredensial dan transaksi yang tidak dapat dibalik."
+    },
+    "transparency": {
+      "eyebrow": "Transparansi copy trading",
+      "title": "Bagaimana discovery, mirroring, dan riset berbeda dari hasil live",
+      "body": "Sinyal berasal dari event on-chain OrderFilled wallet yang diikuti. Sizing live adalah rasio atau jumlah tetap terhadap saldo Deposit Anda, dengan cek risiko — bukan jaminan menyamai PnL leader.",
+      "points": {
+        "discovery": {
+          "title": "Saringan smart money",
+          "body": "Leaderboard meranking wallet Polymarket lebih dari PnL headline — termasuk konsistensi, aktivitas, drawdown, dan konteks risiko — agar Anda bisa shortlist alamat untuk diteliti."
+        },
+        "signal": {
+          "title": "Dari sinyal ke eksekusi",
+          "body": "Block listener memantau fill Polygon CTF Exchange untuk leader yang dilanggan, lalu copy worker mengukur dan mengirim order lewat kredensial CLOB Anda setelah delay opsional."
+        },
+        "sizing": {
+          "title": "RATIO dan FIXED_AMOUNT",
+          "body": "RATIO memakai sebagian Deposit USDC/pUSD tersedia; FIXED_AMOUNT menarget notional dolar pada harga leader. Selalu set batas keras — mengikuti wallet juga mewarisi entry terlambat dan ukuran berlebihan."
+        },
+        "risks": {
+          "title": "Delay, slippage, miss, dan kerugian",
+          "body": "Slippage copy default 5%. Order bisa dinaikkan ke notional minimum, dilewati risk check, terisi sebagian, gagal, atau rugi meskipun leader terlihat untung. Copy memindahkan riset — tidak menghilangkan risiko pasar."
+        },
+        "backtest": {
+          "title": "Backtest vs copy live",
+          "body": "Analisis wallet dan kurva riset di situs ini adalah alat saringan. PnL copy live dilacak dari lot mirror Anda dan bisa berbeda dari leader maupun kurva historis. Kinerja masa lalu tidak menjamin hasil masa depan."
+        }
+      },
+      "links": {
+        "leaderboard": "Buka leaderboard smart money",
+        "guide": "Baca panduan copy trading",
+        "explorer": "Periksa alamat di Polygonscan"
+      }
+    },
+    "fees": {
+      "eyebrow": "Biaya & penarikan",
+      "title": "Poin Gas platform, biaya pasar, dan penarikan",
+      "body": "Dua biaya berbeda: poin Gas platform adalah unit biaya layanan copy di app CopyOdds; biaya jaringan blockchain dan biaya pasar Polymarket bersifat eksternal. Tidak ada biaya kinerja atau biaya penarikan yang dikodekan.",
+      "points": {
+        "platform": {
+          "title": "Poin Gas platform (biaya layanan copy)",
+          "body": "Biaya layanan copy CopyOdds dihitung dari notional live yang terisi dan memenuhi aturan, lalu dipotong sebagai poin Gas platform. Berdasarkan aturan saat ini (0,5% notional dengan 100 poin Gas per USDC), notional terisi 100 USDC = 50 poin Gas ≈ 0,5 USDC. Beli paket Gas di app; copy nyata memerlukan gasBalance > 0. Biaya pasar Polymarket dan biaya jaringan yang berlaku dihitung terpisah."
+        },
+        "gas": {
+          "title": "Biaya jaringan blockchain dan biaya pasar",
+          "body": "Biaya jaringan (mis. MATIC di Polygon, BNB di BSC) bukan poin Gas platform. Forward deposit Polygon dan langkah Relayer biasanya ditangani produk; deposit bridge BSC tetap memerlukan biaya jaringan rantai sumber dari wallet eksternal Anda. Beberapa pasar Polymarket juga memungut taker fee, terpisah dari poin Gas platform."
+        },
+        "timing": {
+          "title": "Kapan poin Gas platform dipotong",
+          "body": "Beli dan jual dikenakan setelah fill aktual pada notional terisi; partial fill dikenakan pada bagian terisi, dan fill lanjutan limit yang sama tidak dikenakan ulang. Order tidak terisi, gagal, atau dibatalkan tidak memotong poin Gas platform (dan tidak ada jalur refund yang dikodekan). Redeem manual dikenakan setelah redeem on-chain berhasil. Paket Gas dikredit setelah fulfillment; ini bukan langganan bulanan."
+        },
+        "withdraw": {
+          "title": "Penarikan",
+          "body": "Tidak ada biaya penarikan terpisah yang dikodekan. Dana keluar dari Deposit lewat Relayer / Bridge ke alamat Polygon USDC native Anda setelah otorisasi TOTP. Jika penarikan tertunda atau diblokir, hubungi dukungan resmi dengan referensi app — situs ini tidak memublikasikan SLA pemrosesan."
+        }
+      },
+      "links": {
+        "app": "Cek paket Gas di app",
+        "support": "Hubungi dukungan resmi"
+      }
+    },
+    "security": {
+      "eyebrow": "Keamanan & verifikasi",
+      "title": "Tanda tangan kustodial dengan step-up penarikan — bukan lencana audit",
+      "body": "Kontrol berfokus pada wallet per pengguna, batas tanda tangan jarak jauh, allowlist transfer, dan penarikan terikat TOTP. Open source meningkatkan inspectability; itu bukan audit keamanan pihak ketiga atau klaim asuransi.",
+      "points": {
+        "keys": {
+          "title": "Tidak ada key di browser; tanda tangan jarak jauh terstruktur",
+          "body": "Private key tidak ditampilkan di browser dan tidak dikembalikan API bisnis. Penandatanganan memakai layanan wallet terpisah untuk alur message / typed-data Relayer Polymarket — bukan tanda tangan transaksi mentah sembarang."
+        },
+        "access": {
+          "title": "Kontrol login dan penarikan",
+          "body": "Masuk dengan OTP email; Passkey opsional untuk akses akun. Penarikan memerlukan authenticator (TOTP) dan otorisasi sekali pakai yang terikat alamat tujuan dan jumlah. Tanpa otorisasi penarikan, outflow harian dibatasi ke penerima allowlist."
+        },
+        "records": {
+          "title": "Catatan dan cek on-chain",
+          "body": "CopyOdds memproses alamat wallet, hash transaksi, dan riwayat trading untuk kustodi dan copy. Halaman riset menautkan wallet Polymarket ke Polygonscan dan profil Polymarket. Gunakan alamat dan hash di app untuk memverifikasi aktivitas on-chain."
+        },
+        "audit": {
+          "title": "Open source vs audit keamanan",
+          "body": "Frontend (copyodds-web) dan backend (copyodds-services) dipublikasikan di bawah Apache-2.0 agar ranking dan alur copy dapat ditinjau. Kami tidak memublikasikan laporan audit pihak ketiga, lencana sertifikasi, atau klaim asuransi."
+        }
+      },
+      "links": {
+        "web": "copyodds-web di GitHub",
+        "services": "copyodds-services di GitHub",
+        "privacy": "Kebijakan Privasi"
+      }
+    },
+    "support": {
+      "eyebrow": "Dukungan & akuntabilitas",
+      "title": "Saluran dan dokumen resmi",
+      "body": "Gunakan hanya kontak dan dokumen yang tercantum di sini. Jangan percaya DM tak diminta yang meminta key, seed, kode authenticator, atau kontrol jarak jauh akun Anda.",
+      "channels": {
+        "title": "Dukungan pelanggan",
+        "body": "Telegram dan WhatsApp adalah saluran dukungan yang dipublikasikan untuk produk dan penarikan. Permintaan privasi juga dapat memakai email privasi di Kebijakan Privasi."
+      },
+      "docs": {
+        "title": "Kebijakan dan identitas",
+        "privacyHint": "Bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi.",
+        "termsHint": "Syarat Layanan mandiri belum dipublikasikan. Label Terms di footer adalah placeholder non-klik dan tidak disajikan sebagai halaman kebijakan aktif.",
+        "riskLabel": "Catatan risiko copy trading",
+        "riskHint": "Bagian panduan tentang pewarisan kesalahan leader, batas keras, dan diversifikasi.",
+        "githubLabel": "Organisasi GitHub",
+        "githubHint": "Identitas open-source resmi untuk repo web dan services."
+      }
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Pertanyaan yang perlu jelas sebelum mendanai atau copy",
+      "body": "Jawaban mengikuti model produk live kustodial + Gas dari layanan trading.",
+      "items": [
+        {
+          "q": "Apakah CopyOdds kustodial atau non-kustodial?",
+          "a": "Kustodial. CopyOdds menyediakan wallet trading per pengguna dan menandatangani order copy lewat layanan wallet jarak jauh agar otomasi berjalan tanpa MetaMask. Ini berbeda dari produk non-kustodial yang private key-nya hanya di perangkat Anda."
+        },
+        {
+          "q": "Siapa yang mengontrol izin tanda tangan wallet?",
+          "a": "Tanda tangan trading dihasilkan layanan wallet platform untuk alur Relayer typed-data / message yang terikat akun kustodial Anda. Binding wallet eksternal, impor key, dan penarikan EOA langsung dinonaktifkan. Tanpa otorisasi penarikan, transfer keluar terbatas ke penerima allowlist."
+        },
+        {
+          "q": "Bisakah copy trading merugikan?",
+          "a": "Ya. Copy trading tidak menghilangkan risiko pasar. Leader bisa salah, terlambat, atau oversized; langganan Anda tetap bisa rugi. Kinerja masa lalu dan win rate tinggi tetap mencakup banyak trade yang kalah."
+        },
+        {
+          "q": "Mengapa hasil saya bisa berbeda dari leader?",
+          "a": "Latensi, slippage default, sizing rasio vs tetap, bump notional minimum, skip risiko, partial fill, dan jeda Gas semuanya bisa menyimpang dari leader. Kurva riset di situs ini bukan jaminan eksekusi copy."
+        },
+        {
+          "q": "Biaya apa yang saya bayar?",
+          "a": "Setelah membeli paket Gas platform, fill live yang memenuhi syarat memotong poin Gas platform sebesar 0,5% dari notional terisi (100 poin Gas per USDC; mis. 100 USDC → 50 poin ≈ 0,5 USDC). Order tidak terisi, gagal, atau dibatalkan tidak dikenakan. Beberapa pasar juga punya taker fee Polymarket dan biaya jaringan. Komisi partner bukan biaya trading Anda. Tidak ada biaya kinerja atau penarikan yang dikodekan."
+        },
+        {
+          "q": "Bagaimana memverifikasi transaksi?",
+          "a": "Gunakan alamat kustodial, alamat Deposit, dan hash transaksi di app di Polygonscan (dan profil Polymarket untuk wallet riset). Data blockchain alamat publik itu dapat diperiksa secara independen."
+        },
+        {
+          "q": "Apa yang harus dilakukan jika penarikan tertunda?",
+          "a": "Pastikan TOTP aktif, tidak ada order/posisi yang memblokir penarikan, dan tidak ada penarikan yang sedang berjalan. Lalu hubungi dukungan Telegram resmi (t.me/oddsFine) atau WhatsApp dengan identitas akun dan referensi app. Situs ini tidak memublikasikan SLA pemrosesan yang dijamin."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Siap ketika aturannya jelas.",
+      "body": "Buka app untuk mendanai wallet kustodial, membeli Gas, dan mengatur kontrol copy — atau hubungi dukungan resmi jika ada yang salah pada dana atau penarikan."
+    }
+  },
+  "landing": {
+    "trustStrip": {
+      "eyebrow": "Pusat Kepercayaan",
+      "title": "Pahami dana, biaya, dan eksekusi copy.",
+      "body": "Wallet kustodial, poin Gas, sizing, penarikan, dan kontrol risiko — sesuai produk live saat ini.",
+      "cta": "Buka Pusat Kepercayaan"
+    },
+    "nav": {
+      "trust": "Keamanan & Kepercayaan"
     }
   }
 }

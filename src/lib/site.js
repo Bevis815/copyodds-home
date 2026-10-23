@@ -53,7 +53,8 @@ export const SITE = {
     license: 'https://github.com/Copyodds/copyodds-web/blob/main/LICENSE',
     privacy: '/privacy',
     trust: '/trust',
-    terms: '#terms',
+    /** No standalone Terms of Service page yet — do not point this at a fake URL. */
+    terms: null,
   },
 }
 

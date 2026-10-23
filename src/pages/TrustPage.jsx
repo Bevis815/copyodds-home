@@ -264,7 +264,9 @@ export function TrustPage() {
                     <span>{t('trust.support.docs.privacyHint')}</span>
                   </li>
                   <li>
-                    <span>{t('footer.terms')}</span>
+                    <span className="trust-docs__unavailable" title={t('footer.termsUnavailable')}>
+                      {t('footer.terms')}
+                    </span>
                     <span>{t('trust.support.docs.termsHint')}</span>
                   </li>
                   <li>
