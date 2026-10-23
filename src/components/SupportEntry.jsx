@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import {
   getTelegramSupportHref,
+  getWhatsAppSupportHandle,
   getWhatsAppSupportHref,
   isWhatsAppSupportEnabled,
 } from '../lib/support'
@@ -81,6 +82,7 @@ export function SupportContactPanel({ className = '' }) {
   const { t } = useTranslation()
   const telegramHref = getTelegramSupportHref()
   const whatsAppHref = getWhatsAppSupportHref()
+  const whatsAppHandle = getWhatsAppSupportHandle()
   const whatsAppEnabled = isWhatsAppSupportEnabled()
 
   return (
@@ -116,7 +118,9 @@ export function SupportContactPanel({ className = '' }) {
             </span>
             <span className="min-w-0">
               <span className="block text-sm font-semibold text-white">{t('support.whatsapp')}</span>
-              <span className="mt-0.5 block truncate text-xs text-slate-500">{t('support.panelHint')}</span>
+              <span className="mt-0.5 block truncate text-xs text-slate-500">
+                {whatsAppHandle ?? t('support.panelHint')}
+              </span>
             </span>
           </span>
           <span className="btn-ghost shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold sm:px-4 sm:py-2 sm:text-sm">

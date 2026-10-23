@@ -1,5 +1,7 @@
 {
-  "common": { "langAria": "Язык" },
+  "common": {
+    "langAria": "Язык"
+  },
   "header": {
     "navLeaderboard": "Таблица лидеров",
     "navMethodology": "Методология",
@@ -20,10 +22,12 @@
     "telegram": "Поддержка в Telegram",
     "telegramCta": "Написать",
     "whatsapp": "Поддержка в WhatsApp",
-    "whatsappCta": "Написать",
+    "whatsappCta": "Копировать",
     "panelHint": "Обычно отвечаем в рабочие часы.",
     "floatingAria": "Связаться с поддержкой в Telegram",
-    "whatsappFloatingAria": "Связаться с поддержкой в WhatsApp"
+    "whatsappFloatingAria": "Скопировать username WhatsApp",
+    "whatsappCopied": "Скопировано",
+    "whatsappHint": "Найдите этот username в WhatsApp"
   },
   "hero": {
     "titleLine1": "Чище сигналы,",
@@ -99,8 +103,15 @@
     "unnamed": "Безымянный трейдер",
     "detail": "подробнее"
   },
-  "format": { "notSynced": "Ещё не синхронизировано", "invalidTime": "Некорректное время" },
-  "periods": { "week": "Неделя", "month": "Месяц", "all": "За всё время" },
+  "format": {
+    "notSynced": "Ещё не синхронизировано",
+    "invalidTime": "Некорректное время"
+  },
+  "periods": {
+    "week": "Неделя",
+    "month": "Месяц",
+    "all": "За всё время"
+  },
   "coverage": {
     "unknown": "Покрытие неизвестно",
     "noPoints": "Нет точек кривой",

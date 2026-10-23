@@ -1,5 +1,7 @@
 {
-  "common": { "langAria": "Bahasa" },
+  "common": {
+    "langAria": "Bahasa"
+  },
   "header": {
     "navLeaderboard": "Papan peringkat",
     "navMethodology": "Metodologi",
@@ -20,10 +22,12 @@
     "telegram": "Dukungan Telegram",
     "telegramCta": "Chat",
     "whatsapp": "Dukungan WhatsApp",
-    "whatsappCta": "Chat",
+    "whatsappCta": "Salin",
     "panelHint": "Kami biasanya membalas pada jam kerja.",
     "floatingAria": "Hubungi dukungan via Telegram",
-    "whatsappFloatingAria": "Hubungi dukungan via WhatsApp"
+    "whatsappFloatingAria": "Salin username WhatsApp",
+    "whatsappCopied": "Disalin",
+    "whatsappHint": "Cari username ini di WhatsApp"
   },
   "hero": {
     "titleLine1": "Sinyal lebih bersih,",
@@ -99,8 +103,15 @@
     "unnamed": "Trader tanpa nama",
     "detail": "detail"
   },
-  "format": { "notSynced": "Belum disinkronkan", "invalidTime": "Waktu tidak valid" },
-  "periods": { "week": "Minggu", "month": "Bulan", "all": "Sepanjang waktu" },
+  "format": {
+    "notSynced": "Belum disinkronkan",
+    "invalidTime": "Waktu tidak valid"
+  },
+  "periods": {
+    "week": "Minggu",
+    "month": "Bulan",
+    "all": "Sepanjang waktu"
+  },
   "coverage": {
     "unknown": "Cakupan tidak diketahui",
     "noPoints": "Tidak ada titik kurva",

@@ -1,5 +1,7 @@
 {
-  "common": { "langAria": "Langue" },
+  "common": {
+    "langAria": "Langue"
+  },
   "header": {
     "navLeaderboard": "Classement",
     "navMethodology": "Méthodologie",
@@ -20,10 +22,12 @@
     "telegram": "Support Telegram",
     "telegramCta": "Discuter",
     "whatsapp": "Support WhatsApp",
-    "whatsappCta": "Discuter",
+    "whatsappCta": "Copier",
     "panelHint": "Nous répondons généralement pendant les heures ouvrables.",
     "floatingAria": "Contacter le support sur Telegram",
-    "whatsappFloatingAria": "Contacter le support sur WhatsApp"
+    "whatsappFloatingAria": "Copier le nom d’utilisateur WhatsApp",
+    "whatsappCopied": "Copié",
+    "whatsappHint": "Recherchez ce nom d’utilisateur dans WhatsApp"
   },
   "hero": {
     "titleLine1": "Des signaux plus clairs,",
@@ -99,8 +103,15 @@
     "unnamed": "Trader sans nom",
     "detail": "détail"
   },
-  "format": { "notSynced": "Pas encore synchronisé", "invalidTime": "Heure invalide" },
-  "periods": { "week": "Semaine", "month": "Mois", "all": "Tout le temps" },
+  "format": {
+    "notSynced": "Pas encore synchronisé",
+    "invalidTime": "Heure invalide"
+  },
+  "periods": {
+    "week": "Semaine",
+    "month": "Mois",
+    "all": "Tout le temps"
+  },
   "coverage": {
     "unknown": "Couverture inconnue",
     "noPoints": "Pas de points de courbe",
